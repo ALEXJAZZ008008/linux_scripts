@@ -2,9 +2,9 @@
 
 Install and set up sudo
 
-Update sources
+Update sources (contrib non-free and main updates security backports debug)
 
-Run list/Update Settings
+Run inatall list/Update Settings
 
 Add Linux headers and graphics/WiFi driver
 
