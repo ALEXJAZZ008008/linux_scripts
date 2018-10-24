@@ -2,13 +2,17 @@
 
 Install and set up sudo
 
-Update sources (contrib non-free and main updates security backports debug)
+Update sources
 
-Run install list/update settings
+Run install list
 
 Run manifest command
 
-Add Linux headers and graphics/WiFi driver
+Run install list
+
+Update drivers
+
+Update settings
 
 Start programs
 
