@@ -1,0 +1,1 @@
+sudo apt install -y libhdf5-serial-dev h5utils cmake cmake-curses-gui libboost-all-dev doxygen git
