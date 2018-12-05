@@ -1,5 +1,10 @@
 # LinuxScripts
 
+Scrips to help others with setting up Ubuntu based (KDE Neon specifically) programming enviroments. 
+Will work on Debian eventually.
+
+
+
 Install and set up sudo
 
 Update sources
