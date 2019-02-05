@@ -1,1 +1,1 @@
-sudo pacman -Syy && pacman -Syu && pacman -S gedit xorg-server plasma-meta kde-applications chromium
+sudo pacman -Syy && pacman -Syu && pacman -S grub xorg-server plasma-meta kde-applications chromium
