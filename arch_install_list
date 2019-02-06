@@ -1,1 +1,1 @@
-sudo pacman -Syy && pacman -Syu && pacman -S openssh grub-bios linux-headers linux-lts linux-lts-headers wpa_supplicant wireless_tools xorg-server plasma-meta kde-applications chromium
+pacman -Syu && pacman -S openssh grub-bios linux-headers linux-lts linux-lts-headers
