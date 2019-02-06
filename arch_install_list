@@ -1,1 +1,1 @@
-pacman -Syu && pacman -S openssh grub-bios linux-headers linux-lts linux-lts-headers
+pacman -Syu && pacman -S openssh grub-bios linux-headers linux-lts linux-lts-headers dialog network-manager-applet networkmanager networkmanager-openvpn wireless_tools wpa_supplicant wpa_actiond xorg-server xf86-video-intel libgl mesa nvidia nvidia-lts nvidia-libgl virtualbox-guest-utils virtualbox-guest-modules-arch
