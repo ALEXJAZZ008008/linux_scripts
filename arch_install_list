@@ -4,13 +4,10 @@ sudo pacman -Syyyu base base-devel grub-bios linux-headers linux-lts linux-lts-h
 #xf86-video-intel
 
 #Nvidia GPU
-#nvidia nvidia-lts nvidia-libgl
+#nvidia nvidia-lts nvidia-libgl lib32-nvidia-libgl
 
 #AMD GPU
 #xf86-video-amdgpu xf86-video-ati
-
-#32bit
-#lib32-mesa-libgl lib32-nvidia-libgl
 
 #VirtualBox
 #virtualbox-guest-utils virtualbox-guest-modules-arch
@@ -22,4 +19,4 @@ sudo pacman -Syyyu base base-devel grub-bios linux-headers linux-lts linux-lts-h
 #firefox firefox-developer-edition arch-firefox-search
 
 #Purge
-sudo pacman -Rns xf86-video-intel nvidia nvidia-lts nvidia-libgl xf86-video-amdgpu xf86-video-ati lib32-mesa-libgl lib32-nvidia-libgl virtualbox-guest-utils virtualbox-guest-modules-arch lightdm lightdm-gtk-greeter deepin-session-ui mate mate-extra mate-applet-dock mate-applet-streamer mate-menu firefox firefox-developer-edition arch-firefox-search
+sudo pacman -Rns xf86-video-intel nvidia nvidia-lts nvidia-libgl lib32-nvidia-libgl xf86-video-amdgpu xf86-video-ati virtualbox-guest-utils virtualbox-guest-modules-arch lightdm lightdm-gtk-greeter deepin-session-ui mate mate-extra mate-applet-dock mate-applet-streamer mate-menu firefox firefox-developer-edition arch-firefox-search
