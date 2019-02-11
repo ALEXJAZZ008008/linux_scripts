@@ -1,6 +1,6 @@
 in_pkglist = open("./pkglist", 'r')
 
-out_pkglist_string = "sudo pacman -syyyu"
+out_pkglist_string = "sudo pacman -Syyyu"
 
 for command in in_pkglist:
     out_pkglist_string += ' ' + command.split('\n')[0]
