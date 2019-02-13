@@ -1,14 +1,12 @@
-in_pkglist = open("./pkglist", 'r')
+with open("pkglist", 'r') as in_pkglist:
+    out_pkglist_string = "sudo apt -y update && sudo apt -y upgrade && sudo apt -y full-upgrade && sudo do-release-upgrade && sudo apt -y update && sudo apt -y upgrade && sudo apt -y full-upgrade && sudo apt -y autoremove && sudo apt -y clean && sudo apt -y install"
 
-out_pkglist_string = "sudo apt -y update && sudo apt -y upgrade && sudo apt -y full-upgrade && sudo do-release-upgrade && sudo apt -y update && sudo apt -y upgrade && sudo apt -y full-upgrade && sudo apt -y autoremove && sudo apt -y clean"
+    next(in_pkglist)
 
-in_pkglist.pop(0)
+    for pkg in in_pkglist:
+        out_pkglist_string += ' ' + pkg.split('/')[0]
 
-for command in in_pkglist:
-    out_pkglist_string += ' ' + command.split('/')[0]
+    out_pkglist_string += "sudo apt -y update && sudo apt -y upgrade && sudo apt -y full-upgrade && sudo do-release-upgrade && sudo apt -y update && sudo apt -y upgrade && sudo apt -y full-upgrade && sudo apt -y autoremove && sudo apt -y clean"
 
-out_pkglist_string = "sudo apt -y update && sudo apt -y upgrade && sudo apt -y full-upgrade && sudo do-release-upgrade && sudo apt -y update && sudo apt -y upgrade && sudo apt -y full-upgrade && sudo apt -y autoremove && sudo apt -y clean"
-
-out_pkglist = open("./pkglist_command", 'w')
-
-out_pkglist.write(out_pkglist_string)
+    with open("pkglist_command", 'w') as out_pkglist:
+        out_pkglist.write(out_pkglist_string)
