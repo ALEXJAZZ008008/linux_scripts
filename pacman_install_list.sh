@@ -56,3 +56,5 @@ done
 #for i in firefox firefox-developer-edition arch-firefox-search; do
 #  sudo pacman -S --noconfirm $i
 #done
+
+exit 0
