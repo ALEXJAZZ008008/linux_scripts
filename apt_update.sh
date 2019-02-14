@@ -1,3 +1,3 @@
 for i in update upgrade full-upgrade autoremove clean; do
-  sudo apt -y $i
+  sudo apt $i -y
 done
