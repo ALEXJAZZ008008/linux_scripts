@@ -8,6 +8,7 @@ done
 #for i in nvidia-driver-410; do
 #  sudo apt install -y
 #done
+exit 0
 
 for i in build-essential dkms freeglut3 freeglut3-dev libxi-dev libxmu-dev g++ libx11-dev libxi-dev libglu1-mesa libglu1-mesa-dev; do
   sudo apt install -y
@@ -31,9 +32,12 @@ done
 for i in furiusisomount fuseiso; do
   sudo apt install -y $i
 done
+exit 0
 
 sudo ln -s /lib/i386-linux-gnu/libc.so.6 /lib/libc.so.6
 
 for i in update upgrade full-upgrade autoremove clean; do
   sudo apt $i -y
 done
+
+exit 0
