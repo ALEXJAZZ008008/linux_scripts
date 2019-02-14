@@ -27,6 +27,10 @@ for i in cuda cuda-9-1 cuda-command-line-tools-9-1 cuda-compiler-9-1 cuda-cublas
   sudo apt install -y $i
 done
 
+for i in furiusisomount fuseiso; do
+  sudo apt install -y $i
+done
+
 for i in update upgrade full-upgrade autoremove clean; do
   sudo apt $i -y
 done
