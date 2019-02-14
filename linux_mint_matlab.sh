@@ -6,7 +6,7 @@ done
 
 #Install latest Nvidia driver using driver manager and reboot
 #for i in nvidia-driver-410; do
-#  sudo apt install -y
+#  sudo apt install -y $i
 #done
 exit 0
 
