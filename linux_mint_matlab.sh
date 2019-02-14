@@ -11,7 +11,7 @@ done
 exit 0
 
 for i in build-essential dkms freeglut3 freeglut3-dev libxi-dev libxmu-dev g++ libx11-dev libxi-dev libglu1-mesa libglu1-mesa-dev; do
-  sudo apt install -y
+  sudo apt install -y $i
 done
 
 wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
