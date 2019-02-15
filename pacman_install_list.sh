@@ -1,60 +1,199 @@
-sudo pacman -Syyyu
+sudo pacman -Syyu --noconfirm
 
-#Purge
-#for i in sddm NetworkManager ntpd lightdm; do
-#  sudo systemctl disable $i
-#done
-
-#for i in xorg-server xorg-xinit xterm xf86-video-vesa xf86-video-nouveau lib32-mesa-libgl libgl mesa sddm plasma-meta plasma plasma-desktop plasma-wayland-session kde-applications kde-applications-meta ttf-liberation font-bh-ttf ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid ttf-roboto noto-fonts ttf-ubuntu-font-family  openssh dialog network-manager-applet networkmanager networkmanager-openvpn wireless_tools wpa_supplicant wpa_actiond sudo vim tmux ntp reflector telepathy-haze chromium steam steam-native-runtime clementine xf86-video-intel nvidia nvidia-lts nvidia-libgl lib32-nvidia-libgl xf86-video-amdgpu xf86-video-ati virtualbox-guest-utils virtualbox-guest-modules-arch i3 lightdm lightdm-gtk-greeter deepin-session-ui mate mate-extra mate-applet-dock mate-applet-streamer mate-menu firefox firefox-developer-edition arch-firefox-search; do
-#  sudo pacman -Rns --noconfirm $i
-#done
-
-#Base with KDE
-for i in base base-devel grub-bios linux-headers linux-lts linux-lts-headers xorg-server xorg-xinit xterm xf86-video-vesa xf86-video-nouveau lib32-mesa-libgl libgl mesa sddm plasma-meta plasma plasma-desktop plasma-wayland-session kde-applications kde-applications-meta ttf-liberation font-bh-ttf ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid ttf-roboto noto-fonts ttf-ubuntu-font-family  openssh dialog network-manager-applet networkmanager networkmanager-openvpn wireless_tools wpa_supplicant wpa_actiond sudo vim tmux ntp reflector telepathy-haze chromium steam steam-native-runtime clementine; do
-  sudo pacman -S --noconfirm $i
+#install reflector
+for i in reflector; do
+  sudo pacman -Syyu --noconfirm $i
 done
 
-for i in sddm NetworkManager ntpd; do
+sudo reflector --verbose --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+sudo pacman -Syyu --noconfirm
+
+#install Base
+for i in base base-devel grub-bios linux-headers linux-lts linux-lts-headers sudo ntp; do
+  sudo pacman -Syyu --noconfirm $i
+done
+for i in ntpd; do
   sudo systemctl enable $i
 done
 
-#Intel GPU
+#install open source drivers
+for i in xf86-video-vesa xf86-video-nouveau lib32-mesa-libgl libgl mesa; do
+  sudo pacman -Syyu --noconfirm $i
+done
+
+#install Intel GPU drivers
 #for i in xf86-video-intel; do
-#  sudo pacman -S --noconfirm $i
+#  sudo pacman -Syyu --noconfirm $i
 #done
 
-#Nvidia GPU
+#uninstall Intel GPU drivers
+#for i in xf86-video-intel; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install Nvidia GPU drivers
 #for i in nvidia nvidia-lts nvidia-libgl lib32-nvidia-libgl; do
-#  sudo pacman -S --noconfirm $i
+#  sudo pacman -Syyu --noconfirm $i
 #done
 
-#AMD GPU
+#uninstall Nvidia GPU drivers
+#for i in nvidia nvidia-lts nvidia-libgl lib32-nvidia-libgl; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install AMD GPU drivers
 #for i in xf86-video-amdgpu xf86-video-ati; do
-#  sudo pacman -S --noconfirm $i
+#  sudo pacman -Syyu --noconfirm $i
 #done
 
-#VirtualBox
+#uninstall AMD GPU drivers
+#for i in xf86-video-amdgpu xf86-video-ati; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install VirtualBox drivers
 #for i in virtualbox-guest-utils virtualbox-guest-modules-arch; do
-#  sudo pacman -S --noconfirm $i
+#  sudo pacman -Syyu --noconfirm $i
 #done
 
-#i3
-#for i in i3; do
-#  sudo pacman -S --noconfirm $i
+#uninstall VirtualBox drivers
+#for i in virtualbox-guest-utils virtualbox-guest-modules-arch; do
+#  sudo pacman -Rns --noconfirm $i
 #done
 
-#MATE
+#install Xorg
+for i in xorg-server xorg-xinit xterm; do
+  sudo pacman -Syyu --noconfirm $i
+done
+
+#uninstall Xorg
+#for i in xorg-server xorg-xinit xterm; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install KDE
+for i in sddm plasma-meta plasma plasma-desktop plasma-wayland-session kde-applications kde-applications-meta; do
+  sudo pacman -Syyu --noconfirm $i
+done
+for i in sddm; do
+  sudo systemctl enable $i
+done
+
+#uninstall KDE
+#for i in sddm; do
+#  sudo systemctl disable $i
+#done
+#for i in sddm plasma-meta plasma plasma-desktop plasma-wayland-session kde-applications kde-applications-meta; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install i3
+#for i in xorg-xdm xdm-archlinux i3; do
+#  sudo pacman -Syyu --noconfirm $i
+#done
+#for i in xdm-archlinux.service; do
+#  sudo systemctl enable $i
+#done
+
+#uninstall i3
+#for i in xdm-archlinux.service; do
+#  sudo systemctl disable $i
+#done
+#for i in xorg-xdm xdm-archlinux i3; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install MATE
 #for i in lightdm lightdm-gtk-greeter deepin-session-ui mate mate-extra mate-applet-dock mate-applet-streamer mate-menu; do
-#  sudo pacman -S --noconfirm $i
+#  sudo pacman -Syyu --noconfirm $i
 #done
-
 #for i in lightdm; do
 #  sudo systemctl enable $i
 #done
 
-#Firefox
+#uninstall MATE
+#for i in lightdm; do
+#  sudo systemctl disable $i
+#done
+#for i in lightdm lightdm-gtk-greeter deepin-session-ui mate mate-extra mate-applet-dock mate-applet-streamer mate-menu; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install open source fonts
+#for i in ttf-liberation font-bh-ttf ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid ttf-roboto noto-fonts ttf-ubuntu-font-family; do
+#  sudo pacman -Syyu --noconfirm $i
+#done
+
+#uninstall open source fonts
+#for i in ttf-liberation font-bh-ttf ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid ttf-roboto noto-fonts ttf-ubuntu-font-family; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install networking
+for i in openssh dialog network-manager-applet networkmanager networkmanager-openvpn wireless_tools wpa_supplicant wpa_actiond; do
+  sudo pacman -Syyu --noconfirm $i
+done
+for i in NetworkManager; do
+  sudo systemctl enable $i
+done
+
+#uninstall networking
+#for i in NetworkManager; do
+#  sudo systemctl disable $i
+#done
+#for i in openssh dialog network-manager-applet networkmanager networkmanager-openvpn wireless_tools wpa_supplicant wpa_actiond; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install git
+for i in git; do
+  sudo pacman -Syyu --noconfirm $i
+done
+
+#uninstall git
+#for i in git; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install Firefox
 #for i in firefox firefox-developer-edition arch-firefox-search; do
-#  sudo pacman -S --noconfirm $i
+#  sudo pacman -Syyu --noconfirm $i
+#done
+
+#uninstall Firefox
+#for i in firefox firefox-developer-edition arch-firefox-search; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install Chromium
+for i in chromium; do
+  sudo pacman -Syyu --noconfirm $i
+done
+
+#uninstall Chromium
+#for i in chromium; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install Steam
+for i in steam steam-native-runtime; do
+  sudo pacman -Syyu --noconfirm $i
+done
+
+#uninstall Steam
+#for i in steam steam-native-runtime; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install Spotify
+for i in clementine; do
+  sudo pacman -Syyu --noconfirm $i
+done
+
+#uninstall Spotify
+#for i in clementine; do
+#  sudo pacman -Rns --noconfirm $i
 #done
 
 exit 0
