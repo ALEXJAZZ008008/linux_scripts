@@ -1,10 +1,14 @@
 #Start wireless adapter
 modprobe brcmsmac
 
-#Get path
-PATH=$(dirname "$0")
+pacman -Syyu --noconfirm
 
-#Update
-$PATH/pacman_update.sh
+for i in reflector; do
+  pacman -S --noconfirm $i
+done
+
+reflector --verbose --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+pacman -Syyu --noconfirm
 
 exit 0
