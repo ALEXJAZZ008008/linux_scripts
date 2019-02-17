@@ -1,4 +1,8 @@
-./pacman_update.sh
+#Get path
+PATH=$(dirname "$0")
+
+#Update
+$PATH/pacman_update.sh
 
 #install Base
 for i in base base-devel grub-bios linux-headers linux-lts linux-lts-headers sudo ntp; do
@@ -196,5 +200,8 @@ done
 #for i in clementine; do
 #  sudo pacman -Rns --noconfirm $i
 #done
+
+#Update
+$PATH/pacman_update.sh
 
 exit 0
