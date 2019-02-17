@@ -1,5 +1,5 @@
 #Start wireless adapter
-sudo modprobe brcmsmac
+modprobe brcmsmac
 
 #Get path
 PATH=$(dirname "$0")
