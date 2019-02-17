@@ -61,33 +61,17 @@ done
 #  pacman -Rns --noconfirm $i
 #done
 
-#install Xorg
+#install Xorg display manager
 for i in xorg-server xorg-xinit xterm; do
   pacman -Syyu --noconfirm $i
 done
 
-#uninstall Xorg
+#uninstall Xorg display manager
 #for i in xorg-server xorg-xinit xterm; do
 #  pacman -Rns --noconfirm $i
 #done
 
-#install KDE
-#for i in sddm plasma-meta plasma plasma-desktop plasma-wayland-session kde-applications kde-applications-meta; do
-#  pacman -Syyu --noconfirm $i
-#done
-#for i in sddm; do
-#  systemctl enable $i
-#done
-
-#uninstall KDE
-#for i in sddm; do
-#  systemctl disable $i
-#done
-#for i in sddm plasma-meta plasma plasma-desktop plasma-wayland-session kde-applications kde-applications-meta; do
-#  pacman -Rns --noconfirm $i
-#done
-
-#install i3
+#install i3 window manager
 #for i in xorg-xdm xdm-archlinux i3; do
 #  pacman -Syyu --noconfirm $i
 #done
@@ -95,7 +79,7 @@ done
 #  systemctl enable $i
 #done
 
-#uninstall i3
+#uninstall i3 window manager
 #for i in xdm-archlinux.service; do
 #  systemctl disable $i
 #done
@@ -103,7 +87,23 @@ done
 #  pacman -Rns --noconfirm $i
 #done
 
-#install MATE
+#install KDE desktop enviroment
+#for i in sddm plasma-meta plasma plasma-desktop plasma-wayland-session kde-applications kde-applications-meta; do
+#  pacman -Syyu --noconfirm $i
+#done
+#for i in sddm; do
+#  systemctl enable $i
+#done
+
+#uninstall KDE desktop enviroment
+#for i in sddm; do
+#  systemctl disable $i
+#done
+#for i in sddm plasma-meta plasma plasma-desktop plasma-wayland-session kde-applications kde-applications-meta; do
+#  pacman -Rns --noconfirm $i
+#done
+
+#install MATE desktop enviroment
 #for i in lightdm lightdm-gtk-greeter deepin-session-ui mate mate-extra mate-applet-dock mate-applet-streamer mate-menu; do
 #  pacman -Syyu --noconfirm $i
 #done
@@ -111,7 +111,7 @@ done
 #  systemctl enable $i
 #done
 
-#uninstall MATE
+#uninstall MATE desktop enviroment
 #for i in lightdm; do
 #  systemctl disable $i
 #done
@@ -165,22 +165,32 @@ done
 #  pacman -Rns --noconfirm $i
 #done
 
-#install Firefox
+#install w3m browser
+for i in w3m; do
+  pacman -Syyu --noconfirm $i
+done
+
+#uninstall w3m browser
+#for i in w3m; do
+#  pacman -Rns --noconfirm $i
+#done
+
+#install Firefox browser
 #for i in firefox firefox-developer-edition arch-firefox-search; do
 #  pacman -Syyu --noconfirm $i
 #done
 
-#uninstall Firefox
+#uninstall Firefox browser
 #for i in firefox firefox-developer-edition arch-firefox-search; do
 #  pacman -Rns --noconfirm $i
 #done
 
-#install Chromium
+#install Chromium browser
 for i in chromium; do
   pacman -Syyu --noconfirm $i
 done
 
-#uninstall Chromium
+#uninstall Chromium browser
 #for i in chromium; do
 #  pacman -Rns --noconfirm $i
 #done
