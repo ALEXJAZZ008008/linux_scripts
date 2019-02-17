@@ -1,13 +1,4 @@
-sudo pacman -Syyu --noconfirm
-
-#install reflector
-for i in reflector; do
-  sudo pacman -Syyu --noconfirm $i
-done
-
-sudo reflector --verbose --protocol https --sort rate --save /etc/pacman.d/mirrorlist
-
-sudo pacman -Syyu --noconfirm
+./pacman_update.sh
 
 #install Base
 for i in base base-devel grub-bios linux-headers linux-lts linux-lts-headers sudo ntp; do
@@ -73,12 +64,12 @@ done
 #done
 
 #install KDE
-for i in sddm plasma-meta plasma plasma-desktop plasma-wayland-session kde-applications kde-applications-meta; do
-  sudo pacman -Syyu --noconfirm $i
-done
-for i in sddm; do
-  sudo systemctl enable $i
-done
+#for i in sddm plasma-meta plasma plasma-desktop plasma-wayland-session kde-applications kde-applications-meta; do
+#  sudo pacman -Syyu --noconfirm $i
+#done
+#for i in sddm; do
+#  sudo systemctl enable $i
+#done
 
 #uninstall KDE
 #for i in sddm; do
@@ -130,7 +121,17 @@ done
 #  sudo pacman -Rns --noconfirm $i
 #done
 
-#install networking
+#install network drivers
+for i in broadcom-wl broadcom-wl-dkms; do
+  sudo pacman -Syyu --noconfirm $i
+done
+
+#uninstall open source fonts
+#for i in broadcom-wl broadcom-wl-dkms; do
+#  sudo pacman -Rns --noconfirm $i
+#done
+
+#install network
 for i in openssh dialog network-manager-applet networkmanager networkmanager-openvpn wireless_tools wpa_supplicant wpa_actiond; do
   sudo pacman -Syyu --noconfirm $i
 done
@@ -138,7 +139,7 @@ for i in NetworkManager; do
   sudo systemctl enable $i
 done
 
-#uninstall networking
+#uninstall network
 #for i in NetworkManager; do
 #  sudo systemctl disable $i
 #done
