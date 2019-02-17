@@ -1,8 +1,12 @@
-#Get path
-PATH=$(dirname "$0")
+pacman -Syyu --noconfirm
 
-#Update
-$PATH/pacman_update.sh
+for i in reflector; do
+  pacman -S --noconfirm $i
+done
+
+reflector --verbose --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+pacman -Syyu --noconfirm
 
 #install Base
 for i in base base-devel grub-bios linux-headers linux-lts linux-lts-headers sudo ntp; do
@@ -201,7 +205,14 @@ done
 #  pacman -Rns --noconfirm $i
 #done
 
-#Update
-$PATH/pacman_update.sh
+pacman -Syyu --noconfirm
+
+for i in reflector; do
+  pacman -S --noconfirm $i
+done
+
+reflector --verbose --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+pacman -Syyu --noconfirm
 
 exit 0
