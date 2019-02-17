@@ -1,3 +1,8 @@
-sudo mpdprobe brcmsmac
+#Start wireless adapter
+sudo modprobe brcmsmac
 
-./pacman_update.sh
+#Get path
+PATH=$(dirname "$0")
+
+#Update
+$PATH/pacman_update.sh
