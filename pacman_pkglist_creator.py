@@ -4,7 +4,7 @@ with open("./pkglist", 'r') as in_pkglist:
     for pkg in in_pkglist:
         out_pkglist_string += ' ' + pkg.split('\n')[0]
     
-    out_pkglist_string += ";\ndo\n\tsudo pacman -Syyu --noconfirm $i\ndone"
+    out_pkglist_string += "; do\n\tsudo pacman -Syyu --noconfirm $i\ndone\n\nsudo pacman -Syyu\n"
 
     with open("./pkglist_command", 'w') as out_pkglist:
         out_pkglist.write(out_pkglist_string)
