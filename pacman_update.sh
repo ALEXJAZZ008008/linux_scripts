@@ -1,11 +1,11 @@
-sudo pacman -Syyu --noconfirm
+pacman -Syyu --noconfirm
 
 for i in reflector; do
-  sudo pacman -S --noconfirm $i
+  pacman -S --noconfirm $i
 done
 
-sudo reflector --verbose --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+reflector --verbose --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
-sudo pacman -Syyu --noconfirm
+pacman -Syyu --noconfirm
 
 exit 0
