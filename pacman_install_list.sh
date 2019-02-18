@@ -8,7 +8,7 @@ reflector --verbose --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 pacman -Syyu --noconfirm
 
-#install Base
+#install base
 for i in base base-devel grub-bios linux-headers linux-lts linux-lts-headers sudo ntp; do
   pacman -Syyu --noconfirm $i
 done
@@ -21,52 +21,52 @@ for i in xf86-video-vesa xf86-video-nouveau lib32-mesa-libgl libgl mesa; do
   pacman -Syyu --noconfirm $i
 done
 
-#install Intel GPU drivers
+#install intel gpu drivers
 #for i in xf86-video-intel; do
 #  pacman -Syyu --noconfirm $i
 #done
 
-#uninstall Intel GPU drivers
+#uninstall intel gpu drivers
 #for i in xf86-video-intel; do
 #  pacman -Rns --noconfirm $i
 #done
 
-#install Nvidia GPU drivers
+#install nvidia gpu drivers
 #for i in nvidia nvidia-lts nvidia-libgl lib32-nvidia-libgl; do
 #  pacman -Syyu --noconfirm $i
 #done
 
-#uninstall Nvidia GPU drivers
+#uninstall nvidia gpu drivers
 #for i in nvidia nvidia-lts nvidia-libgl lib32-nvidia-libgl; do
 #  pacman -Rns --noconfirm $i
 #done
 
-#install AMD GPU drivers
+#install amd gpu drivers
 #for i in xf86-video-amdgpu xf86-video-ati; do
 #  pacman -Syyu --noconfirm $i
 #done
 
-#uninstall AMD GPU drivers
+#uninstall amd gpu drivers
 #for i in xf86-video-amdgpu xf86-video-ati; do
 #  pacman -Rns --noconfirm $i
 #done
 
-#install VirtualBox drivers
+#install virtualbox drivers
 #for i in virtualbox-guest-utils virtualbox-guest-modules-arch; do
 #  pacman -Syyu --noconfirm $i
 #done
 
-#uninstall VirtualBox drivers
+#uninstall virtualbox drivers
 #for i in virtualbox-guest-utils virtualbox-guest-modules-arch; do
 #  pacman -Rns --noconfirm $i
 #done
 
-#install Xorg display manager
+#install xorg display manager
 for i in xorg-server xorg-xinit xterm; do
   pacman -Syyu --noconfirm $i
 done
 
-#uninstall Xorg display manager
+#uninstall xorg display manager
 #for i in xorg-server xorg-xinit xterm; do
 #  pacman -Rns --noconfirm $i
 #done
@@ -87,7 +87,7 @@ done
 #  pacman -Rns --noconfirm $i
 #done
 
-#install KDE desktop enviroment
+#install kde desktop enviroment
 #for i in sddm plasma-meta plasma plasma-desktop plasma-wayland-session kde-applications kde-applications-meta; do
 #  pacman -Syyu --noconfirm $i
 #done
@@ -95,7 +95,7 @@ done
 #  systemctl enable $i
 #done
 
-#uninstall KDE desktop enviroment
+#uninstall kde desktop enviroment
 #for i in sddm; do
 #  systemctl disable $i
 #done
@@ -103,7 +103,7 @@ done
 #  pacman -Rns --noconfirm $i
 #done
 
-#install MATE desktop enviroment
+#install mate desktop enviroment
 #for i in lightdm lightdm-gtk-greeter deepin-session-ui mate mate-extra mate-applet-dock mate-applet-streamer mate-menu; do
 #  pacman -Syyu --noconfirm $i
 #done
@@ -111,7 +111,7 @@ done
 #  systemctl enable $i
 #done
 
-#uninstall MATE desktop enviroment
+#uninstall mate desktop enviroment
 #for i in lightdm; do
 #  systemctl disable $i
 #done
@@ -130,16 +130,16 @@ done
 #done
 
 #install network drivers
-for i in broadcom-wl broadcom-wl-dkms; do
-  pacman -Syyu --noconfirm $i
-done
+#for i in broadcom-wl broadcom-wl-dkms; do
+#  pacman -Syyu --noconfirm $i
+#done
 
-#uninstall open source fonts
+#uninstall network drivers
 #for i in broadcom-wl broadcom-wl-dkms; do
 #  pacman -Rns --noconfirm $i
 #done
 
-#install network
+#install networking
 for i in openssh dialog network-manager-applet networkmanager networkmanager-openvpn wireless_tools wpa_supplicant wpa_actiond; do
   pacman -Syyu --noconfirm $i
 done
@@ -147,11 +147,21 @@ for i in NetworkManager; do
   systemctl enable $i
 done
 
-#uninstall network
+#uninstall networking
 #for i in NetworkManager; do
 #  systemctl disable $i
 #done
 #for i in openssh dialog network-manager-applet networkmanager networkmanager-openvpn wireless_tools wpa_supplicant wpa_actiond; do
+#  pacman -Rns --noconfirm $i
+#done
+
+#install cmake
+for i in cmake extra-cmake-modules; do
+  pacman -Syyu --noconfirm $i
+done
+
+#uninstall cmake
+#for i in cmake extra-cmake-modules; do
 #  pacman -Rns --noconfirm $i
 #done
 
@@ -165,6 +175,46 @@ done
 #  pacman -Rns --noconfirm $i
 #done
 
+#install python
+for i in python2 python pypy pypy3; do
+  pacman -Syyu --noconfirm $i
+done
+
+#uninstall python
+#for i in python2 python pypy pypy3; do
+#  pacman -Rns --noconfirm $i
+#done
+
+#install swig
+#for i in swig; do
+#  pacman -Syyu --noconfirm $i
+#done
+
+#uninstall swig
+#for i in swig; do
+#  pacman -Rns --noconfirm $i
+#done
+
+#install ide
+for i in qtcreator qt5-base qt4 codeblocks doxygen doxygen-docs; do
+  pacman -Syyu --noconfirm $i
+done
+
+#uninstall ide
+#for i in qtcreator qt5-base qt4 codeblocks doxygen doxygen-docs; do
+#  pacman -Rns --noconfirm $i
+#done
+
+#install pycharm
+for i in pycharm-community-edition; do
+  pacman -Syyu --noconfirm $i
+done
+
+#uninstall pycharm
+#for i in pycharm-community-edition; do
+#  pacman -Rns --noconfirm $i
+#done
+
 #install w3m browser
 for i in w3m; do
   pacman -Syyu --noconfirm $i
@@ -175,43 +225,93 @@ done
 #  pacman -Rns --noconfirm $i
 #done
 
-#install Firefox browser
+#install firefox browser
 #for i in firefox firefox-developer-edition arch-firefox-search; do
 #  pacman -Syyu --noconfirm $i
 #done
 
-#uninstall Firefox browser
+#uninstall firefox browser
 #for i in firefox firefox-developer-edition arch-firefox-search; do
 #  pacman -Rns --noconfirm $i
 #done
 
-#install Chromium browser
+#install chromium browser
 for i in chromium; do
   pacman -Syyu --noconfirm $i
 done
 
-#uninstall Chromium browser
+#uninstall chromium browser
 #for i in chromium; do
 #  pacman -Rns --noconfirm $i
 #done
 
-#install Steam
+#install pdf viewer
+for i in zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-pdf-poppler zathura-ps; do
+  pacman -Syyu --noconfirm $i
+done
+
+#uninstall pdf viewer
+#for i in zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-pdf-poppler zathura-ps; do
+#  pacman -Rns --noconfirm $i
+#done
+
+#install libreoffice
+for i in libreoffice-fresh libreoffice-still libreoffice-fresh-en-gb; do
+  pacman -Syyu --noconfirm $i
+done
+
+#uninstall libreoffice
+#for i in libreoffice-fresh libreoffice-still libreoffice-fresh-en-gb; do
+#  pacman -Rns --noconfirm $i
+#done
+
+#install vlc
+#for i in vlc; do
+#  pacman -Syyu --noconfirm $i
+#done
+
+#uninstall vlc
+#for i in vlc; do
+#  pacman -Rns --noconfirm $i
+#done
+
+#install media editors
+#for i in gimp audacity blender; do
+#  pacman -Syyu --noconfirm $i
+#done
+
+#uninstall media editors
+#for i in gimp audacity blender; do
+#  pacman -Rns --noconfirm $i
+#done
+
+#install steam
 for i in steam steam-native-runtime; do
   pacman -Syyu --noconfirm $i
 done
 
-#uninstall Steam
+#uninstall steam
 #for i in steam steam-native-runtime; do
 #  pacman -Rns --noconfirm $i
 #done
 
-#install Spotify
+#install spotify
 for i in clementine; do
   pacman -Syyu --noconfirm $i
 done
 
-#uninstall Spotify
+#uninstall spotify
 #for i in clementine; do
+#  pacman -Rns --noconfirm $i
+#done
+
+#install emulation
+#for i in virtualbox virtualbox-host-modules-arch virtualbox-host-dkms wine wine-staging wine_gecko wine-mono; do
+#  pacman -Syyu --noconfirm $i
+#done
+
+#uninstall emulation
+#for i in virtualbox virtualbox-host-modules-arch virtualbox-host-dkms wine wine-staging wine_gecko wine-mono; do
 #  pacman -Rns --noconfirm $i
 #done
 
