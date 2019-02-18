@@ -57,6 +57,16 @@ done
 #  sudo apt purge -y $i
 #done
 
+#Install Pypy
+for i in pypy pypy3; do
+  sudo apt install -y $i
+done
+
+#Uninstall Pypy
+#for i in pypy pypy3; do
+#  sudo apt purge -y $i
+#done
+
 #Install Swig
 #for i in swig; do
 #  sudo apt install -y $i
