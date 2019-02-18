@@ -3,7 +3,7 @@ for i in update upgrade full-upgrade autoremove clean; do
 done
 
 #Build
-for i in build-essential gcc g++ make sudo cmake cmake3 git snapd pavucontrol; do
+for i in linux-headers-generic build-essential gcc g++ make sudo cmake cmake3 git snapd pavucontrol; do
   sudo apt install -y $i
 done
 
@@ -51,7 +51,6 @@ done
 #for i in python3-numpy python3-scipy python3-matplotlib; do
 #  sudo apt install -y $i
 #done
-
 
 #Uninstall Python 3 libraries
 #for i in python3-numpy python3-scipy python3-matplotlib; do
@@ -108,6 +107,27 @@ done
 #  sudo apt purge -y $i
 #done
 
+#Install w3m
+for i in w3m w3m-el w3m-el-snapshot w3m-img; do
+  sudo apt install -y $i
+done
+
+#Uninstall w3m
+#for i in w3m w3m-el w3m-el-snapshot w3m-img; do
+#  sudo apt purge -y $i
+#done
+
+
+#Install Firefox
+#for i in firefox firefox-globalmenu firefox-launchpad-plugin firefox-locale-en firefox-mozsymbols firefox-testsuite firefoxdriver; do
+#  sudo apt install -y $i
+#done
+
+#Uninstall Firefox
+#for i in firefox firefox-globalmenu firefox-launchpad-plugin firefox-locale-en firefox-mozsymbols firefox-testsuite firefoxdriver; do
+#  sudo apt purge -y $i
+#done
+
 #Install Chromium
 for i in chromium-browser; do
   sudo apt install -y $i
@@ -138,6 +158,16 @@ done
 #  sudo apt purge -y $i
 #done
 
+#Install PDF viewer
+for i in zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps; do
+  sudo apt install -y $i
+done
+
+#Uninstall PDF viewer
+#for i in zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps; do
+#  sudo apt purge -y $i
+#done
+
 #Install LibreOffice
 for i in libreoffice; do
   sudo apt install -y $i
@@ -149,12 +179,12 @@ done
 #done
 
 #Install media editors
-#for i in gimp audacity; do
+#for i in gimp audacity blender blender-data; do
 #  sudo apt install -y $i
 #done
 
 #Uninstall media editors
-#for i in gimp audacity; do
+#for i in gimp audacity blender blender-data; do
 #  sudo apt purge -y $i
 #done
 
