@@ -2,13 +2,225 @@ for i in update upgrade full-upgrade autoremove clean; do
   sudo apt $i -y
 done
 
-for i in gdebi gparted pitivi network-manager-openvpn network-manager-openvpn-gnome transmission-gtk transmission-qt libreoffice default-jdk blender gimp imagemagick inkscape pavucontrol audacity geany vlc texlive-full xfce4-whiskermenu-plugin gvfs-backends build-essential cmake p7zip p7zip-full unrar-free unzip htop lshw wget locate screen nano vim git subversion tesseract-ocr tesseract-ocr-eng tesseract-ocr-spa sddm kde-full xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod xscreensaver-screensaver-dizzy xscreensaver-screensaver-webcollage chromium-browser libfontconfig1 mesa-common-dev libglu1-mesa-dev qt5-default libqt5svg5 libqt5svg5-dev qtdeclarative5-dev qt5-doc qt5-doc-html qtbase5-doc-html qtbase5-examples qtcreator pypy python-pip python3-pip python3-distutils python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib virtualbox wine-development cmake-gui cmake-qt-gui libboost-dev doxygen kdevelop libgsl-dev codeblocks okular-extra-backends kmouth espeak espeak-data  festival festival-freebsoft-utils festlex-cmu festlex-poslex festvox-kdlpc16k festvox-kallpc16k festvox-en1 flite freetts glib-2.0 libdotconf0 libespeak1 libestools2.1 libpthread-workqueue0 sound-icons speech-dispatcher speech-dispatcher-audio-plugins speech-dispatcher-espeak speech-dispatcher-festival speech-dispatcher-flite exfat-fuse exfat-utils btrfs-compsize btrfs-heatmap btrfs-progs btrfs-tools apt-btrfs-snapshot gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev graphviz python3-notebook jupyter-core python-ipykernel jupyter-notebook jupyter python-docopt python3-docopt xclip steam-installer python-virtualenv python3-virtualenv musescore snapd; do
+#Build
+for i in build-essential gcc g++ make sudo cmake cmake3 git snapd pavucontrol; do
   sudo apt install -y $i
 done
 
-for i in "spotify --classic --edge" "skype --classic --edge" "steamforwindows --classic --edge" "pycharm-professional --classic --edge" "clion --classic --edge"; do
+#Install CMake GUI
+for i in cmake-gui cmake-qt-gui cmake-curses-gui cmake3-curses-gui; do
+  sudo apt install -y $i
+done
+
+#Uninstall CMake GUI
+#for i in cmake-gui cmake-qt-gui cmake-curses-gui cmake3-curses-gui; do
+#  sudo apt purge -y $i
+#done
+
+#Install Python
+for i in python python-dev python-pip python-virtualenv python-distutils-extra; do
+  sudo apt install -y $i
+done
+
+#Uninstall Python
+#for i in python python-dev python-pip python-virtualenv python-distutils-extra; do
+#  sudo apt purge -y $i
+#done
+
+#Install Python libraries
+#for i in python-numpy python-scipy python-matplotlib; do
+#  sudo apt install -y $i
+#done
+
+#Uninstall Python libraries
+#for i in python-numpy python-scipy python-matplotlib; do
+#  sudo apt purge -y $i
+#done
+
+#Install Python 3
+for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra; do
+  sudo apt install -y $i
+done
+
+#Uninstall Python 3
+#for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra; do
+#  sudo apt purge -y $i
+#done
+
+#Install Python 3 libraries
+#for i in python3-numpy python3-scipy python3-matplotlib; do
+#  sudo apt install -y $i
+#done
+
+
+#Uninstall Python 3 libraries
+#for i in python3-numpy python3-scipy python3-matplotlib; do
+#  sudo apt purge -y $i
+#done
+
+#Install Swig
+#for i in swig; do
+#  sudo apt install -y $i
+#done
+
+#Uninstall Swig
+#for i in swig; do
+#  sudo apt purge -y $i
+#done
+
+#Install KDE desktop enviroment
+for i in sddm kde-full; do
+  sudo apt install -y $i
+done
+
+#Uninstall KDE desktop enviroment
+#for i in sddm kde-full; do
+#  sudo apt purge -y $i
+#done
+
+#Install open source fonts
+#for i in libfontconfig1; do
+#  sudo apt install -y $i
+#done
+
+#Uninstall open source fonts
+#for i in libfontconfig1; do
+#  sudo apt purge -y $i
+#done
+
+#Install IDE
+for i in qtcreator codeblocks doxygen; do
+  sudo apt install -y $i
+done
+
+#Uninstall IDE
+#for i in qtcreator codeblocks doxygen; do
+#  sudo apt purge -y $i
+#done
+
+#Install Networking
+for i in network-manager network-manager-gnome network-manager-openvpn network-manager-vpnc network-manager-openconnect network-manager-openvpn-gnome network-manager-vpnc-gnome network-manager-openconnect-gnome; do
+  sudo apt install -y $i
+done
+
+#Uninstall Networking
+#for i in network-manager network-manager-gnome network-manager-openvpn network-manager-vpnc network-manager-openconnect network-manager-openvpn-gnome network-manager-vpnc-gnome network-manager-openconnect-gnome; do
+#  sudo apt purge -y $i
+#done
+
+#Install Chromium
+for i in chromium-browser; do
+  sudo apt install -y $i
+done
+
+#Uninstall Chromium
+#for i in chromium-browser; do
+#  sudo apt purge -y $i
+#done
+
+#Install emulation
+#for i in virtualbox wine-development; do
+#  sudo apt install -y $i
+#done
+
+#Uninstall emulation
+#for i in virtualbox wine-development; do
+#  sudo apt purge -y $i
+#done
+
+#Install VLC
+#for i in vlc; do
+#  sudo apt install -y $i
+#done
+
+#Uninstall VLC
+#for i in vlc; do
+#  sudo apt purge -y $i
+#done
+
+#Install LibreOffice
+for i in libreoffice; do
+  sudo apt install -y $i
+done
+
+#Uninstall LibreOffice
+#for i in libreoffice; do
+#  sudo apt purge -y $i
+#done
+
+#Install media editors
+#for i in gimp audacity; do
+#  sudo apt install -y $i
+#done
+
+#Uninstall media editors
+#for i in gimp audacity; do
+#  sudo apt purge -y $i
+#done
+
+#Install Steam(Linux)
+for i in steam-installer; do
+  sudo apt install -y $i
+done
+
+#Uninstall Steam(Linux)
+#for i in steam-installer; do
+#  sudo apt purge -y $i
+#done
+
+for i in update upgrade full-upgrade autoremove clean; do
+  sudo apt $i -y
+done
+
+#Install Clion
+#for i in "clion --classic --edge"; do
+#  sudo snap install $i
+#done
+
+#Remove Clion
+#for i in "clion --classic --edge"; do
+#  sudo snap remove $i
+#done
+
+#Install Pycharm
+for i in "pycharm-professional --classic --edge"; do
   sudo snap install $i
 done
+
+#Remove Pycharm
+#for i in "pycharm-professional --classic --edge"; do
+#  sudo snap remove $i
+#done
+
+#Install Skype
+for i in "skype --classic --edge"; do
+  sudo snap install $i
+done
+
+#Remove Skype
+#for i in "skype --classic --edge"; do
+#  sudo snap remove $i
+#done
+
+#Install Spotify
+for i in "spotify --classic --edge"; do
+  sudo snap install $i
+done
+
+#Remove Spotify
+#for i in "spotify --classic --edge"; do
+#  sudo snap remove $i
+#done
+
+#Install Steam(Windows)
+for i in "steamforwindows --classic --edge"; do
+  sudo snap install $i
+done
+
+#Remove Steam(Windows)
+#for i in "steamforwindows --classic --edge"; do
+#  sudo snap remove $i
+#done
 
 for i in update upgrade full-upgrade autoremove clean; do
   sudo apt $i -y
