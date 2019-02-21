@@ -29,7 +29,7 @@ for i in update upgrade full-upgrade autoremove clean; do
 done
 
 #Build
-for i in linux-headers-generic build-essential gcc g++ make sudo cmake cmake3 git snapd pavucontrol; do
+for i in linux-headers-generic build-essential gcc g++ make sudo cmake cmake3 git python-software-properties python3-software-properties software-properties-common software-properties-gtk software-properties-kde software-properties-qt snapd pavucontrol; do
   sudo apt install -y $i
 done
 
