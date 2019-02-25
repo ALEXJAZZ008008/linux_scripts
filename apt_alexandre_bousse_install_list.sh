@@ -1,3 +1,6 @@
+#This is not nice and attempts to install things that are not correct and are messy but for completeness they are there.
+
+
 add-apt-repository ppa:ubuntu-toolchain-r/test -y
 
 for i in update upgrade full-upgrade autoremove clean; do
