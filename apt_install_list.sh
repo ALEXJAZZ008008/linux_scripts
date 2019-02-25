@@ -24,6 +24,8 @@ skype=true
 spotify=true
 steam_windows=true
 
+work=false
+
 for i in update upgrade full-upgrade autoremove clean; do
   sudo apt $i -y
 done
@@ -334,6 +336,22 @@ else
   #Remove Steam(Windows)
   for i in "steamforwindows --classic --edge"; do
     sudo snap remove $i
+  done
+fi
+
+for i in update upgrade full-upgrade autoremove clean; do
+  sudo apt $i -y
+done
+
+if [ "$work" = true ]; then
+  #Install work
+  for i in amide; do
+    sudo apt install -y $i
+  done
+else
+  #Uninstall work
+  for i in amide; do
+    sudo apt purge -y $i
   done
 fi
 
