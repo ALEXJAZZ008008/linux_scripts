@@ -4,7 +4,7 @@ for i in update upgrade full-upgrade autoremove clean; do
   apt $i -y
 done
 
-#Install latest Nvidia driver using driver manager and reboot
+#Install latest Nvidia driver using driver manager or software & updates and reboot
 #for i in nvidia-driver-410; do
 #  apt install -y $i
 #done
@@ -35,6 +35,26 @@ done
 exit 0
 
 ln -s /lib/i386-linux-gnu/libc.so.6 /lib/libc.so.6
+
+#1. in the terminal enter this code: sudo nano /usr/share/applications/matlab.desktop
+#2. copy paste the following lines into the newly opened .desktop file without #
+#  [Desktop Entry]
+#  Exec=/home/user/Matlab/bin/matlab -desktop
+#  Icon=/home/user/Matlab/X11/icons/matlab64c_icon.xpm
+#  Type=Application
+#  Comment=Matrix Laboratory
+#  Name=Matlab
+#  Categories=Development;
+#user will be replaced by your user name. (must).
+
+#For Exec and Icon, the path should be correct i.e you must change "user"  according to your path. (must).
+#in "Name= Matlab " you can change the name whatever you want.(optional).
+#in "GenericName" you can put whatever you want. you can cut off this line too.(optional).
+#save & exit the .desktop file.
+#a new entry named "Matlab" will be added in the menu under the programming section.
+#3. now go to menu->programming->Matlab.
+#Enjoy... your Matlab environment....
+exit 0
 
 for i in update upgrade full-upgrade autoremove clean; do
   apt $i -y
