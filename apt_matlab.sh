@@ -33,7 +33,8 @@ for i in cuda cuda-9-1 cuda-command-line-tools-9-1 cuda-compiler-9-1 cuda-cublas
   apt install -y $i
 done
 
-#Use furiusisomount to mount and install Matlab ISO in /home/Matlab and install matlab
+#Use furiusisomount to mount and install Matlab ISO in /home/$user/Matlab and install matlab
+#$user will be replaced by your user name. (must).
 for i in furiusisomount fuseiso; do
   apt install -y $i
 done
@@ -44,13 +45,13 @@ ln -s /lib/i386-linux-gnu/libc.so.6 /lib/libc.so.6
 #1. in the terminal enter this code: sudo nano /usr/share/applications/matlab.desktop
 #2. copy paste the following lines into the newly opened .desktop file without #
 #  [Desktop Entry]
-#  Exec=/home/user/Matlab/bin/matlab -desktop
-#  Icon=/home/user/Matlab/X11/icons/matlab64c_icon.xpm
+#  Exec=/home/$user/Matlab/bin/matlab -desktop
+#  Icon=/home/$user/Matlab/X11/icons/matlab64c_icon.xpm
 #  Type=Application
 #  Comment=Matrix Laboratory
 #  Name=Matlab
 #  Categories=Development;
-#user will be replaced by your user name. (must).
+#$user will be replaced by your user name. (must).
 
 #For Exec and Icon, the path should be correct i.e you must change "user"  according to your path. (must).
 #in "Name= Matlab " you can change the name whatever you want.(optional).
