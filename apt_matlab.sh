@@ -18,6 +18,8 @@ wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/c
 
 dpkg -i ./cuda-repo-ubuntu1804_10.0.130–1_amd64.deb
 
+rm ./cuda-repo-ubuntu1804_10.0.130–1_amd64.deb
+
 apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 
 for i in update upgrade full-upgrade autoremove clean; do
@@ -28,7 +30,7 @@ for i in cuda cuda-9-1 cuda-command-line-tools-9-1 cuda-compiler-9-1 cuda-cublas
   apt install -y $i
 done
 
-#Use furiusisomount to mount and install Matlab ISO in /home/Matlab
+#Use furiusisomount to mount and install Matlab ISO in /home/Matlab and install matlab
 for i in furiusisomount fuseiso; do
   apt install -y $i
 done
