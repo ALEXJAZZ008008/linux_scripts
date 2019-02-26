@@ -421,13 +421,13 @@ fi
 if [ "$pdf_viewer" = true ]
 then
   #install pdf viewer
-  for i in zathura
+  for i in zathura zathura-pdf-mupdf
   do
     pacman -S --noconfirm $i
   done
 else
   #uninstall pdf viewer
-  for i in zathura
+  for i in zathura zathura-pdf-mupdf
   do
     pacman -Rns --noconfirm $i
   done
