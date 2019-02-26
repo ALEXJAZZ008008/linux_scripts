@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cmake_gui=true
 python=true
 python_libraries=false
