@@ -278,13 +278,13 @@ fi
 if [ "$pdf_viewer" = true ]
 then
   #Install PDF viewer
-  for i in zathura
+  for i in zathura zathura-pdf-poppler
   do
     sudo apt install -y $i
   done
 else
   #Uninstall PDF viewer
-  for i in zathura
+  for i in zathura zathura-pdf-poppler
   do
     sudo apt purge -y $i
   done
