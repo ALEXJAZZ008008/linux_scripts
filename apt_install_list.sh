@@ -1,17 +1,18 @@
 #!/bin/bash
 
-if [ $# -lt 22 ]
+if [$1 == -a -o $1 == --all ]
 then
   python=true
   python_3=true
   kde_desktop_enviroment=true
   emulation=true
   networking=true
-  pypy=false
-  cmake_gui=false
-  ide=false
+  pypy=true
+  git=true
+  cmake_gui=true
+  ide=true
   w3m=true
-  firefox=false
+  firefox=true
   chromium=true
   pdf_viewer=true
   libre_office=true
@@ -22,35 +23,65 @@ then
   skype=true
   spotify=true
   steam_windows=true
-  clion=false
-  pycharm=false
+  clion=true
+  pycharm=true
 
-  work=false
+  work=true
 else
-  python=$1
-  python_3=$2
-  kde_desktop_enviroment=$3
-  emulation=$4
-  networking=$5
-  pypy=$6
-  cmake_gui=$7
-  ide=$8
-  w3m=$9
-  firefox=$10
-  chromium=$11
-  pdf_viewer=$12
-  libre_office=$13
-  vlc=$14
-  media_editors=$15
-  steam_linux=$16
-  
-  skype=$17
-  spotify=$18
-  steam_windows=$19
-  clion=$20
-  pycharm=$21
+  if [ $# -lt 22 ]
+  then
+    python=true
+    python_3=true
+    kde_desktop_enviroment=true
+    emulation=true
+    networking=true
+    pypy=false
+    git=false
+    cmake_gui=false
+    ide=false
+    w3m=true
+    firefox=false
+    chromium=true
+    pdf_viewer=true
+    libre_office=true
+    vlc=true
+    media_editors=true
+    steam_linux=true
 
-  work=$22
+    skype=true
+    spotify=true
+    steam_windows=true
+    clion=false
+    pycharm=false
+
+    work=false
+  else
+    python=$1
+    python_3=$2
+    kde_desktop_enviroment=$3
+    emulation=$4
+    networking=$5
+    pypy=$6
+    git=$7
+    cmake_gui=$8
+    ide=$9
+    w3m=$10
+    firefox=$11
+    chromium=$12
+    pdf_viewer=$13
+    libre_office=$14
+    vlc=$15
+    media_editors=$16
+    steam_linux=$17
+
+    skype=$18
+    spotify=$19
+    steam_windows=$20
+    clion=$21
+    pycharm=$22
+
+    work=$23
+  fi
 fi
 
 for i in update upgrade full-upgrade autoremove clean
@@ -59,7 +90,7 @@ do
 done
 
 #Build
-for i in linux-headers-generic sudo build-essential git snapd
+for i in linux-headers-generic sudo build-essential snapd
 do
   sudo apt install -y $i
 done
@@ -149,6 +180,21 @@ then
 else
   #Uninstall Pypy
   for i in pypy pypy3
+  do
+    sudo apt purge -y $i
+  done
+fi
+
+if [ "$git" = true ]
+then
+  #Install git
+  for i in git
+  do
+    sudo apt install -y $i
+  done
+else
+  #Uninstall git
+  for i in git
   do
     sudo apt purge -y $i
   done
