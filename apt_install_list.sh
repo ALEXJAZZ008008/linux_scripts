@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [$1 == "-a" -o $1 == "--all" ]
+if [ $1 == "-a" -o $1 == "--all" ]
 then
   python=true
   python_3=true
