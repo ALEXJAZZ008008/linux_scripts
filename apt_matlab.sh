@@ -1,5 +1,6 @@
-#This is not nice and attempts to install things that are not correct and are messy but for completeness they are there, if you're installing matlab on you linux machine you've already sacrificed it anyway. obviously update versions etc
+#!/bin/bash
 
+#This is not nice and attempts to install things that are not correct and are messy but for completeness they are there, if you're installing matlab on you linux machine you've already sacrificed it anyway. obviously update versions etc
 
 add-apt-repository -y ppa:graphics-drivers/ppa
 
