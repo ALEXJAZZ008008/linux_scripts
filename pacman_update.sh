@@ -1,3 +1,5 @@
+#!/bin/bash
+
 pacman -Syyu --noconfirm
 
 for i in reflector; do
