@@ -1,3 +1,5 @@
+#!/bin/bash
+
 intel_gpu_drivers=false
 nvidia_gpu_drivers=false
 amd_gpu_drivers=false
