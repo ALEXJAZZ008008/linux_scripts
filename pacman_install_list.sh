@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# -lt 23 ]
+if [ $1 == "-a-i" -o $1 == "--all--i3" ]
 then
   python=true
   intel_gpu_drivers=false
@@ -8,17 +8,17 @@ then
   amd_gpu_drivers=false
   virtualbox_drivers=false
   xorg_display_manager=true
-  i3_window_manager=false
-  kde_desktop_enviroment=true
-  emulation=false
+  i3_window_manager=true
+  kde_desktop_enviroment=false
+  emulation=true
   network_drivers=false
   networking=true
-  git=false
-  cmake=false
-  ide=false
-  pycharm=false
+  git=true
+  cmake=true
+  ide=true
+  pycharm=true
   w3m=true
-  firefox_browser=false
+  firefox_browser=true
   chromium_browser=true
   pdf_viewer=true
   libre_office=true
@@ -26,30 +26,85 @@ then
   media_editors=true
   steam=true
 else
-  python=$1
-  intel_gpu_drivers=$2
-  nvidia_gpu_drivers=$3
-  amd_gpu_drivers=$4
-  virtualbox_drivers=$5
-  xorg_display_manager=$6
-  i3_window_manager=$7
-  kde_desktop_enviroment=$8
-  emulation=$9
-  network_drivers=$10
-  networking=$11
-  git=$12
-  cmake=$13
-  ide=$14
-  pycharm=$15
-  w3m=$16
-  firefox_browser=$17
-  chromium_browser=$18
-  pdf_viewer=$19
-  libre_office=$20
-  vlc=$21
-  media_editors=$22
-  steam=$23
+  if [ $1 == "-a-k" -o $1 == "--all--kde" ]
+  then
+    python=true
+    intel_gpu_drivers=false
+    nvidia_gpu_drivers=false
+    amd_gpu_drivers=false
+    virtualbox_drivers=false
+    xorg_display_manager=true
+    i3_window_manager=false
+    kde_desktop_enviroment=true
+    emulation=true
+    network_drivers=false
+    networking=true
+    git=true
+    cmake=true
+    ide=true
+    pycharm=true
+    w3m=true
+    firefox_browser=true
+    chromium_browser=true
+    pdf_viewer=true
+    libre_office=true
+    vlc=true
+    media_editors=true
+    steam=true
+  else
+    if [ $# -lt 23 ]
+    then
+      python=true
+      intel_gpu_drivers=false
+      nvidia_gpu_drivers=false
+      amd_gpu_drivers=false
+      virtualbox_drivers=false
+      xorg_display_manager=true
+      i3_window_manager=false
+      kde_desktop_enviroment=true
+      emulation=false
+      network_drivers=false
+      networking=true
+      git=false
+      cmake=false
+      ide=false
+      pycharm=false
+      w3m=true
+      firefox_browser=false
+      chromium_browser=true
+      pdf_viewer=true
+      libre_office=true
+      vlc=true
+      media_editors=true
+      steam=true
+    else
+      python=$1
+      intel_gpu_drivers=$2
+      nvidia_gpu_drivers=$3
+      amd_gpu_drivers=$4
+      virtualbox_drivers=$5
+      xorg_display_manager=$6
+      i3_window_manager=$7
+      kde_desktop_enviroment=$8
+      emulation=$9
+      network_drivers=$10
+      networking=$11
+      git=$12
+      cmake=$13
+      ide=$14
+      pycharm=$15
+      w3m=$16
+      firefox_browser=$17
+      chromium_browser=$18
+      pdf_viewer=$19
+      libre_office=$20
+      vlc=$21
+      media_editors=$22
+      steam=$23
+    fi
+  fi
 fi
+
 
 pacman -Syyu --noconfirm
 
