@@ -8,15 +8,14 @@ for i in update upgrade full-upgrade autoremove clean; do
   apt $i -y
 done
 
-#Install latest Nvidia driver using driver manager or software & updates and reboot
+#Install latest Nvidia driver using driver manager or software & updates and reboot or run:
 #for i in nvidia-driver-410; do
 #  apt install -y $i
 #done
-exit 0
-
-for i in build-essential dkms freeglut3 freeglut3-dev libxi-dev libxmu-dev g++ libx11-dev libxi-dev libglu1-mesa libglu1-mesa-dev; do
-  apt install -y $i
-done
+if [ $1 == "-1" ]
+then
+  exit 0
+fi
 
 wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
 
@@ -36,7 +35,10 @@ done
 
 #mount and install Matlab ISO in /mnt
 #$user will be replaced by your user name. (must).
-exit 0
+if [ $1 == "-2" ]
+then
+  exit 0
+fi
 
 ln -s /lib/i386-linux-gnu/libc.so.6 /lib/libc.so.6
 
@@ -58,7 +60,6 @@ ln -s /lib/i386-linux-gnu/libc.so.6 /lib/libc.so.6
 #a new entry named "Matlab" will be added in the menu under the programming section.
 #3. now go to menu->programming->Matlab.
 #Enjoy... your Matlab environment....
-exit 0
 
 for i in update upgrade full-upgrade autoremove clean; do
   apt $i -y
