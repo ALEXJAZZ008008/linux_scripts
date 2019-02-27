@@ -17,6 +17,12 @@ do
   sudo apt install -y $i
 done
 
+#documentation generator
+for i in doxygen
+do
+  sudo apt install -y $i
+done
+
 for i in update upgrade full-upgrade autoremove clean
 do
   sudo apt $i -y
