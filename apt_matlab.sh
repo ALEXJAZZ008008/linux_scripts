@@ -4,7 +4,8 @@
 
 add-apt-repository -y ppa:graphics-drivers/ppa
 
-for i in update upgrade full-upgrade autoremove clean; do
+for i in update upgrade full-upgrade autoremove clean
+do
   apt $i -y
 done
 
@@ -25,11 +26,13 @@ rm ./cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
 
 apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 
-for i in update upgrade full-upgrade autoremove clean; do
+for i in update upgrade full-upgrade autoremove clean
+do
   apt $i -y
 done
 
-for i in cuda; do
+for i in cuda
+do
   apt install -y $i
 done
 
@@ -61,7 +64,8 @@ ln -s /lib/i386-linux-gnu/libc.so.6 /lib/libc.so.6
 #3. now go to menu->programming->Matlab.
 #Enjoy... your Matlab environment....
 
-for i in update upgrade full-upgrade autoremove clean; do
+for i in update upgrade full-upgrade autoremove clean
+do
   apt $i -y
 done
 
