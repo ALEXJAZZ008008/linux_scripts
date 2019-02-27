@@ -20,15 +20,16 @@ then
   media_editors=true
   steam_linux=true
   
+  pypy3=true
+  clion=true
+  pycharm=true
   skype=true
   spotify=true
   steam_windows=true
-  clion=true
-  pycharm=true
-
+  
   work=true
 else
-  if [ $# -lt 22 ]
+  if [ $# -lt 24 ]
   then
     python=true
     python_3=true
@@ -47,13 +48,14 @@ else
     vlc=true
     media_editors=true
     steam_linux=true
-
+    
+    pypy3=false
+    clion=false
+    pycharm=false
     skype=true
     spotify=true
     steam_windows=true
-    clion=false
-    pycharm=false
-
+    
     work=false
   else
     python=$1
@@ -73,14 +75,15 @@ else
     vlc=$15
     media_editors=$16
     steam_linux=$17
-
-    skype=$18
-    spotify=$19
-    steam_windows=$20
-    clion=$21
-    pycharm=$22
-
-    work=$23
+    
+    pypy3=$18
+    clion=$19
+    pycharm=$20
+    skype=$21
+    spotify=$22
+    steam_windows=$23
+    
+    work=$24
   fi
 fi
 
@@ -173,13 +176,13 @@ fi
 if [ "$pypy" = true ]
 then
   #Install Pypy
-  for i in pypy pypy3
+  for i in pypy
   do
     sudo apt install -y $i
   done
 else
   #Uninstall Pypy
-  for i in pypy pypy3
+  for i in pypy
   do
     sudo apt purge -y $i
   done
@@ -354,6 +357,51 @@ for i in update upgrade full-upgrade autoremove clean; do
   sudo apt $i -y
 done
 
+if [ "$pypy3" = true ]
+then
+  #Install pypy3
+  for i in pypy3
+  do
+    sudo snap install $i
+  done
+else
+  #Remove pypy3
+  for i in pypy3
+  do
+    sudo snap remove $i
+  done
+fi
+
+if [ "$clion" = true ]
+then
+  #Install Clion
+  for i in clion
+  do
+    sudo snap install $i
+  done
+else
+  #Remove Clion
+  for i in clion
+  do
+    sudo snap remove $i
+  done
+fi
+
+if [ "$pycharm" = true ]
+then
+  #Install Pycharm
+  for i in pycharm-professional
+  do
+    sudo snap install $i
+  done
+else
+  #Remove Pycharm
+  for i in pycharm-professional
+  do
+    sudo snap remove $i
+  done
+fi
+
 if [ "skype" = true ]
 then
   #Install Skype
@@ -394,36 +442,6 @@ then
 else
   #Remove Steam(Windows)
   for i in steamforwindows
-  do
-    sudo snap remove $i
-  done
-fi
-
-if [ "$clion" = true ]
-then
-  #Install Clion
-  for i in clion
-  do
-    sudo snap install $i
-  done
-else
-  #Remove Clion
-  for i in clion
-  do
-    sudo snap remove $i
-  done
-fi
-
-if [ "$pycharm" = true ]
-then
-  #Install Pycharm
-  for i in pycharm-professional
-  do
-    sudo snap install $i
-  done
-else
-  #Remove Pycharm
-  for i in pycharm-professional
   do
     sudo snap remove $i
   done
