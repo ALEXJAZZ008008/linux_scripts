@@ -465,6 +465,12 @@ then
   do
     sudo apt install -y $i
   done
+  
+  #documentation generator
+  for i in doxygen
+  do
+    sudo apt install -y $i
+  done
 else
   #Uninstall work
   for i in amide
@@ -473,6 +479,12 @@ else
   done
   
   for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  do
+    sudo apt purge -y $i
+  done
+  
+  #documentation generator
+  for i in doxygen
   do
     sudo apt purge -y $i
   done
