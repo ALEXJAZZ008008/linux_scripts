@@ -1,6 +1,7 @@
 #!/bin/bash
 
-for i in update upgrade full-upgrade autoremove clean; do
+for i in update upgrade full-upgrade autoremove clean
+do
   sudo apt $i -y
 done
 
