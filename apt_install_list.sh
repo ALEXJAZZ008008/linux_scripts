@@ -451,19 +451,35 @@ for i in update upgrade full-upgrade autoremove clean; do
   sudo apt $i -y
 done
 
-if [ "$work" = true ]; then
+if [ "$work" = true ]
+then
   #Install work
-  for i in amide; do
+  #medical imaging viewer
+  for i in amide
+  do
+    sudo apt install -y $i
+  done
+  
+  #dependencies for stir
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  do
     sudo apt install -y $i
   done
 else
   #Uninstall work
-  for i in amide; do
+  for i in amide
+  do
+    sudo apt purge -y $i
+  done
+  
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  do
     sudo apt purge -y $i
   done
 fi
 
-for i in update upgrade full-upgrade autoremove clean; do
+for i in update upgrade full-upgrade autoremove clean
+do
   sudo apt $i -y
 done
 
