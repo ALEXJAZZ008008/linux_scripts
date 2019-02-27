@@ -360,13 +360,13 @@ done
 if [ "$pypy3" = true ]
 then
   #Install pypy3
-  for i in pypy3
+  for i in "pypy3 --classic"
   do
     sudo snap install $i
   done
 else
   #Remove pypy3
-  for i in pypy3
+  for i in "pypy3 --classic"
   do
     sudo snap remove $i
   done
@@ -375,13 +375,13 @@ fi
 if [ "$clion" = true ]
 then
   #Install Clion
-  for i in clion
+  for i in "clion --classic"
   do
     sudo snap install $i
   done
 else
   #Remove Clion
-  for i in clion
+  for i in "clion --classic"
   do
     sudo snap remove $i
   done
@@ -390,13 +390,13 @@ fi
 if [ "$pycharm" = true ]
 then
   #Install Pycharm
-  for i in pycharm-professional
+  for i in "pycharm-professional --classic"
   do
     sudo snap install $i
   done
 else
   #Remove Pycharm
-  for i in pycharm-professional
+  for i in "pycharm-professional --classic"
   do
     sudo snap remove $i
   done
@@ -405,13 +405,13 @@ fi
 if [ "skype" = true ]
 then
   #Install Skype
-  for i in skype
+  for i in "skype --classic"
   do
     sudo snap install $i
   done
 else
   #Remove Skype
-  for i in skype
+  for i in "skype --classic"
   do
     sudo snap remove $i
   done
@@ -420,13 +420,13 @@ fi
 if [ "$spotify" = true ]
 then
   #Install Spotify
-  for i in spotify
+  for i in "spotify --classic"
   do
     sudo snap install $i
   done
 else
   #Remove Spotify
-  for i in spotify
+  for i in "spotify --classic"
   do
     sudo snap remove $i
   done
@@ -435,13 +435,13 @@ fi
 if [ "$steam_windows" = true ]
 then
   #Install Steam(Windows)
-  for i in steamforwindows
+  for i in "steamforwindows --classic"
   do
     sudo snap install $i
   done
 else
   #Remove Steam(Windows)
-  for i in steamforwindows
+  for i in "steamforwindows --classic"
   do
     sudo snap remove $i
   done
