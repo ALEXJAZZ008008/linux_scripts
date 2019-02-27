@@ -467,7 +467,7 @@ then
   done
   
   #documentation generator
-  for i in doxygen
+  for i in doxygen graphviz
   do
     sudo apt install -y $i
   done
@@ -484,7 +484,7 @@ else
   done
   
   #documentation generator
-  for i in doxygen
+  for i in doxygen graphviz
   do
     sudo apt purge -y $i
   done
