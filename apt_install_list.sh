@@ -2,6 +2,8 @@
 if [ $1 == "-h" -o $1 == "--help" ]
 then
   echo -e "Options:\n\nNo arguments to install default packages\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\npython\npython_3\nneofetch=true\ni3=true\nkde_desktop_enviroment\nemulation\nnetworking\npypy\ngit\ncmake_gui\nide\nw3m\nfirefox\nchromium\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam_linux\n\npypy3\nclion\npycharm\nskype\nspotify\nsteam_windows\n\nwork"
+
+  exit 0
 else
   if [ $1 == "-a" -o $1 == "--all" ]
   then
