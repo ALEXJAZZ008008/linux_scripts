@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if [ $1 == "-h" -o $1 == "--help" ]
+if [ $# == 1 -a $1 == "-h" -o $1 == "--help" ]
 then
   echo -e "Options:\n\nNo arguments to install default packages\n-a-i or --all--i3 to install all packages with i3.\n-a-k or --all--kde to install all packages with KDE.\n\nElse enter true or false to select from following package list:\npython\nneofetch\nintel_gpu_drivers\nnvidia_gpu_drivers\namd_gpu_drivers\nvirtualbox_drivers\nxorg_display_manager\ni3_window_manager\nkde_desktop_enviroment\nemulation\nnetwork_drivers\nnetworking\ngit\ncmake\nide\npycharm\nw3m\nfirefox_browser\nchromium_browser\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam"
 
   exit 0
 else
-  if [ $1 == "-a-i" -o $1 == "--all--i3" ]
+  if [ $# == 1 -a $1 == "-a-i" -o $1 == "--all--i3" ]
   then
     python=true
     neofetch=true
@@ -33,7 +33,7 @@ else
     media_editors=true
     steam=true
   else
-    if [ $1 == "-a-k" -o $1 == "--all--kde" ]
+    if [ $# == 1 -a $1 == "-a-k" -o $1 == "--all--kde" ]
     then
       python=true
       neofetch=true
