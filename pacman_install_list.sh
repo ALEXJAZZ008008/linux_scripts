@@ -1,33 +1,12 @@
 #!/bin/bash
 
-if [ $1 == "-a-i" -o $1 == "--all--i3" ]
+if [ $1 == "-h" -o $1 == "--help" ]
 then
-  python=true
-  neofetch=true
-  intel_gpu_drivers=false
-  nvidia_gpu_drivers=false
-  amd_gpu_drivers=false
-  virtualbox_drivers=false
-  xorg_display_manager=true
-  i3_window_manager=true
-  kde_desktop_enviroment=false
-  emulation=true
-  network_drivers=false
-  networking=true
-  git=true
-  cmake=true
-  ide=true
-  pycharm=true
-  w3m=true
-  firefox_browser=true
-  chromium_browser=true
-  pdf_viewer=true
-  libre_office=true
-  vlc=true
-  media_editors=true
-  steam=true
+  echo -e "Options:\n\nNo arguments to install default packages\n-a-i or --all--i3 to install all packages with i3.\n-a-k or --all--kde to install all packages with KDE.\n\nElse enter true or false to select from following package list:\npython\nneofetch\nintel_gpu_drivers\nnvidia_gpu_drivers\namd_gpu_drivers\nvirtualbox_drivers\nxorg_display_manager\ni3_window_manager\nkde_desktop_enviroment\nemulation\nnetwork_drivers\nnetworking\ngit\ncmake\nide\npycharm\nw3m\nfirefox_browser\nchromium_browser\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam"
+
+  exit 0
 else
-  if [ $1 == "-a-k" -o $1 == "--all--kde" ]
+  if [ $1 == "-a-i" -o $1 == "--all--i3" ]
   then
     python=true
     neofetch=true
@@ -36,8 +15,8 @@ else
     amd_gpu_drivers=false
     virtualbox_drivers=false
     xorg_display_manager=true
-    i3_window_manager=false
-    kde_desktop_enviroment=true
+    i3_window_manager=true
+    kde_desktop_enviroment=false
     emulation=true
     network_drivers=false
     networking=true
@@ -54,7 +33,7 @@ else
     media_editors=true
     steam=true
   else
-    if [ $# -ne 24 ]
+    if [ $1 == "-a-k" -o $1 == "--all--kde" ]
     then
       python=true
       neofetch=true
@@ -65,15 +44,15 @@ else
       xorg_display_manager=true
       i3_window_manager=false
       kde_desktop_enviroment=true
-      emulation=false
+      emulation=true
       network_drivers=false
       networking=true
-      git=false
-      cmake=false
-      ide=false
-      pycharm=false
+      git=true
+      cmake=true
+      ide=true
+      pycharm=true
       w3m=true
-      firefox_browser=false
+      firefox_browser=true
       chromium_browser=true
       pdf_viewer=true
       libre_office=true
@@ -81,30 +60,58 @@ else
       media_editors=true
       steam=true
     else
-      python=$1
-      neofetch=$2
-      intel_gpu_drivers=$3
-      nvidia_gpu_drivers=$4
-      amd_gpu_drivers=$5
-      virtualbox_drivers=$6
-      xorg_display_manager=$7
-      i3_window_manager=$8
-      kde_desktop_enviroment=$9
-      emulation=$10
-      network_drivers=$11
-      networking=$12
-      git=$13
-      cmake=$14
-      ide=$15
-      pycharm=$16
-      w3m=$17
-      firefox_browser=$18
-      chromium_browser=$19
-      pdf_viewer=$20
-      libre_office=$21
-      vlc=$22
-      media_editors=$23
-      steam=$24
+      if [ $# -ne 24 ]
+      then
+        python=true
+        neofetch=true
+        intel_gpu_drivers=false
+        nvidia_gpu_drivers=false
+        amd_gpu_drivers=false
+        virtualbox_drivers=false
+        xorg_display_manager=true
+        i3_window_manager=false
+        kde_desktop_enviroment=true
+        emulation=false
+        network_drivers=false
+        networking=true
+        git=false
+        cmake=false
+        ide=false
+        pycharm=false
+        w3m=true
+        firefox_browser=false
+        chromium_browser=true
+        pdf_viewer=true
+        libre_office=true
+        vlc=true
+        media_editors=true
+        steam=true
+      else
+        python=$1
+        neofetch=$2
+        intel_gpu_drivers=$3
+        nvidia_gpu_drivers=$4
+        amd_gpu_drivers=$5
+        virtualbox_drivers=$6
+        xorg_display_manager=$7
+        i3_window_manager=$8
+        kde_desktop_enviroment=$9
+        emulation=$10
+        network_drivers=$11
+        networking=$12
+        git=$13
+        cmake=$14
+        ide=$15
+        pycharm=$16
+        w3m=$17
+        firefox_browser=$18
+        chromium_browser=$19
+        pdf_viewer=$20
+        libre_office=$21
+        vlc=$22
+        media_editors=$23
+        steam=$24
+      fi
     fi
   fi
 fi
