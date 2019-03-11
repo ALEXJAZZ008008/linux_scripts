@@ -3,6 +3,7 @@
 if [ $1 == "-a-i" -o $1 == "--all--i3" ]
 then
   python=true
+  neofetch=true
   intel_gpu_drivers=false
   nvidia_gpu_drivers=false
   amd_gpu_drivers=false
@@ -29,6 +30,7 @@ else
   if [ $1 == "-a-k" -o $1 == "--all--kde" ]
   then
     python=true
+    neofetch=true
     intel_gpu_drivers=false
     nvidia_gpu_drivers=false
     amd_gpu_drivers=false
@@ -52,9 +54,10 @@ else
     media_editors=true
     steam=true
   else
-    if [ $# -lt 23 ]
+    if [ $# -ne 24 ]
     then
       python=true
+      neofetch=true
       intel_gpu_drivers=false
       nvidia_gpu_drivers=false
       amd_gpu_drivers=false
@@ -79,28 +82,29 @@ else
       steam=true
     else
       python=$1
-      intel_gpu_drivers=$2
-      nvidia_gpu_drivers=$3
-      amd_gpu_drivers=$4
-      virtualbox_drivers=$5
-      xorg_display_manager=$6
-      i3_window_manager=$7
-      kde_desktop_enviroment=$8
-      emulation=$9
-      network_drivers=$10
-      networking=$11
-      git=$12
-      cmake=$13
-      ide=$14
-      pycharm=$15
-      w3m=$16
-      firefox_browser=$17
-      chromium_browser=$18
-      pdf_viewer=$19
-      libre_office=$20
-      vlc=$21
-      media_editors=$22
-      steam=$23
+      neofetch=$2
+      intel_gpu_drivers=$3
+      nvidia_gpu_drivers=$4
+      amd_gpu_drivers=$5
+      virtualbox_drivers=$6
+      xorg_display_manager=$7
+      i3_window_manager=$8
+      kde_desktop_enviroment=$9
+      emulation=$10
+      network_drivers=$11
+      networking=$12
+      git=$13
+      cmake=$14
+      ide=$15
+      pycharm=$16
+      w3m=$17
+      firefox_browser=$18
+      chromium_browser=$19
+      pdf_viewer=$20
+      libre_office=$21
+      vlc=$22
+      media_editors=$23
+      steam=$24
     fi
   fi
 fi
@@ -137,6 +141,21 @@ then
 else
   #uninstall python
   for i in python2 python pypy pypy3
+  do
+    pacman -Rns --noconfirm $i
+  done
+fi
+
+if [ "$neofetch" = true ]
+then
+  #install neofetch
+  for i in neofetch
+  do
+    pacman -S --noconfirm $i
+  done
+else
+  #uninstall neofetch
+  for i in neofetch
   do
     pacman -Rns --noconfirm $i
   done
