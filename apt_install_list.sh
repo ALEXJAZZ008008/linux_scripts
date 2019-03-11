@@ -4,6 +4,8 @@ if [ $1 == "-a" -o $1 == "--all" ]
 then
   python=true
   python_3=true
+  neofetch=true
+  i3=true
   kde_desktop_enviroment=true
   emulation=true
   networking=true
@@ -29,10 +31,12 @@ then
   
   work=true
 else
-  if [ $# -lt 24 ]
+  if [ $# -ne 26 ]
   then
     python=true
     python_3=true
+    neofetch=true
+    i3=true
     kde_desktop_enviroment=true
     emulation=true
     networking=true
@@ -60,30 +64,32 @@ else
   else
     python=$1
     python_3=$2
-    kde_desktop_enviroment=$3
-    emulation=$4
-    networking=$5
-    pypy=$6
-    git=$7
-    cmake_gui=$8
-    ide=$9
-    w3m=$10
-    firefox=$11
-    chromium=$12
-    pdf_viewer=$13
-    libre_office=$14
-    vlc=$15
-    media_editors=$16
-    steam_linux=$17
+    neofetch=$3
+    i3=$4
+    kde_desktop_enviroment=$5
+    emulation=$6
+    networking=$7
+    pypy=$8
+    git=$9
+    cmake_gui=$10
+    ide=$11
+    w3m=$12
+    firefox=$13
+    chromium=$14
+    pdf_viewer=$15
+    libre_office=$16
+    vlc=$17
+    media_editors=$18
+    steam_linux=$19
     
-    pypy3=$18
-    clion=$19
-    pycharm=$20
-    skype=$21
-    spotify=$22
-    steam_windows=$23
+    pypy3=$20
+    clion=$21
+    pycharm=$22
+    skype=$23
+    spotify=$24
+    steam_windows=$25
     
-    work=$24
+    work=$26
   fi
 fi
 
@@ -123,6 +129,36 @@ then
 else
   #Uninstall Python 3
   for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra
+  do
+    sudo apt purge -y $i
+  done
+fi
+
+if [ "$neofetch" = true ]
+then
+  #Install Neofetch
+  for i in neofetch
+  do
+    sudo apt install -y $i
+  done
+else
+  #Uninstall Neofetch
+  for i in neofetch
+  do
+    sudo apt purge -y $i
+  done
+fi
+
+if [ "$i3" = true ]
+then
+  #Install i3
+  for i in i3
+  do
+    sudo apt install -y $i
+  done
+else
+  #Uninstall i3
+  for i in i3
   do
     sudo apt purge -y $i
   done
