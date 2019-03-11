@@ -1,37 +1,9 @@
 #!/bin/bash
-
-if [ $1 == "-a" -o $1 == "--all" ]
+if [ $1 == "-h" -o $1 == "--help" ]
 then
-  python=true
-  python_3=true
-  neofetch=true
-  i3=true
-  kde_desktop_enviroment=true
-  emulation=true
-  networking=true
-  pypy=true
-  git=true
-  cmake_gui=true
-  ide=true
-  w3m=true
-  firefox=true
-  chromium=true
-  pdf_viewer=true
-  libre_office=true
-  vlc=true
-  media_editors=true
-  steam_linux=true
-  
-  pypy3=true
-  clion=true
-  pycharm=true
-  skype=true
-  spotify=true
-  steam_windows=true
-  
-  work=true
-else
-  if [ $# -ne 26 ]
+  echo -e "Options:\n\nNo arguments to install default packages\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\npython\npython_3\nneofetch=true\ni3=true\nkde_desktop_enviroment\nemulation\nnetworking\npypy\ngit\ncmake_gui\nide\nw3m\nfirefox\nchromium\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam_linux\n\npypy3\nclion\npycharm\nskype\nspotify\nsteam_windows\n\nwork"
+else:
+  if [ $1 == "-a" -o $1 == "--all" ]
   then
     python=true
     python_3=true
@@ -40,56 +12,88 @@ else
     kde_desktop_enviroment=true
     emulation=true
     networking=true
-    pypy=false
-    git=false
-    cmake_gui=false
-    ide=false
+    pypy=true
+    git=true
+    cmake_gui=true
+    ide=true
     w3m=true
-    firefox=false
+    firefox=true
     chromium=true
     pdf_viewer=true
     libre_office=true
     vlc=true
     media_editors=true
     steam_linux=true
-    
-    pypy3=false
-    clion=false
-    pycharm=false
+
+    pypy3=true
+    clion=true
+    pycharm=true
     skype=true
     spotify=true
     steam_windows=true
-    
-    work=false
+
+    work=true
   else
-    python=$1
-    python_3=$2
-    neofetch=$3
-    i3=$4
-    kde_desktop_enviroment=$5
-    emulation=$6
-    networking=$7
-    pypy=$8
-    git=$9
-    cmake_gui=$10
-    ide=$11
-    w3m=$12
-    firefox=$13
-    chromium=$14
-    pdf_viewer=$15
-    libre_office=$16
-    vlc=$17
-    media_editors=$18
-    steam_linux=$19
-    
-    pypy3=$20
-    clion=$21
-    pycharm=$22
-    skype=$23
-    spotify=$24
-    steam_windows=$25
-    
-    work=$26
+    if [ $# -ne 26 ]
+    then
+      python=true
+      python_3=true
+      neofetch=true
+      i3=true
+      kde_desktop_enviroment=true
+      emulation=true
+      networking=true
+      pypy=false
+      git=false
+      cmake_gui=false
+      ide=false
+      w3m=true
+      firefox=false
+      chromium=true
+      pdf_viewer=true
+      libre_office=true
+      vlc=true
+      media_editors=true
+      steam_linux=true
+
+      pypy3=false
+      clion=false
+      pycharm=false
+      skype=true
+      spotify=true
+      steam_windows=true
+
+      work=false
+    else
+      python=$1
+      python_3=$2
+      neofetch=$3
+      i3=$4
+      kde_desktop_enviroment=$5
+      emulation=$6
+      networking=$7
+      pypy=$8
+      git=$9
+      cmake_gui=$10
+      ide=$11
+      w3m=$12
+      firefox=$13
+      chromium=$14
+      pdf_viewer=$15
+      libre_office=$16
+      vlc=$17
+      media_editors=$18
+      steam_linux=$19
+
+      pypy3=$20
+      clion=$21
+      pycharm=$22
+      skype=$23
+      spotify=$24
+      steam_windows=$25
+
+      work=$26
+    fi
   fi
 fi
 
