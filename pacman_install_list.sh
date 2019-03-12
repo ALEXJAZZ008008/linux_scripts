@@ -2,7 +2,7 @@
 
 if [ $# == 1 -a $1 == "-h" -o $1 == "--help" ]
 then
-  echo -e "Options:\n\nNo arguments to install default packages\n-a-i or --all--i3 to install all packages with i3.\n-a-k or --all--kde to install all packages with KDE.\n\nElse enter true or false to select from following package list:\npython\nneofetch\nintel_gpu_drivers\nnvidia_gpu_drivers\namd_gpu_drivers\nvirtualbox_drivers\nxorg_display_manager\ni3_window_manager\nkde_desktop_enviroment\nemulation\nnetwork_drivers\nnetworking\ngit\ncmake\nide\npycharm\nw3m\nfirefox_browser\nchromium_browser\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam"
+  echo -e "Options:\n\nNo arguments to install default packages\n-a-i or --all--i3 to install all packages with i3.\n-a-k or --all--kde to install all packages with KDE.\n\nElse enter true or false to select from following package list:\npython\nneofetch\ncloc\nintel_gpu_drivers\nnvidia_gpu_drivers\namd_gpu_drivers\nvirtualbox_drivers\nxorg_display_manager\ni3_window_manager\nkde_desktop_enviroment\nemulation\nnetwork_drivers\nnetworking\ngit\ncmake\nide\npycharm\nw3m\nfirefox_browser\nchromium_browser\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam"
 
   exit 0
 else
@@ -10,6 +10,7 @@ else
   then
     python=true
     neofetch=true
+    cloc=true
     intel_gpu_drivers=false
     nvidia_gpu_drivers=false
     amd_gpu_drivers=false
@@ -37,6 +38,7 @@ else
     then
       python=true
       neofetch=true
+      cloc=true
       intel_gpu_drivers=false
       nvidia_gpu_drivers=false
       amd_gpu_drivers=false
@@ -60,10 +62,11 @@ else
       media_editors=true
       steam=true
     else
-      if [ $# -ne 24 ]
+      if [ $# -ne 25 ]
       then
         python=true
         neofetch=true
+        cloc=false
         intel_gpu_drivers=false
         nvidia_gpu_drivers=false
         amd_gpu_drivers=false
@@ -89,28 +92,29 @@ else
       else
         python=$1
         neofetch=$2
-        intel_gpu_drivers=$3
-        nvidia_gpu_drivers=$4
-        amd_gpu_drivers=$5
-        virtualbox_drivers=$6
-        xorg_display_manager=$7
-        i3_window_manager=$8
-        kde_desktop_enviroment=$9
-        emulation=$10
-        network_drivers=$11
-        networking=$12
-        git=$13
-        cmake=$14
-        ide=$15
-        pycharm=$16
-        w3m=$17
-        firefox_browser=$18
-        chromium_browser=$19
-        pdf_viewer=$20
-        libre_office=$21
-        vlc=$22
-        media_editors=$23
-        steam=$24
+        cloc=$3
+        intel_gpu_drivers=$4
+        nvidia_gpu_drivers=$5
+        amd_gpu_drivers=$6
+        virtualbox_drivers=$7
+        xorg_display_manager=$8
+        i3_window_manager=$9
+        kde_desktop_enviroment=$10
+        emulation=$11
+        network_drivers=$12
+        networking=$13
+        git=$14
+        cmake=$15
+        ide=$16
+        pycharm=$17
+        w3m=$18
+        firefox_browser=$19
+        chromium_browser=$20
+        pdf_viewer=$21
+        libre_office=$22
+        vlc=$23
+        media_editors=$24
+        steam=$25
       fi
     fi
   fi
@@ -163,6 +167,21 @@ then
 else
   #uninstall neofetch
   for i in neofetch
+  do
+    pacman -Rns --noconfirm $i
+  done
+fi
+
+if [ "$cloc" = true ]
+then
+  #install cloc
+  for i in cloc
+  do
+    pacman -S --noconfirm $i
+  done
+else
+  #uninstall cloc
+  for i in cloc
   do
     pacman -Rns --noconfirm $i
   done
