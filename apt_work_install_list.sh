@@ -23,6 +23,12 @@ do
   sudo apt install -y $i
 done
 
+#video codec
+for i in ffmpeg
+do
+  sudo apt install -y $i
+done
+
 for i in update upgrade full-upgrade autoremove clean
 do
   sudo apt $i -y
