@@ -532,6 +532,12 @@ then
   do
     sudo apt install -y $i
   done
+  
+  #video codec
+  for i in ffmpeg
+  do
+    sudo apt install -y $i
+  done
 else
   #Uninstall work
   for i in amide
@@ -544,8 +550,12 @@ else
     sudo apt purge -y $i
   done
   
-  #documentation generator
   for i in doxygen graphviz
+  do
+    sudo apt purge -y $i
+  done
+  
+  for i in ffmpeg
   do
     sudo apt purge -y $i
   done
