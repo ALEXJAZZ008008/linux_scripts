@@ -2,7 +2,7 @@
 
 if [ $# == 1 -a $1 == "-h" -o $1 == "--help" ]
 then
-  echo -e "Options:\n\nNo arguments to install default packages\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\npython\npython_3\nneofetch=true\ni3=true\nkde_desktop_enviroment\nemulation\nnetworking\npypy\ngit\ncmake_gui\nide\nw3m\nfirefox\nchromium\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam_linux\n\npypy3\nclion\npycharm\nskype\nspotify\nsteam_windows\n\nwork"
+  echo -e "Options:\n\nNo arguments to install default packages\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\npython\npython_3\nneofetch\ncloc\ni3\nkde_desktop_enviroment\nemulation\nnetworking\npypy\ngit\ncmake_gui\nide\nw3m\nfirefox\nchromium\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam_linux\n\npypy3\nclion\npycharm\nskype\nspotify\nsteam_windows\n\nwork"
 
   exit 0
 else
@@ -11,6 +11,7 @@ else
     python=true
     python_3=true
     neofetch=true
+    cloc=true
     i3=true
     kde_desktop_enviroment=true
     emulation=true
@@ -37,11 +38,12 @@ else
 
     work=true
   else
-    if [ $# -ne 26 ]
+    if [ $# -ne 27 ]
     then
       python=true
       python_3=true
       neofetch=true
+      cloc=false
       i3=true
       kde_desktop_enviroment=true
       emulation=true
@@ -71,31 +73,32 @@ else
       python=$1
       python_3=$2
       neofetch=$3
-      i3=$4
-      kde_desktop_enviroment=$5
-      emulation=$6
-      networking=$7
-      pypy=$8
-      git=$9
-      cmake_gui=$10
-      ide=$11
-      w3m=$12
-      firefox=$13
-      chromium=$14
-      pdf_viewer=$15
-      libre_office=$16
-      vlc=$17
-      media_editors=$18
-      steam_linux=$19
+      cloc=$4
+      i3=$5
+      kde_desktop_enviroment=$6
+      emulation=$7
+      networking=$8
+      pypy=$9
+      git=$10
+      cmake_gui=$11
+      ide=$12
+      w3m=$13
+      firefox=$14
+      chromium=$15
+      pdf_viewer=$16
+      libre_office=$17
+      vlc=$18
+      media_editors=$19
+      steam_linux=$20
 
-      pypy3=$20
-      clion=$21
-      pycharm=$22
-      skype=$23
-      spotify=$24
-      steam_windows=$25
+      pypy3=$21
+      clion=$22
+      pycharm=$23
+      skype=$24
+      spotify=$25
+      steam_windows=$26
 
-      work=$26
+      work=$27
     fi
   fi
 fi
@@ -151,6 +154,21 @@ then
 else
   #Uninstall Neofetch
   for i in neofetch
+  do
+    sudo apt purge -y $i
+  done
+fi
+
+if [ "$cloc" = true ]
+then
+  #Install CLOC
+  for i in cloc
+  do
+    sudo apt install -y $i
+  done
+else
+  #Uninstall CLOC
+  for i in cloc
   do
     sudo apt purge -y $i
   done
