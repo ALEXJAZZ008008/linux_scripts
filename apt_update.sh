@@ -2,7 +2,7 @@
 
 for i in update upgrade full-upgrade autoremove clean
 do
-  sudo apt $i -y
+  apt $i -y
 done
 
 for i in refresh
