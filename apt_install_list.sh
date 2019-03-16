@@ -657,7 +657,7 @@ then
   done
   
   #qt for nifty
-  for i in libqt5svg5 libqt5svg5-dev
+  for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev
   do
     apt install -y $i
   done
@@ -684,7 +684,7 @@ else
   done
   
   #qt for nifty
-  for i in libqt5svg5 libqt5svg5-dev
+  for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev
   do
     apt purge -y $i
   done
