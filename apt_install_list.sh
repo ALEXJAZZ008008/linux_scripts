@@ -462,14 +462,14 @@ done
 if [ "$snap" = true ]
 then
   #Install Snap Store
-  for i in "Snap Store --edge --classic"
+  for i in "snap-store --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
 else
   #Remove Snap Store
-  for i in "Snap Store --edge --classic"
+  for i in "snap-store --edge --classic"
   do
     snap remove $i
   done
@@ -510,14 +510,14 @@ fi
 if [ "$notepad" = true ]
 then
   #Install Notepad++
-  for i in "Notepad-Plus-Plus --edge --classic"
+  for i in "notepad-plus-plus --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
 else
   #Remove Notepad++
-  for i in "Notepad-Plus-Plus --edge --classic"
+  for i in "notepad-plus-plus --edge --classic"
   do
     snap remove $i
   done
@@ -558,14 +558,14 @@ fi
 if [ "slack" = true ]
 then
   #Install Slack
-  for i in "Slack --edge --classic"
+  for i in "slack --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
 else
   #Remove Slack
-  for i in "Slack --edgs --classic"
+  for i in "slack --edgs --classic"
   do
     snap remove $i
   done
@@ -590,14 +590,14 @@ fi
 if [ "discord" = true ]
 then
   #Install Discord
-  for i in "Discord --edge --classic"
+  for i in "discord --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
 else
   #Remove Discord
-  for i in "Discord --edgs --classic"
+  for i in "discord --edgs --classic"
   do
     snap remove $i
   done
