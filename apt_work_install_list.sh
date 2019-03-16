@@ -35,7 +35,7 @@ do
 done
 
 #qt for nifty
-for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev
+for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev libqt5xmlpatterns5 libqt5xmlpatterns5-dev
 do
   apt install -y $i
 done
