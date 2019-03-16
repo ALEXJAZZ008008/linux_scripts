@@ -272,13 +272,13 @@ fi
 if [ $git = true ]
 then
   #Install git
-  for i in git
+  for i in git subversion mercurial
   do
     apt install -y $i
   done
 else
   #Uninstall git
-  for i in git
+  for i in git subversion mercurial
   do
     apt purge -y $i
   done
