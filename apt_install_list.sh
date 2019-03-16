@@ -655,6 +655,12 @@ then
   do
     apt install -y $i
   done
+  
+  #qt for nifty
+  for i in libqt5svg5 libqt5svg5-dev
+  do
+    apt install -y $i
+  done
 else
   #Uninstall work
   for i in amide
@@ -673,6 +679,12 @@ else
   done
   
   for i in ffmpeg
+  do
+    apt purge -y $i
+  done
+  
+  #qt for nifty
+  for i in libqt5svg5 libqt5svg5-dev
   do
     apt purge -y $i
   done
