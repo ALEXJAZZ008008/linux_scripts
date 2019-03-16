@@ -134,7 +134,7 @@ do
   apt install -y $i
 done
 
-if [ "$python" = true ]
+if [ $python = true ]
 then
   #Install Python
   for i in python python-dev python-pip python-virtualenv python-distutils-extra
@@ -149,7 +149,7 @@ else
   done
 fi
 
-if [ "$python_3" = true ]
+if [ $python_3 = true ]
 then
   #Install Python 3
   for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra
@@ -164,7 +164,7 @@ else
   done
 fi
 
-if [ "$neofetch" = true ]
+if [ $neofetch = true ]
 then
   #Install Neofetch
   for i in neofetch
@@ -179,7 +179,7 @@ else
   done
 fi
 
-if [ "$cloc" = true ]
+if [ $cloc = true ]
 then
   #Install CLOC
   for i in cloc
@@ -194,7 +194,7 @@ else
   done
 fi
 
-if [ "$i3" = true ]
+if [ $i3 = true ]
 then
   #Install i3
   for i in i3
@@ -209,7 +209,7 @@ else
   done
 fi
 
-if [ "$kde_desktop_enviroment" = true ]
+if [ $kde_desktop_enviroment = true ]
 then
   #Install KDE desktop enviroment
   for i in sddm kde-full
@@ -224,7 +224,7 @@ else
   done
 fi
 
-if [ "$emulation" = true ]
+if [ $emulation = true ]
 then
   #Install emulation
   for i in virtualbox wine-development
@@ -239,7 +239,7 @@ else
   done
 fi
 
-if [ "$networking" = true ]
+if [ $networking = true ]
 then
   #Install Networking
   for i in network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
@@ -254,7 +254,7 @@ else
   done
 fi
 
-if [ "$pypy" = true ]
+if [ $pypy = true ]
 then
   #Install Pypy
   for i in pypy
@@ -269,7 +269,7 @@ else
   done
 fi
 
-if [ "$git" = true ]
+if [ $git = true ]
 then
   #Install git
   for i in git
@@ -284,7 +284,7 @@ else
   done
 fi
 
-if [ "$cmake_gui" = true ]
+if [ $cmake_gui = true ]
 then
   #Install CMake GUI
   for i in cmake-gui cmake-qt-gui
@@ -299,7 +299,7 @@ else
   done
 fi
 
-if [ "$ide" = true ]
+if [ $ide = true ]
 then
   #Install IDE
   for i in qtcreator codeblocks
@@ -314,7 +314,7 @@ else
   done
 fi
 
-if [ "$w3m" = true ]
+if [ $w3m = true ]
 then
   #Install w3m
   for i in w3m
@@ -329,7 +329,7 @@ else
   done
 fi
 
-if [ "$firefox" = true ]
+if [ $firefox = true ]
 then
   #Install Firefox
   for i in firefox
@@ -344,7 +344,7 @@ else
   done
 fi
 
-if [ "$tor" = true ]
+if [ $tor = true ]
 then
   #Install Tor
   for i in tor torbrowser-launcher apt-transport-tor
@@ -359,7 +359,7 @@ else
   done
 fi
 
-if [ "$chromium" = true ]
+if [ $chromium = true ]
 then
   #Install Chromium
   for i in chromium-browser
@@ -374,7 +374,7 @@ else
   done
 fi
 
-if [ "$pdf_viewer" = true ]
+if [ $pdf_viewer = true ]
 then
   #Install PDF viewer
   for i in zathura zathura-pdf-poppler
@@ -389,7 +389,7 @@ else
   done
 fi
 
-if [ "$libre_office" = true ]
+if [ $libre_office = true ]
 then
   #Install LibreOffice
   for i in libreoffice
@@ -404,7 +404,7 @@ else
   done
 fi
 
-if [ "$vlc" = true ]
+if [ $vlc = true ]
 then
   #Install VLC
   for i in vlc
@@ -419,7 +419,7 @@ else
   done
 fi
 
-if [ "$media_editors" = true ]
+if [ $media_editors = true ]
 then
   #Install media editors
   for i in gimp audacity blender
@@ -434,7 +434,7 @@ else
   done
 fi
 
-if [ "$steam" = true ]
+if [ $steam = true ]
 then
   #Install Steam(Linux)
   for i in steam-installer
@@ -459,7 +459,7 @@ do
   snap $i
 done
 
-if [ "$snap" = true ]
+if [ $snap = true ]
 then
   #Install Snap Store
   for i in "snap-store --edge --classic"
@@ -475,7 +475,7 @@ else
   done
 fi
 
-if [ "$pypy3" = true ]
+if [ $pypy3 = true ]
 then
   #Install pypy3
   for i in "pypy3 --edge --classic"
@@ -491,7 +491,7 @@ else
   done
 fi
 
-if [ "$powershell" = true ]
+if [ $powershell = true ]
 then
   #Install Powershell
   for i in "powershell --edge --classic"
@@ -507,7 +507,7 @@ else
   done
 fi
 
-if [ "$notepad" = true ]
+if [ $notepad = true ]
 then
   #Install Notepad++
   for i in "notepad-plus-plus --edge --classic"
@@ -523,7 +523,7 @@ else
   done
 fi
 
-if [ "$clion" = true ]
+if [ $clion = true ]
 then
   #Install Clion
   for i in "clion --edge --classic"
@@ -539,7 +539,7 @@ else
   done
 fi
 
-if [ "$pycharm" = true ]
+if [ $pycharm = true ]
 then
   #Install Pycharm
   for i in "pycharm-professional --edge --classic"
@@ -555,7 +555,7 @@ else
   done
 fi
 
-if [ "slack" = true ]
+if [ $slack = true ]
 then
   #Install Slack
   for i in "slack --edge --classic"
@@ -565,13 +565,13 @@ then
   done
 else
   #Remove Slack
-  for i in "slack --edgs --classic"
+  for i in "slack --edge --classic"
   do
     snap remove $i
   done
 fi
 
-if [ "skype" = true ]
+if [ $skype = true ]
 then
   #Install Skype
   for i in "skype --edge --classic"
@@ -581,13 +581,13 @@ then
   done
 else
   #Remove Skype
-  for i in "skype --edgs --classic"
+  for i in "skype --edge --classic"
   do
     snap remove $i
   done
 fi
 
-if [ "discord" = true ]
+if [ $discord = true ]
 then
   #Install Discord
   for i in "discord --edge --classic"
@@ -603,7 +603,7 @@ else
   done
 fi
 
-if [ "$spotify" = true ]
+if [ $spotify = true ]
 then
   #Install Spotify
   for i in "spotify --edge --classic"
@@ -629,7 +629,7 @@ do
   snap $i
 done
 
-if [ "$work" = true ]
+if [ $work = true ]
 then
   #Install work
   #medical imaging viewer
