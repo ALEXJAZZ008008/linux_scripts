@@ -29,6 +29,12 @@ do
   apt install -y $i
 done
 
+#qt for nifty
+for i in libqt5svg5 libqt5svg5-dev
+do
+  apt install -y $i
+done
+
 for i in update upgrade full-upgrade autoremove clean
 do
   apt $i -y
