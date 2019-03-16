@@ -302,13 +302,13 @@ fi
 if [ $ide = true ]
 then
   #Install IDE
-  for i in qtcreator codeblocks
+  for i in qtcreator qtbase5-dev codeblocks
   do
     apt install -y $i
   done
 else
   #Uninstall IDE
-  for i in qtcreator codeblocks
+  for i in qtcreator qtbase5-dev codeblocks
   do
     apt purge -y $i
   done
