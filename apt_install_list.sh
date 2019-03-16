@@ -27,18 +27,17 @@ else
     libre_office=true
     vlc=true
     media_editors=true
-    steam_linux=true
+    steam=true
 
     pypy3=true
     clion=true
     pycharm=true
     skype=true
     spotify=true
-    steam_windows=true
 
     work=true
   else
-    if [ $# -ne 27 ]
+    if [ $# -ne 26 ]
     then
       python=true
       python_3=true
@@ -59,14 +58,13 @@ else
       libre_office=true
       vlc=true
       media_editors=true
-      steam_linux=true
+      steam=true
 
       pypy3=false
       clion=false
       pycharm=false
       skype=true
       spotify=true
-      steam_windows=true
 
       work=false
     else
@@ -89,29 +87,33 @@ else
       libre_office=$17
       vlc=$18
       media_editors=$19
-      steam_linux=$20
+      steam=$20
 
       pypy3=$21
       clion=$22
       pycharm=$23
       skype=$24
       spotify=$25
-      steam_windows=$26
 
-      work=$27
+      work=$26
     fi
   fi
 fi
 
 for i in update upgrade full-upgrade autoremove clean
 do
-  sudo apt $i -y
+  apt $i -y
+done
+
+for i in refresh
+do
+  snap $i
 done
 
 #Build
 for i in linux-headers-generic sudo build-essential snapd
 do
-  sudo apt install -y $i
+  apt install -y $i
 done
 
 if [ "$python" = true ]
@@ -119,13 +121,13 @@ then
   #Install Python
   for i in python python-dev python-pip python-virtualenv python-distutils-extra
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall Python
   for i in python python-dev python-pip python-virtualenv python-distutils-extra
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -134,13 +136,13 @@ then
   #Install Python 3
   for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall Python 3
   for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -149,13 +151,13 @@ then
   #Install Neofetch
   for i in neofetch
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall Neofetch
   for i in neofetch
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -164,13 +166,13 @@ then
   #Install CLOC
   for i in cloc
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall CLOC
   for i in cloc
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -179,13 +181,13 @@ then
   #Install i3
   for i in i3
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall i3
   for i in i3
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -194,13 +196,13 @@ then
   #Install KDE desktop enviroment
   for i in sddm kde-full
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall KDE desktop enviroment
   for i in sddm kde-full
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -209,13 +211,13 @@ then
   #Install emulation
   for i in virtualbox wine-development
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall emulation
   for i in virtualbox wine-development
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -224,13 +226,13 @@ then
   #Install Networking
   for i in network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall Networking
   for i in network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -239,13 +241,13 @@ then
   #Install Pypy
   for i in pypy
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall Pypy
   for i in pypy
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -254,13 +256,13 @@ then
   #Install git
   for i in git
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall git
   for i in git
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -269,13 +271,13 @@ then
   #Install CMake GUI
   for i in cmake-gui cmake-qt-gui
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall CMake GUI
   for i in cmake-gui cmake-qt-gui
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -284,13 +286,13 @@ then
   #Install IDE
   for i in qtcreator codeblocks
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall IDE
   for i in qtcreator codeblocks
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -299,13 +301,13 @@ then
   #Install w3m
   for i in w3m
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall w3m
   for i in w3m
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -314,13 +316,13 @@ then
   #Install Firefox
   for i in firefox
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall Firefox
   for i in firefox
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -329,13 +331,13 @@ then
   #Install Chromium
   for i in chromium-browser
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall Chromium
   for i in chromium-browser
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -344,13 +346,13 @@ then
   #Install PDF viewer
   for i in zathura zathura-pdf-poppler
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall PDF viewer
   for i in zathura zathura-pdf-poppler
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -359,13 +361,13 @@ then
   #Install LibreOffice
   for i in libreoffice
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall LibreOffice
   for i in libreoffice
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -374,13 +376,13 @@ then
   #Install VLC
   for i in vlc
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall VLC
   for i in vlc
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
@@ -389,33 +391,39 @@ then
   #Install media editors
   for i in gimp audacity blender
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall media editors
   for i in gimp audacity blender
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
-if [ "$steam_linux" = true ]
+if [ "$steam" = true ]
 then
   #Install Steam(Linux)
   for i in steam-installer
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall Steam(Linux)
   for i in steam-installer
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
-for i in update upgrade full-upgrade autoremove clean; do
+for i in update upgrade full-upgrade autoremove clean
+do
   sudo apt $i -y
+done
+
+for i in refresh
+do
+  snap $i
 done
 
 if [ "$pypy3" = true ]
@@ -423,13 +431,14 @@ then
   #Install pypy3
   for i in "pypy3 --edge --classic"
   do
-    sudo snap install $i
+    snap install $i
+    snap refresh $i
   done
 else
   #Remove pypy3
   for i in "pypy3 --edge --classic"
   do
-    sudo snap remove $i
+    snap remove $i
   done
 fi
 
@@ -438,13 +447,14 @@ then
   #Install Clion
   for i in "clion --edge --classic"
   do
-    sudo snap install $i
+    snap install $i
+    snap refresh $i
   done
 else
   #Remove Clion
   for i in "clion --edge --classic"
   do
-    sudo snap remove $i
+    snap remove $i
   done
 fi
 
@@ -453,13 +463,14 @@ then
   #Install Pycharm
   for i in "pycharm-professional --edge --classic"
   do
-    sudo snap install $i
+    snap install $i
+    snap refresh $i
   done
 else
   #Remove Pycharm
   for i in "pycharm-professional --edge --classic"
   do
-    sudo snap remove $i
+    snap remove $i
   done
 fi
 
@@ -468,13 +479,14 @@ then
   #Install Skype
   for i in "skype --edge --classic"
   do
-    sudo snap install $i
+    snap install $i
+    snap refresh $i
   done
 else
   #Remove Skype
   for i in "skype --edgs --classic"
   do
-    sudo snap remove $i
+    snap remove $i
   done
 fi
 
@@ -483,33 +495,25 @@ then
   #Install Spotify
   for i in "spotify --edge --classic"
   do
-    sudo snap install $i
+    snap install $i
+    snap refresh $i
   done
 else
   #Remove Spotify
   for i in "spotify --edge --classic"
   do
-    sudo snap remove $i
+    snap remove $i
   done
 fi
 
-if [ "$steam_windows" = true ]
-then
-  #Install Steam(Windows)
-  for i in "steamforwindows --edge --classic"
-  do
-    sudo snap install $i
-  done
-else
-  #Remove Steam(Windows)
-  for i in "steamforwindows --edge --classic"
-  do
-    sudo snap remove $i
-  done
-fi
-
-for i in update upgrade full-upgrade autoremove clean; do
+for i in update upgrade full-upgrade autoremove clean
+do
   sudo apt $i -y
+done
+
+for i in refresh
+do
+  snap $i
 done
 
 if [ "$work" = true ]
@@ -518,52 +522,57 @@ then
   #medical imaging viewer
   for i in amide
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
   
   #dependencies for stir
   for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
   
   #documentation generator
   for i in doxygen graphviz
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
   
   #video codec
   for i in ffmpeg
   do
-    sudo apt install -y $i
+    apt install -y $i
   done
 else
   #Uninstall work
   for i in amide
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
   
   for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
   
   for i in doxygen graphviz
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
   
   for i in ffmpeg
   do
-    sudo apt purge -y $i
+    apt purge -y $i
   done
 fi
 
 for i in update upgrade full-upgrade autoremove clean
 do
-  sudo apt $i -y
+  apt $i -y
+done
+
+for i in refresh
+do
+  snap $i
 done
 
 exit 0
