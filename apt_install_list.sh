@@ -2,7 +2,7 @@
 
 if [ $# == 1 -a $1 == "-h" -o $1 == "--help" ]
 then
-  echo -e "Options:\n\nNo arguments to install default packages\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\npython\npython_3\nneofetch\ncloc\ni3\nkde_desktop_enviroment\nemulation\nnetworking\npypy\ngit\ncmake_gui\nide\nw3m\nfirefox\nchromium\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam_linux\n\npypy3\nclion\npycharm\nskype\nspotify\nsteam_windows\n\nwork"
+  echo -e "Options:\n\nNo arguments to install default packages\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\npython\npython_3\nneofetch\ncloc\ni3\nkde_desktop_enviroment\nemulation\nnetworking\npypy\ngit\ncmake_gui\nide\nw3m\nfirefox\ntor\nchromium\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam_linux\n\nsnap\npypy3\npowershell\nnotepad\nclion\npycharm\nslack\nskype\ndiscord\nspotify\n\nwork"
 
   exit 0
 else
@@ -22,6 +22,7 @@ else
     ide=true
     w3m=true
     firefox=true
+    tor=true
     chromium=true
     pdf_viewer=true
     libre_office=true
@@ -29,15 +30,20 @@ else
     media_editors=true
     steam=true
 
+    snap=true
     pypy3=true
+    powershell=true
+    notepad=true
     clion=true
     pycharm=true
+    slack=true
     skype=true
+    discord=true
     spotify=true
 
     work=true
   else
-    if [ $# -ne 26 ]
+    if [ $# -ne 32 ]
     then
       python=true
       python_3=true
@@ -53,17 +59,23 @@ else
       ide=false
       w3m=true
       firefox=false
+      tor=false
       chromium=true
       pdf_viewer=true
       libre_office=true
       vlc=true
       media_editors=true
       steam=true
-
+      
+      snap=true
       pypy3=false
+      powershell=false
+      notepad=true
       clion=false
       pycharm=false
+      slack=true
       skype=true
+      discord=true
       spotify=true
 
       work=false
@@ -82,20 +94,26 @@ else
       ide=$12
       w3m=$13
       firefox=$14
-      chromium=$15
-      pdf_viewer=$16
-      libre_office=$17
-      vlc=$18
-      media_editors=$19
-      steam=$20
+      tor=$15
+      chromium=$16
+      pdf_viewer=$17
+      libre_office=$18
+      vlc=$19
+      media_editors=$20
+      steam=$21
 
-      pypy3=$21
-      clion=$22
-      pycharm=$23
-      skype=$24
-      spotify=$25
+      snap=$22
+      pypy3=$23
+      powershell=$24
+      notepad=$25
+      clion=$26
+      pycharm=$27
+      slack=$28
+      skype=$29
+      discord=$30
+      spotify=$31
 
-      work=$26
+      work=$32
     fi
   fi
 fi
@@ -326,6 +344,21 @@ else
   done
 fi
 
+if [ "$tor" = true ]
+then
+  #Install Tor
+  for i in tor torbrowser-launcher apt-transport-tor
+  do
+    apt install -y $i
+  done
+else
+  #Uninstall Tor
+  for i in tor torbrowser-launcher apt-transport-tor
+  do
+    apt purge -y $i
+  done
+fi
+
 if [ "$chromium" = true ]
 then
   #Install Chromium
@@ -426,6 +459,22 @@ do
   snap $i
 done
 
+if [ "$snap" = true ]
+then
+  #Install Snap Store
+  for i in "Snap Store --edge --classic"
+  do
+    snap install $i
+    snap refresh $i
+  done
+else
+  #Remove Snap Store
+  for i in "Snap Store --edge --classic"
+  do
+    snap remove $i
+  done
+fi
+
 if [ "$pypy3" = true ]
 then
   #Install pypy3
@@ -437,6 +486,38 @@ then
 else
   #Remove pypy3
   for i in "pypy3 --edge --classic"
+  do
+    snap remove $i
+  done
+fi
+
+if [ "$powershell" = true ]
+then
+  #Install Powershell
+  for i in "powershell --edge --classic"
+  do
+    snap install $i
+    snap refresh $i
+  done
+else
+  #Remove Powershell
+  for i in "powershell --edge --classic"
+  do
+    snap remove $i
+  done
+fi
+
+if [ "$notepad" = true ]
+then
+  #Install Notepad++
+  for i in "Notepad-Plus-Plus --edge --classic"
+  do
+    snap install $i
+    snap refresh $i
+  done
+else
+  #Remove Notepad++
+  for i in "Notepad-Plus-Plus --edge --classic"
   do
     snap remove $i
   done
@@ -474,6 +555,22 @@ else
   done
 fi
 
+if [ "slack" = true ]
+then
+  #Install Slack
+  for i in "Slack --edge --classic"
+  do
+    snap install $i
+    snap refresh $i
+  done
+else
+  #Remove Slack
+  for i in "Slack --edgs --classic"
+  do
+    snap remove $i
+  done
+fi
+
 if [ "skype" = true ]
 then
   #Install Skype
@@ -485,6 +582,22 @@ then
 else
   #Remove Skype
   for i in "skype --edgs --classic"
+  do
+    snap remove $i
+  done
+fi
+
+if [ "discord" = true ]
+then
+  #Install Discord
+  for i in "Discord --edge --classic"
+  do
+    snap install $i
+    snap refresh $i
+  done
+else
+  #Remove Discord
+  for i in "Discord --edgs --classic"
   do
     snap remove $i
   done
