@@ -142,7 +142,7 @@ do
   systemctl enable $i
 done
 
-if [ "$python" = true ]
+if [ $python = true ]
 then
   #install python
   for i in python2 python pypy pypy3
@@ -157,7 +157,7 @@ else
   done
 fi
 
-if [ "$neofetch" = true ]
+if [ $neofetch = true ]
 then
   #install neofetch
   for i in neofetch
@@ -172,7 +172,7 @@ else
   done
 fi
 
-if [ "$cloc" = true ]
+if [ $cloc = true ]
 then
   #install cloc
   for i in cloc
@@ -187,7 +187,7 @@ else
   done
 fi
 
-if [ "$intel_gpu_drivers" = true ]
+if [ $intel_gpu_drivers = true ]
 then
   #install intel gpu drivers
   for i in xf86-video-intel
@@ -202,7 +202,7 @@ else
   done
 fi
 
-if [ "$nvidia_gpu_drivers" = true ]
+if [ $nvidia_gpu_drivers = true ]
 then
   #install nvidia gpu drivers
   for i in nvidia nvidia-lts nvidia-libgl lib32-nvidia-libgl
@@ -217,7 +217,7 @@ else
   done
 fi
 
-if [ "$amd_gpu_drivers" = true ]
+if [ $amd_gpu_drivers = true ]
 then
   #install amd gpu drivers
   for i in xf86-video-amdgpu xf86-video-ati
@@ -232,7 +232,7 @@ else
   done
 fi
 
-if [ "$virtualbox_drivers" = true ]
+if [ $virtualbox_drivers = true ]
 then
   #install virtualbox drivers
   for i in virtualbox-guest-utils virtualbox-guest-modules-arch
@@ -247,7 +247,7 @@ else
   done
 fi
 
-if [ "$xorg_display_manager" = true ]
+if [ $xorg_display_manager = true ]
 then
   #install xorg display manager
   for i in xorg-server xorg-xinit xterm xf86-video-vesa xf86-video-nouveau lib32-mesa-libgl libgl mesa
@@ -262,7 +262,7 @@ else
   done
 fi
 
-if [ "$i3_window_manager" = true ]
+if [ $i3_window_manager = true ]
 then
   #install i3 window manager
   for i in xdm-archlinux i3
@@ -285,7 +285,7 @@ else
   done
 fi
 
-if [ "$kde_desktop_enviroment" = true ]
+if [ $kde_desktop_enviroment = true ]
 then
   #install kde desktop enviroment
   for i in sddm plasma kde-applications
@@ -308,7 +308,7 @@ else
   done
 fi
 
-if [ "$emulation" = true ]
+if [ $emulation = true ]
 then
   #install emulation
   for i in virtualbox virtualbox-host-modules-arch virtualbox-host-dkms wine-staging wine_gecko wine-mono
@@ -323,7 +323,7 @@ else
   done
 fi
 
-if [ "$network_drivers" = true ]
+if [ $network_drivers = true ]
 then
   #install network drivers
   for i in broadcom-wl broadcom-wl-dkms
@@ -338,7 +338,7 @@ else
   done
 fi
 
-if [ "$networking" = true ]
+if [ $networking = true ]
 then
 #install networking
   for i in openssh dialog network-manager-applet networkmanager networkmanager-openvpn wireless_tools wpa_supplicant wpa_actiond
@@ -361,7 +361,7 @@ else
   done
 fi
 
-if [ "$git" = true ]; then
+if [ $git = true ]; then
   #install git
   for i in git; do
     pacman -S --noconfirm $i
@@ -373,7 +373,7 @@ else
   done
 fi
 
-if [ "$cmake" = true ]
+if [ $cmake = true ]
 then
   #install cmake
   for i in cmake
@@ -388,7 +388,7 @@ else
   done
 fi
 
-if [ "$ide" = true ]
+if [ $ide = true ]
 then
   #install ide
   for i in qtcreator codeblocks
@@ -403,7 +403,7 @@ else
   done
 fi
 
-if [ "$pycharm" = true ]
+if [ $pycharm = true ]
 then
   #install pycharm
   for i in pycharm-community-edition
@@ -418,7 +418,7 @@ else
   done
 fi
 
-if [ "$w3m" = true ]
+if [ $w3m = true ]
 then
   #install w3m browser
   for i in w3m
@@ -433,7 +433,7 @@ else
   done
 fi
 
-if [ "$firefox_browser" = true ]
+if [ $firefox_browser = true ]
 then
   #install firefox browser
   for i in firefox
@@ -448,7 +448,7 @@ else
   done
 fi
 
-if [ "$chromium_browser" = true ]
+if [ $chromium_browser = true ]
 then
   #install chromium browser
   for i in chromium
@@ -463,7 +463,7 @@ else
   done
 fi
 
-if [ "$pdf_viewer" = true ]
+if [ $pdf_viewer = true ]
 then
   #install pdf viewer
   for i in zathura zathura-pdf-mupdf
@@ -478,7 +478,7 @@ else
   done
 fi
 
-if [ "$libre_office" = true ]
+if [ $libre_office = true ]
 then
   #install libreoffice
   for i in libreoffice-fresh libreoffice-fresh-en-gb
@@ -493,7 +493,7 @@ else
   done
 fi
 
-if [ "$vlc" = true ]
+if [ $vlc = true ]
 then
   #install vlc
   for i in vlc
@@ -508,7 +508,7 @@ else
   done
 fi
 
-if [ "$media_editors" = true ]
+if [ $media_editors = true ]
 then
   #install media editors
   for i in gimp audacity blender
@@ -523,7 +523,7 @@ else
   done
 fi
 
-if [ "$steam" = true ]
+if [ $steam = true ]
 then
   #install steam
   for i in steam steam-native-runtime
