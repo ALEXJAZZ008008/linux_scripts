@@ -40,6 +40,12 @@ do
   apt install -y $i
 done
 
+#for python scripts in jrmomo
+for i in python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+do
+  apt install -y $i
+done
+
 for i in update upgrade full-upgrade autoremove clean
 do
   apt $i -y
