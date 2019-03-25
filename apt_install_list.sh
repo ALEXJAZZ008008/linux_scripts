@@ -166,14 +166,14 @@ fi
 
 if [ $neofetch = true ]
 then
-  #Install Neofetch
-  for i in neofetch
+  #Install Neofetch et al
+  for i in neofetch upower gparted
   do
     apt install -y $i
   done
 else
-  #Uninstall Neofetch
-  for i in neofetch
+  #Uninstall Neofetch et al
+  for i in neofetch upower gparted
   do
     apt purge -y $i
   done
