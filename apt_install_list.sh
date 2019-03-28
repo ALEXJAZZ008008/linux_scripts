@@ -2,7 +2,7 @@
 
 if [ $# == 1 -a $1 == "-h" -o $1 == "--help" ]
 then
-  echo -e "Options:\n\nNo arguments to install default packages\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\npython\npython_3\nneofetch\ncloc\ni3\nkde_desktop_enviroment\nemulation\nnetworking\npypy\ngit\ncmake_gui\nide\nw3m\nfirefox\ntor\nchromium\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam_linux\n\nsnap\npypy3\npowershell\nnotepad\nclion\npycharm\nslack\nskype\ndiscord\nspotify\n\nwork"
+  echo -e "Options:\n\nNo arguments to install default packages\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\npython\npython_3\ntools\ncloc\ni3\nkde_desktop_enviroment\nemulation\nnetworking\npypy\ngit\ncmake_gui\nide\nw3m\nfirefox\ntor\nchromium\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam_linux\n\nsnap\npypy3\npowershell\nnotepad\nclion\npycharm\nslack\nskype\ndiscord\nspotify\n\nwork"
 
   exit 0
 else
@@ -10,7 +10,7 @@ else
   then
     python=true
     python_3=true
-    neofetch=true
+    tools=true
     cloc=true
     i3=true
     kde_desktop_enviroment=true
@@ -47,7 +47,7 @@ else
     then
       python=true
       python_3=true
-      neofetch=true
+      tools=true
       cloc=false
       i3=true
       kde_desktop_enviroment=true
@@ -82,7 +82,7 @@ else
     else
       python=$1
       python_3=$2
-      neofetch=$3
+      tools=$3
       cloc=$4
       i3=$5
       kde_desktop_enviroment=$6
@@ -164,15 +164,15 @@ else
   done
 fi
 
-if [ $neofetch = true ]
+if [ $tools = true ]
 then
-  #Install Neofetch et al
+  #Install tools
   for i in neofetch upower gparted
   do
     apt install -y $i
   done
 else
-  #Uninstall Neofetch et al
+  #Uninstall tools
   for i in neofetch upower gparted
   do
     apt purge -y $i
@@ -302,13 +302,13 @@ fi
 if [ $ide = true ]
 then
   #Install IDE
-  for i in qtcreator codeblocks
+  for i in qtcreator codeblocks spyder octave
   do
     apt install -y $i
   done
 else
   #Uninstall IDE
-  for i in qtcreator codeblocks
+  for i in qtcreator codeblocks spyder octave
   do
     apt purge -y $i
   done
