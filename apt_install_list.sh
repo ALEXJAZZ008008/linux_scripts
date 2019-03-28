@@ -673,7 +673,7 @@ then
   done
 
   #for python scripts in jrmomo
-  for i in python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+  for i in python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib ipython python-pandas python-sympy python-nose
   do
     apt install -y $i
   done
@@ -730,7 +730,7 @@ else
   done
 
   #for python scripts in jrmomo
-  for i in python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+  for i in python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib ipython python-pandas python-sympy python-nose
   do
     apt purge -y $i
   done
