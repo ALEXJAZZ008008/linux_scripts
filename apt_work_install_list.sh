@@ -2,6 +2,8 @@
 
 echo -e "\n\nInstalling work dependencies...\n"
   
+echo -e "\n\nUpdating...\n"
+  
 #Install work dependencies
 for i in update upgrade full-upgrade autoremove clean
 do
@@ -12,42 +14,70 @@ for i in refresh
 do
   snap $i
 done
+  
+echo -e "\nDone!\n"
 
-#medical imaging viewer compatible with hv for stir and nii for nifty*
+echo -e "\n\nInstalling amide...\n"
+  
+#Install medical imaging viewer compatible with hv for stir and nii for nifty*
 for i in amide
 do
   apt install -y $i
 done
 
-#dependencies for stir
+echo -e "\nDone!\n"
+
+echo -e "\n\nInstalling stir dependencies...\n"
+
+#Install dependencies for stir
 for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
 do
   apt install -y $i
 done
 
-#documentation generator
+echo -e "\nDone!\n"
+
+echo -e "\n\nInstalling doxygen...\n"
+
+#Install documentation generator
 for i in doxygen graphviz
 do
   apt install -y $i
 done
 
-#video codec for jrmomo
+echo -e "\nDone!\n"
+
+echo -e "\n\nInstalling ffmpeg...\n"
+
+#Install video codec for jrmomo
 for i in ffmpeg
 do
   apt install -y $i
 done
 
-#qt for nifty*
+echo -e "\nDone!\n"
+
+echo -e "\n\nInstalling qt...\n"
+
+#Install qt for nifty*
 for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev libqt5xmlpatterns5 libqt5xmlpatterns5-dev qttools5-dev
 do
   apt install -y $i
 done
 
-#python for jrmomo
+echo -e "\nDone!\n"
+
+echo -e "\n\nInstalling python...\n"
+
+#Install python for jrmomo
 for i in python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib ipython python-pandas python-sympy python-nose
 do
   apt install -y $i
 done
+
+echo -e "\nDone!\n"
+
+echo -e "\n\nUpdating...\n"
 
 for i in update upgrade full-upgrade autoremove clean
 do
@@ -59,6 +89,8 @@ do
   snap $i
 done
   
-echo -e "\n\nDone!\n"
+echo -e "\nDone!\n"
+  
+echo -e "\nDone!\n"
 
 exit 0
