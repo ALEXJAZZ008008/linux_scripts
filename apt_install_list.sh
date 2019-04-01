@@ -2,6 +2,8 @@
 
 if [ $# == 1 -a ]
 then
+  echo -e "Arguments detected"
+  
   if [ $1 == "-h" -o $1 == "--help" ]
   then
     echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\npython\npython_3\ntools\ncloc\ni3\nkde_desktop_enviroment\nemulation\nnetworking\npypy\ngit\ncmake_gui\nide\nw3m\nfirefox\ntor\nchromium\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam_linux\n\nsnap\npypy3\npowershell\nnotepad\nclion\npycharm\nslack\nskype\ndiscord\nspotify\n\nwork\n\n"
@@ -10,7 +12,7 @@ then
   else
     if [ $# == 1 -a [ $1 == "-p" -o $1 == "--purge" ] ]
     then
-      echo -e "Argument: -p or --purge, uninstalling all packages...\n\n"
+      echo -e "Argument: -p or --purge, uninstalling all packages...\n"
 
       PYTHON=false
       PYTHONTHREE=false
@@ -49,7 +51,7 @@ then
     else
       if [ $# == 1 -a [ $1 == "-a" -o $1 == "--all" ] ]
       then
-        echo -e "Argument: -a or --all, installing all packages...\n\n"
+        echo -e "Argument: -a or --all, installing all packages...\n"
 
         PYTHON=true
         PYTHONTHREE=true
@@ -91,7 +93,7 @@ then
 else
   if [ $# == 32 ]
   then
-    echo -e "Argument: user defined, installing selected packages...\n\n"
+    echo -e "Argument: user defined, installing selected packages...\n"
     
     PYTHON=$1
     PYTHONTHREE=$2
@@ -128,7 +130,7 @@ else
     
     WORKDEPENDENCIES=$33
   else
-    echo -e "Argument: no argument, installing default packages...\n\n"
+    echo -e "Argument: no argument, installing default packages...\n"
     
     PYTHON=true
     PYTHONTHREE=true
@@ -167,230 +169,230 @@ else
   fi
 fi
 
-echo -e "Changes to be made:\n"
+echo -e "Changes to be made:"
 
 if [ $PYTHON = true ]
 then
-  echo -e "Install python\n"
+  echo -e "Install python"
 else
-  echo -e "Uninstall python\n"
+  echo -e "Uninstall python"
 fi
 
 if [ $PYTHONTHREE = true ]
 then
-  echo -e "Install python3\n"
+  echo -e "Install python3"
 else
-  echo -e "Uninstall python3\n"
+  echo -e "Uninstall python3"
 fi
 
 if [ $TOOLS = true ]
 then
-  echo -e "Install tools\n"
+  echo -e "Install tools"
 else
-  echo -e "Uninstall tools\n"
+  echo -e "Uninstall tools"
 fi
 
 if [ $ITHREE = true ]
 then
-  echo -e "Install i3\n"
+  echo -e "Install i3"
 else
-  echo -e "Uninstall i3\n"
+  echo -e "Uninstall i3"
 fi
 
 if [ $KDE = true ]
 then
-  echo -e "Install kde\n"
+  echo -e "Install kde"
 else
-  echo -e "Uninstall kde\n"
+  echo -e "Uninstall kde"
 fi
 
 if [ $EMULATION = true ]
 then
-  echo -e "Install emulation\n"
+  echo -e "Install emulation"
 else
-  echo -e "Uninstalling emulation\n"
+  echo -e "Uninstalling emulation"
 fi
 
 if [ $NETWORKING = true ]
 then
-  echo -e "Install networking\n"
+  echo -e "Install networking"
 else
-  echo -e "Uninstall networking\n"
+  echo -e "Uninstall networking"
 fi
 
 if [ $PYPY = true ]
 then
-  echo -e "Install pypy\n"
+  echo -e "Install pypy"
 else
-  echo -e "Uninstall pypy\n"
+  echo -e "Uninstall pypy"
 fi
 
 if [ $SOURCECONTROL = true ]
 then
-  echo -e "Install source control\n"
+  echo -e "Install source control"
 else
-  echo -e "Uninstall source control\n"
+  echo -e "Uninstall source control"
 fi
 
 if [ $CMAKE = true ]
 then
-  echo -e "Install cmake\n"
+  echo -e "Install cmake"
 else
-  echo -e "Uninstall cmake\n"
+  echo -e "Uninstall cmake"
 fi
 
 if [ $IDE = true ]
 then
-  echo -e "Install ide\n"
+  echo -e "Install ide"
 else
-  echo -e "Uninstall ide\n"
+  echo -e "Uninstall ide"
 fi
 
 if [ $WTHREEM = true ]
 then
-  echo -e "Install w3m\n"
+  echo -e "Install w3m"
 else
-  echo -e "Uninstall w3m\n"
+  echo -e "Uninstall w3m"
 fi
 
 if [ $FIREFOX = true ]
 then
-  echo -e "Install firefox\n"
+  echo -e "Install firefox"
 else
-  echo -e "Uninstall firefox\n"
+  echo -e "Uninstall firefox"
 fi
 
 if [ $TOR = true ]
 then
-  echo -e "Install tor\n"
+  echo -e "Install tor"
 else
-  echo -e "Uninstall tor\n"
+  echo -e "Uninstall tor"
 fi
 
 if [ $CHROMIUM = true ]
 then
-  echo -e "Install chromium\n"
+  echo -e "Install chromium"
 else
-  echo -e "Uninstall chromium\n"
+  echo -e "Uninstall chromium"
 fi
 
 if [ $PDF = true ]
 then
-  echo -e "Install pdf viewer\n"
+  echo -e "Install pdf viewer"
 else
-  echo -e "Uninstall pdf viewer\n"
+  echo -e "Uninstall pdf viewer"
 fi
 
 if [ $LIBREOFFICE = true ]
 then
-  echo -e "Install libreoffice\n"
+  echo -e "Install libreoffice"
 else
-  echo -e "Uninstall libreoffice\n"
+  echo -e "Uninstall libreoffice"
 fi
 
 if [ $VLC = true ]
 then
-  echo -e "Install vlc\n"
+  echo -e "Install vlc"
 else
-  echo -e "Uninstall vlc\n"
+  echo -e "Uninstall vlc"
 fi
 
 if [ $MEDIA = true ]
 then
-  echo -e "Install media\n"
+  echo -e "Install media"
 else
-  echo -e "Uninstall media\n"
+  echo -e "Uninstall media"
 fi
 
 if [ $STEAM = true ]
 then
-  echo -e "Install steam\n"
+  echo -e "Install steam"
 else
-  echo -e "Uninstall steam\n"
+  echo -e "Uninstall steam"
 fi
 
 if [ $SNAP = true ]
 then
-  echo -e "Install snap\n"
+  echo -e "Install snap"
 else
-  echo -e "Uninstall snap\n"
+  echo -e "Uninstall snap"
 fi
 
 if [ $PYPYTHREE = true ]
 then
-  echo -e "Install pypy3\n"
+  echo -e "Install pypy3"
 else
-  echo -e "Uninstall pypy3\n"
+  echo -e "Uninstall pypy3"
 fi
 
 if [ $GITKRACKEN = true ]
 then
-  echo -e "Install git\n"
+  echo -e "Install git"
 else
-  echo -e "Uninstall git\n"
+  echo -e "Uninstall git"
 fi
 
 if [ $POWERSHELL = true ]
 then
-  echo -e "Install powershell\n"
+  echo -e "Install powershell"
 else
-  echo -e "Uninstall powershell\n"
+  echo -e "Uninstall powershell"
 fi
 
 if [ $NOTEPADPLUSPLUS = true ]
 then
-  echo -e "Install notepad\n"
+  echo -e "Install notepad"
 else
-  echo -e "Uninstall notepad\n"
+  echo -e "Uninstall notepad"
 fi
 
 if [ $CLION = true ]
 then
-  echo -e "Install clion\n"
+  echo -e "Install clion"
 else
-  echo -e "Uninstall clion\n"
+  echo -e "Uninstall clion"
 fi
 
 if [ $PYCHARM = true ]
 then
-  echo -e "Install pycharm\n"
+  echo -e "Install pycharm"
 else
-  echo -e "Uninstall pycharm\n"
+  echo -e "Uninstall pycharm"
 fi
 
 if [ $SLACK = true ]
 then
-  echo -e "Install slack\n"
+  echo -e "Install slack"
 else
-  echo -e "Uninstall slack\n"
+  echo -e "Uninstall slack"
 fi
 
 if [ $DISCORD = true ]
 then
-  echo -e "Install discord\n"
+  echo -e "Install discord"
 else
-  echo -e "Uninstall discord\n"
+  echo -e "Uninstall discord"
 fi
 
 if [ $SKYPE = true ]
 then
-  echo -e "Install skype\n"
+  echo -e "Install skype"
 else
-  echo -e "Uninstall skype\n"
+  echo -e "Uninstall skype"
 fi
 
 if [ $SPOTIFY = true ]
 then
-  echo -e "Install spotify\n"
+  echo -e "Install spotify"
 else
-  echo -e "Uninstall spotify\n"
+  echo -e "Uninstall spotify"
 fi
 
 if [ $WORKDEPENDENCIES = true ]
 then
-  echo -e "Install work dependencies\n"
+  echo -e "Install work dependencies"
 else
-  echo -e "Uninstall work dependencies\n"
+  echo -e "Uninstall work dependencies"
 fi
 
 while true
@@ -416,7 +418,7 @@ do
   snap $i
 done
 
-echo -e "\n\nDone!\n"
+echo -e "\nDone!\n"
 
 echo -e "\n\nInstalling default packages...\n"
 
@@ -426,7 +428,7 @@ do
   apt install -y $i
 done
 
-echo -e "\n\nDone!\n"
+echo -e "\nDone!\n"
 
 if [ $PYTHON = true ]
 then
@@ -438,7 +440,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling python...\n"
   
@@ -448,7 +450,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $PYTHONTHREE = true ]
@@ -461,7 +463,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling python3...\n"
   
@@ -471,7 +473,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $TOOLS = true ]
@@ -484,7 +486,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling tools...\n"
   
@@ -494,7 +496,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $ITHREE = true ]
@@ -507,7 +509,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling i3...\n"
   
@@ -517,7 +519,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $KDE = true ]
@@ -530,7 +532,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling kde...\n"
   
@@ -540,7 +542,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $EMULATION = true ]
@@ -553,7 +555,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling emulation...\n"
   
@@ -563,7 +565,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $NETWORKING = true ]
@@ -576,7 +578,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling networking...\n"
   
@@ -586,7 +588,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $PYPY = true ]
@@ -599,7 +601,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling pypy...\n"
   
@@ -609,7 +611,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $SOURCECONTROL = true ]
@@ -622,7 +624,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling source control...\n"
   
@@ -632,7 +634,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $CMAKE = true ]
@@ -645,7 +647,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling cmake...\n"
   
@@ -655,7 +657,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $IDE = true ]
@@ -668,7 +670,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling ide...\n"
   
@@ -678,7 +680,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $WTHREEM = true ]
@@ -691,7 +693,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling w3m...\n"
   
@@ -701,7 +703,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $FIREFOX = true ]
@@ -714,7 +716,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling firefox...\n"
   
@@ -724,7 +726,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $TOR = true ]
@@ -737,7 +739,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling tor...\n"
   
@@ -747,7 +749,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $CHROMIUM = true ]
@@ -760,7 +762,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling chromium...\n"
   
@@ -770,7 +772,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $PDF = true ]
@@ -783,7 +785,7 @@ then
     apt install -y $i
   done
   
-  echo -e "Done!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling pdf viewer...\n"
   
@@ -793,7 +795,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $LIBREOFFICE = true ]
@@ -806,7 +808,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling libreoffice...\n"
   
@@ -816,7 +818,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $VLC = true ]
@@ -829,7 +831,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling vlc...\n"
   
@@ -839,7 +841,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $MEDIA = true ]
@@ -852,7 +854,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling media...\n"
   
@@ -862,7 +864,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $STEAM = true ]
@@ -875,7 +877,7 @@ then
     apt install -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling steam...\n"
   
@@ -885,7 +887,7 @@ else
     apt purge -y $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 echo -e "\n\nUpdating...\n"
@@ -900,7 +902,7 @@ do
   snap $i
 done
 
-echo -e "\n\nDone!\n"
+echo -e "\nDone!\n"
 
 if [ $SNAP = true ]
 then
@@ -913,7 +915,7 @@ then
     snap refresh $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling snap...\n"
   
@@ -923,7 +925,7 @@ else
     snap remove $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $PYPYTHREE = true ]
@@ -937,7 +939,7 @@ then
     snap refresh $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling pypy3...\n"
   
@@ -947,7 +949,7 @@ else
     snap remove $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $GITKRACKEN = true ]
@@ -961,7 +963,7 @@ then
     snap refresh $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling git...\n"
   
@@ -971,7 +973,7 @@ else
     snap remove $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $POWERSHELL = true ]
@@ -985,7 +987,7 @@ then
     snap refresh $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling powershell...\n"
   
@@ -995,7 +997,7 @@ else
     snap remove $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $NOTEPADPLUSPLUS = true ]
@@ -1009,7 +1011,7 @@ then
     snap refresh $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling notepad...\n"
   
@@ -1019,7 +1021,7 @@ else
     snap remove $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $CLION = true ]
@@ -1033,7 +1035,7 @@ then
     snap refresh $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling clion...\n"
   
@@ -1043,7 +1045,7 @@ else
     snap remove $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $PYCHARM = true ]
@@ -1057,7 +1059,7 @@ then
     snap refresh $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling pycharm...\n"
   
@@ -1067,7 +1069,7 @@ else
     snap remove $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $SLACK = true ]
@@ -1081,7 +1083,7 @@ then
     snap refresh $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling slack...\n"
   
@@ -1091,7 +1093,7 @@ else
     snap remove $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $DISCORD = true ]
@@ -1105,7 +1107,7 @@ then
     snap refresh $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling discord...\n"
   
@@ -1115,7 +1117,7 @@ else
     snap remove $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $SKYPE = true ]
@@ -1129,7 +1131,7 @@ then
     snap refresh $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling skype...\n"
   
@@ -1139,7 +1141,7 @@ else
     snap remove $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 if [ $SPOTIFY = true ]
@@ -1153,7 +1155,7 @@ then
     snap refresh $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling spotify...\n"
   
@@ -1163,7 +1165,7 @@ else
     snap remove $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 echo -e "\n\nUpdating...\n"
@@ -1178,7 +1180,7 @@ do
   snap $i
 done
 
-echo -e "\n\nDone!\n"
+echo -e "\nDone!\n"
 
 if [ $WORKDEPENDENCIES = true ]
 then
@@ -1241,7 +1243,7 @@ then
     snap $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstall work dependencies...\n"
   
@@ -1302,7 +1304,7 @@ else
     snap $i
   done
   
-  echo -e "\n\nDone!\n"
+  echo -e "\nDone!\n"
 fi
 
 echo -e "\n\nUpdating...\n"
@@ -1317,6 +1319,6 @@ do
   snap $i
 done
 
-echo -e "\n\nDone!\n"
+echo -e "\nDone!\n"
 
 exit 0
