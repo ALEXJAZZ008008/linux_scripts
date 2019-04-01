@@ -397,12 +397,13 @@ fi
 
 while true
 do
-    read -p "\nDo you wish to continue? [y/n] " yn
+    echo -e ""
+    read -p "Do you wish to continue? [y/n] " yn
     
     case $yn in
         [Yy]* ) break;;
         [Nn]* ) exit 1;;
-        * ) echo "Please answer yes or no.";;
+        * ) echo -e "Please answer yes or no.";;
     esac
 done 
 
