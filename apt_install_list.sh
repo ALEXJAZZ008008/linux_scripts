@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# == 1 -a ]
+if [ $# == 1 ]
 then
   echo -e "Arguments detected"
   
@@ -10,7 +10,7 @@ then
 
     exit 0
   else
-    if [ $# == 1 -a [ $1 == "-p" -o $1 == "--purge" ] ]
+    if [ $1 == "-p" -o $1 == "--purge" ]
     then
       echo -e "Argument: -p or --purge, uninstalling all packages...\n"
 
@@ -49,7 +49,7 @@ then
 
       WORKDEPENDENCIES=false
     else
-      if [ $# == 1 -a [ $1 == "-a" -o $1 == "--all" ] ]
+      if [ $1 == "-a" -o $1 == "--all" ]
       then
         echo -e "Argument: -a or --all, installing all packages...\n"
 
@@ -325,7 +325,7 @@ else
   echo -e "Uninstall pypy3"
 fi
 
-if [ $GITKRACKEN = true ]
+if [ $GIT = true ]
 then
   echo -e "Install git"
 else
@@ -953,7 +953,7 @@ else
   echo -e "\nDone!\n"
 fi
 
-if [ $GITKRACKEN = true ]
+if [ $GIT = true ]
 then
   echo -e "\n\nInstalling git...\n"
   
