@@ -1,37 +1,157 @@
 #!/bin/bash
 
-if [ $# == 1 -a [ $1 == "-h" -o $1 == "--help" ] ]
+if [ $# == 1 -a ]
 then
-  echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\npython\npython_3\ntools\ncloc\ni3\nkde_desktop_enviroment\nemulation\nnetworking\npypy\ngit\ncmake_gui\nide\nw3m\nfirefox\ntor\nchromium\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam_linux\n\nsnap\npypy3\npowershell\nnotepad\nclion\npycharm\nslack\nskype\ndiscord\nspotify\n\nwork\n\n"
-
-  exit 0
-else
-  if [ $# == 1 -a [ $1 == "-p" -o $1 == "--purge" ] ]
+  if [ $1 == "-h" -o $1 == "--help" ]
   then
-    echo -e "Argument: -p or --purge, uninstalling all packages...\n\n"
+    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\npython\npython_3\ntools\ncloc\ni3\nkde_desktop_enviroment\nemulation\nnetworking\npypy\ngit\ncmake_gui\nide\nw3m\nfirefox\ntor\nchromium\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam_linux\n\nsnap\npypy3\npowershell\nnotepad\nclion\npycharm\nslack\nskype\ndiscord\nspotify\n\nwork\n\n"
+
+    exit 0
+  else
+    if [ $# == 1 -a [ $1 == "-p" -o $1 == "--purge" ] ]
+    then
+      echo -e "Argument: -p or --purge, uninstalling all packages...\n\n"
+
+      PYTHON=false
+      PYTHONTHREE=false
+      TOOLS=false
+      ITHREE=false
+      KDE=false
+      EMULATION=false
+      NETWORKING=false
+      PYPY=false
+      SOURCECONTROL=false
+      CMAKE=false
+      IDE=false
+      WTHREEM=false
+      FIREFOX=false
+      TOR=false
+      CHROMIUM=false
+      PDF=false
+      LIBREOFFICE=false
+      VLC=false
+      MEDIA=false
+      STEAM=false
+
+      SNAP=false
+      PYPYTHREE=false
+      GIT=false
+      POWERSHELL=false
+      NOTEPADPLUSPLUS=false
+      CLION=false
+      PYCHARM=false
+      SLACK=false
+      DISCORD=false
+      SKYPE=false
+      SPOTIFY=false
+
+      WORKDEPENDENCIES=false
+    else
+      if [ $# == 1 -a [ $1 == "-a" -o $1 == "--all" ] ]
+      then
+        echo -e "Argument: -a or --all, installing all packages...\n\n"
+
+        PYTHON=true
+        PYTHONTHREE=true
+        TOOLS=true
+        ITHREE=true
+        KDE=true
+        EMULATION=true
+        NETWORKING=true
+        PYPY=true
+        SOURCECONTROL=true
+        CMAKE=true
+        IDE=true
+        WTHREEM=true
+        FIREFOX=true
+        TOR=true
+        CHROMIUM=true
+        PDF=true
+        LIBREOFFICE=true
+        VLC=true
+        MEDIA=true
+        STEAM=true
+
+        SNAP=true
+        PYPYTHREE=true
+        GIT=true
+        POWERSHELL=true
+        NOTEPADPLUSPLUS=true
+        CLION=true
+        PYCHARM=true
+        SLACK=true
+        DISCORD=true
+        SKYPE=true
+        SPOTIFY=true
+
+        WORKDEPENDENCIES=true
+      fi
+    fi
+  fi
+else
+  if [ $# == 32 ]
+  then
+    echo -e "Argument: user defined, installing selected packages...\n\n"
     
-    PYTHON=false
-    PYTHONTHREE=false
+    PYTHON=$1
+    PYTHONTHREE=$2
+    TOOLS=$3
+    ITHREE=$4
+    KDE=$5
+    EMULATION=$6
+    NETWORKING=$7
+    PYPY=$8
+    SOURCECONTROL=$9
+    CMAKE=$10
+    IDE=$11
+    WTHREEM=$12
+    FIREFOX=$13
+    TOR=$14
+    CHROMIUM=$15
+    PDF=$16
+    LIBREOFFICE=$17
+    VLC=$18
+    MEDIA=$19
+    STEAM=$20
+    
+    SNAP=$21
+    PYPYTHREE=$22
+    GIT=$23
+    POWERSHELL=$24
+    NOTEPADPLUSPLUS=$25
+    CLION=$26
+    PYCHARM=$27
+    SLACK=$28
+    DISCORD=$29
+    SKYPE=$30
+    SPOTIFY=$31
+    
+    WORKDEPENDENCIES=$33
+  else
+    echo -e "Argument: no argument, installing default packages...\n\n"
+    
+    PYTHON=true
+    PYTHONTHREE=true
     TOOLS=false
     ITHREE=false
-    KDE=false
+    KDE=true
     EMULATION=false
-    NETWORKING=false
+    NETWORKING=true
     PYPY=false
     SOURCECONTROL=false
     CMAKE=false
     IDE=false
     WTHREEM=false
-    FIREFOX=false
+    FIREFOX=true
     TOR=false
-    CHROMIUM=false
+    CHROMIUM=true
     PDF=false
-    LIBREOFFICE=false
-    VLC=false
+    LIBREOFFICE=true
+    VLC=true
     MEDIA=false
-    STEAM=false
-
-    SNAP=false
+    STEAM=true
+    
+    SNAP=true
     PYPYTHREE=false
     GIT=false
     POWERSHELL=false
@@ -39,132 +159,252 @@ else
     CLION=false
     PYCHARM=false
     SLACK=false
-    DISCORD=false
-    SKYPE=false
-    SPOTIFY=false
-
-    work=false
-  else
-    if [ $# == 1 -a [ $1 == "-a" -o $1 == "--all" ] ]
-    then
-      echo -e "Argument: -a or --all, installing all packages...\n\n"
-      
-      PYTHON=true
-      PYTHONTHREE=true
-      TOOLS=true
-      ITHREE=true
-      KDE=true
-      EMULATION=true
-      NETWORKING=true
-      PYPY=true
-      SOURCECONTROL=true
-      CMAKE=true
-      IDE=true
-      WTHREEM=true
-      FIREFOX=true
-      TOR=true
-      CHROMIUM=true
-      PDF=true
-      LIBREOFFICE=true
-      VLC=true
-      MEDIA=true
-      STEAM=true
-
-      SNAP=true
-      PYPYTHREE=true
-      GIT=true
-      POWERSHELL=true
-      NOTEPADPLUSPLUS=true
-      CLION=true
-      PYCHARM=true
-      SLACK=true
-      DISCORD=true
-      SKYPE=true
-      SPOTIFY=true
-
-      work=true
-    else
-      if [ $# -ne 32 ]
-      then
-        echo -e "Argument: no argument, installing default packages...\n\n"
-        
-        PYTHON=true
-        PYTHONTHREE=true
-        TOOLS=false
-        ITHREE=false
-        KDE=true
-        EMULATION=false
-        NETWORKING=true
-        PYPY=false
-        SOURCECONTROL=false
-        CMAKE=false
-        IDE=false
-        WTHREEM=false
-        FIREFOX=true
-        TOR=false
-        CHROMIUM=true
-        PDF=false
-        LIBREOFFICE=true
-        VLC=true
-        MEDIA=false
-        STEAM=true
-
-        SNAP=true
-        PYPYTHREE=false
-        GIT=false
-        POWERSHELL=false
-        NOTEPADPLUSPLUS=false
-        CLION=false
-        PYCHARM=false
-        SLACK=false
-        DISCORD=true
-        SKYPE=true
-        SPOTIFY=true
-
-        work=false
-      else
-        echo -e "Argument: user defined, installing selected packages...\n\n"
-        
-        PYTHON=$1
-        PYTHONTHREE=$2
-        TOOLS=$3
-        ITHREE=$4
-        KDE=$5
-        EMULATION=$6
-        NETWORKING=$7
-        PYPY=$8
-        SOURCECONTROL=$9
-        CMAKE=$10
-        IDE=$11
-        WTHREEM=$12
-        FIREFOX=$13
-        TOR=$14
-        CHROMIUM=$15
-        PDF=$16
-        LIBREOFFICE=$17
-        VLC=$18
-        MEDIA=$19
-        STEAM=$20
-
-        SNAP=$21
-        PYPYTHREE=$22
-        GIT=$23
-        POWERSHELL=$24
-        NOTEPADPLUSPLUS=$25
-        CLION=$26
-        PYCHARM=$27
-        SLACK=$28
-        DISCORD=$29
-        SKYPE=$30
-        SPOTIFY=$31
-
-        work=$33
-      fi
-    fi
+    DISCORD=true
+    SKYPE=true
+    SPOTIFY=true
+    
+    WORKDEPENDENCIES=false
   fi
 fi
 
-echo -e "\n\nUpdating...\n"
+echo -e "Changes to be made:\n"
+
+if [ $PYTHON = true ]
+then
+  echo -e "Install python\n"
+else
+  echo -e "Uninstall python\n"
+fi
+
+if [ $PYTHONTHREE = true ]
+then
+  echo -e "Install python3\n"
+else
+  echo -e "Uninstall python3\n"
+fi
+
+if [ $TOOLS = true ]
+then
+  echo -e "Install tools\n"
+else
+  echo -e "Uninstall tools\n"
+fi
+
+if [ $ITHREE = true ]
+then
+  echo -e "Install i3\n"
+else
+  echo -e "Uninstall i3\n"
+fi
+
+if [ $KDE = true ]
+then
+  echo -e "Install kde\n"
+else
+  echo -e "Uninstall kde\n"
+fi
+
+if [ $EMULATION = true ]
+then
+  echo -e "Install emulation\n"
+else
+  echo -e "Uninstalling emulation\n"
+fi
+
+if [ $NETWORKING = true ]
+then
+  echo -e "Install networking\n"
+else
+  echo -e "Uninstall networking\n"
+fi
+
+if [ $PYPY = true ]
+then
+  echo -e "Install pypy\n"
+else
+  echo -e "Uninstall pypy\n"
+fi
+
+if [ $SOURCECONTROL = true ]
+then
+  echo -e "Install source control\n"
+else
+  echo -e "Uninstall source control\n"
+fi
+
+if [ $CMAKE = true ]
+then
+  echo -e "Install cmake\n"
+else
+  echo -e "Uninstall cmake\n"
+fi
+
+if [ $IDE = true ]
+then
+  echo -e "Install ide\n"
+else
+  echo -e "Uninstall ide\n"
+fi
+
+if [ $WTHREEM = true ]
+then
+  echo -e "Install w3m\n"
+else
+  echo -e "Uninstall w3m\n"
+fi
+
+if [ $FIREFOX = true ]
+then
+  echo -e "Install firefox\n"
+else
+  echo -e "Uninstall firefox\n"
+fi
+
+if [ $TOR = true ]
+then
+  echo -e "Install tor\n"
+else
+  echo -e "Uninstall tor\n"
+fi
+
+if [ $CHROMIUM = true ]
+then
+  echo -e "Install chromium\n"
+else
+  echo -e "Uninstall chromium\n"
+fi
+
+if [ $PDF = true ]
+then
+  echo -e "Install pdf viewer\n"
+else
+  echo -e "Uninstall pdf viewer\n"
+fi
+
+if [ $LIBREOFFICE = true ]
+then
+  echo -e "Install libreoffice\n"
+else
+  echo -e "Uninstall libreoffice\n"
+fi
+
+if [ $VLC = true ]
+then
+  echo -e "Install vlc\n"
+else
+  echo -e "Uninstall vlc\n"
+fi
+
+if [ $MEDIA = true ]
+then
+  echo -e "Install media\n"
+else
+  echo -e "Uninstall media\n"
+fi
+
+if [ $STEAM = true ]
+then
+  echo -e "Install steam\n"
+else
+  echo -e "Uninstall steam\n"
+fi
+
+if [ $SNAP = true ]
+then
+  echo -e "Install snap\n"
+else
+  echo -e "Uninstall snap\n"
+fi
+
+if [ $PYPYTHREE = true ]
+then
+  echo -e "Install pypy3\n"
+else
+  echo -e "Uninstall pypy3\n"
+fi
+
+if [ $GITKRACKEN = true ]
+then
+  echo -e "Install git\n"
+else
+  echo -e "Uninstall git\n"
+fi
+
+if [ $POWERSHELL = true ]
+then
+  echo -e "Install powershell\n"
+else
+  echo -e "Uninstall powershell\n"
+fi
+
+if [ $NOTEPADPLUSPLUS = true ]
+then
+  echo -e "Install notepad\n"
+else
+  echo -e "Uninstall notepad\n"
+fi
+
+if [ $CLION = true ]
+then
+  echo -e "Install clion\n"
+else
+  echo -e "Uninstall clion\n"
+fi
+
+if [ $PYCHARM = true ]
+then
+  echo -e "Install pycharm\n"
+else
+  echo -e "Uninstall pycharm\n"
+fi
+
+if [ $SLACK = true ]
+then
+  echo -e "Install slack\n"
+else
+  echo -e "Uninstall slack\n"
+fi
+
+if [ $DISCORD = true ]
+then
+  echo -e "Install discord\n"
+else
+  echo -e "Uninstall discord\n"
+fi
+
+if [ $SKYPE = true ]
+then
+  echo -e "Install skype\n"
+else
+  echo -e "Uninstall skype\n"
+fi
+
+if [ $SPOTIFY = true ]
+then
+  echo -e "Install spotify\n"
+else
+  echo -e "Uninstall spotify\n"
+fi
+
+if [ $WORKDEPENDENCIES = true ]
+then
+  echo -e "Install work dependencies\n"
+else
+  echo -e "Uninstall work dependencies\n"
+fi
+
+while true
+do
+    read -p "\nDo you wish to continue? [y/n] " yn
+    
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit 1;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done 
+
+echo -e "\n\n\nUpdating...\n"
 
 for i in update upgrade full-upgrade autoremove clean
 do
