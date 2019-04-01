@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo -e "\n\nInstalling work dependencies...\n"
+  
+#Install work dependencies
 for i in update upgrade full-upgrade autoremove clean
 do
   apt $i -y
@@ -10,7 +13,7 @@ do
   snap $i
 done
 
-#medical imaging viewer compatible with hv for stir
+#medical imaging viewer compatible with hv for stir and nii for nifty*
 for i in amide
 do
   apt install -y $i
@@ -28,20 +31,20 @@ do
   apt install -y $i
 done
 
-#video codec
+#video codec for jrmomo
 for i in ffmpeg
 do
   apt install -y $i
 done
 
-#qt for nifty
+#qt for nifty*
 for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev libqt5xmlpatterns5 libqt5xmlpatterns5-dev qttools5-dev
 do
   apt install -y $i
 done
 
-#for python scripts in jrmomo
-for i in python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+#python for jrmomo
+for i in python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib ipython python-pandas python-sympy python-nose
 do
   apt install -y $i
 done
@@ -55,5 +58,7 @@ for i in refresh
 do
   snap $i
 done
+  
+echo -e "\n\nDone!\n"
 
 exit 0
