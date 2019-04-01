@@ -958,7 +958,7 @@ then
   echo -e "\n\nInstalling git...\n"
   
   #Install git
-  for i in "gitkracken --edge --classic"
+  for i in "gitkraken --edge --classic"
   do
     snap install $i
     snap refresh $i
@@ -969,7 +969,7 @@ else
   echo -e "\n\nUninstalling git...\n"
   
   #Remove git
-  for i in "gitkracken --edge --classic"
+  for i in "gitkraken --edge --classic"
   do
     snap remove $i
   done
@@ -1187,6 +1187,8 @@ if [ $WORKDEPENDENCIES = true ]
 then
   echo -e "\n\nInstalling work dependencies...\n"
   
+  echo -e "\n\nUpdating...\n"
+  
   #Install work dependencies
   for i in update upgrade full-upgrade autoremove clean
   do
@@ -1197,42 +1199,70 @@ then
   do
     snap $i
   done
+  
+  echo -e "\nDone!\n"
 
-  #medical imaging viewer compatible with hv for stir and nii for nifty*
+  echo -e "\n\nInstalling amide...\n"
+  
+  #Install medical imaging viewer compatible with hv for stir and nii for nifty*
   for i in amide
   do
     apt install -y $i
   done
 
-  #dependencies for stir
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nInstalling stir dependencies...\n"
+
+  #Install dependencies for stir
   for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
   do
     apt install -y $i
   done
 
-  #documentation generator
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nInstalling doxygen...\n"
+
+  #Install documentation generator
   for i in doxygen graphviz
   do
     apt install -y $i
   done
 
-  #video codec for jrmomo
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nInstalling ffmpeg...\n"
+
+  #Install video codec for jrmomo
   for i in ffmpeg
   do
     apt install -y $i
   done
 
-  #qt for nifty*
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nInstalling qt...\n"
+
+  #Install qt for nifty*
   for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev libqt5xmlpatterns5 libqt5xmlpatterns5-dev qttools5-dev
   do
     apt install -y $i
   done
 
-  #python for jrmomo
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nInstalling python...\n"
+
+  #Install python for jrmomo
   for i in python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib ipython python-pandas python-sympy python-nose
   do
     apt install -y $i
   done
+
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nUpdating...\n"
 
   for i in update upgrade full-upgrade autoremove clean
   do
@@ -1245,10 +1275,14 @@ then
   done
   
   echo -e "\nDone!\n"
-else
-  echo -e "\n\nUninstall work dependencies...\n"
   
-  #Uninstall work dependencies
+  echo -e "\nDone!\n"
+else
+  echo -e "\n\nUninstalling work dependencies...\n"
+  
+  echo -e "\n\nUpdating...\n"
+  
+  #Install work dependencies
   for i in update upgrade full-upgrade autoremove clean
   do
     apt $i -y
@@ -1258,42 +1292,70 @@ else
   do
     snap $i
   done
+  
+  echo -e "\nDone!\n"
 
-  #medical imaging viewer compatible with hv for stir and nii for nifty*
+  echo -e "\n\nUninstalling amide...\n"
+  
+  #Uninstall medical imaging viewer compatible with hv for stir and nii for nifty*
   for i in amide
   do
     apt purge -y $i
   done
 
-  #dependencies for stir
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nUninstalling stir dependencies...\n"
+
+  #Uninstall dependencies for stir
   for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
   do
     apt purge -y $i
   done
 
-  #documentation generator
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nUninstalling doxygen...\n"
+
+  #Uninstall documentation generator
   for i in doxygen graphviz
   do
     apt purge -y $i
   done
 
-  #video codec for jrmomo
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nUninstalling ffmpeg...\n"
+
+  #Uninstall video codec for jrmomo
   for i in ffmpeg
   do
     apt purge -y $i
   done
 
-  #qt for nifty*
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nUninstalling qt...\n"
+
+  #Unnstall qt for nifty*
   for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev libqt5xmlpatterns5 libqt5xmlpatterns5-dev qttools5-dev
   do
     apt purge -y $i
   done
 
-  #python for jrmomo
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nUninstalling python...\n"
+
+  #Uninstall python for jrmomo
   for i in python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib ipython python-pandas python-sympy python-nose
   do
     apt purge -y $i
   done
+
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nUpdating...\n"
 
   for i in update upgrade full-upgrade autoremove clean
   do
@@ -1304,6 +1366,8 @@ else
   do
     snap $i
   done
+  
+  echo -e "\nDone!\n"
   
   echo -e "\nDone!\n"
 fi
