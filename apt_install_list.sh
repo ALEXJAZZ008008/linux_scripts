@@ -311,6 +311,8 @@ else
   echo -e "Uninstall steam"
 fi
 
+echo -e ""
+
 if [ $SNAP = true ]
 then
   echo -e "Install snap"
@@ -387,6 +389,8 @@ then
 else
   echo -e "Uninstall spotify"
 fi
+
+echo -e ""
 
 if [ $WORKDEPENDENCIES = true ]
 then
