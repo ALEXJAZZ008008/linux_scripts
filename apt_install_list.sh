@@ -1,158 +1,162 @@
 #!/bin/bash
 
-if [ $# == 1 -a $1 == "-h" -o $1 == "--help" ]
+if [ $# == 1 -a [ $1 == "-h" -o $1 == "--help" ] ]
 then
-  echo -e "Options:\n\nNo arguments to install default packages\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\npython\npython_3\ntools\ncloc\ni3\nkde_desktop_enviroment\nemulation\nnetworking\npypy\ngit\ncmake_gui\nide\nw3m\nfirefox\ntor\nchromium\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam_linux\n\nsnap\npypy3\npowershell\nnotepad\nclion\npycharm\nslack\nskype\ndiscord\nspotify\n\nwork"
+  echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\npython\npython_3\ntools\ncloc\ni3\nkde_desktop_enviroment\nemulation\nnetworking\npypy\ngit\ncmake_gui\nide\nw3m\nfirefox\ntor\nchromium\npdf_viewer\nlibre_office\nvlc\nmedia_editors\nsteam_linux\n\nsnap\npypy3\npowershell\nnotepad\nclion\npycharm\nslack\nskype\ndiscord\nspotify\n\nwork\n\n"
 
   exit 0
 else
-  if [ $# == 1 -p $1 == "-a" -o $1 == "--purge" ]
+  if [ $# == 1 -a [ $1 == "-p" -o $1 == "--purge" ] ]
   then
-    python=false
-    python_3=false
-    tools=false
-    cloc=false
-    i3=false
-    kde_desktop_enviroment=false
-    emulation=false
-    networking=false
-    pypy=false
-    git=false
-    cmake_gui=false
-    ide=false
-    w3m=false
-    firefox=false
-    tor=false
-    chromium=false
-    pdf_viewer=false
-    libre_office=false
-    vlc=false
-    media_editors=false
-    steam=false
+    echo -e "Argument: -p or --purge, uninstalling all packages...\n\n"
+    
+    PYTHON=false
+    PYTHONTHREE=false
+    TOOLS=false
+    ITHREE=false
+    KDE=false
+    EMULATION=false
+    NETWORKING=false
+    PYPY=false
+    SOURCECONTROL=false
+    CMAKE=false
+    IDE=false
+    WTHREEM=false
+    FIREFOX=false
+    TOR=false
+    CHROMIUM=false
+    PDF=false
+    LIBREOFFICE=false
+    VLC=false
+    MEDIA=false
+    STEAM=false
 
-    snap=false
-    pypy3=false
-    gitkracken=false
-    powershell=false
-    notepad=false
-    clion=false
-    pycharm=false
-    slack=false
-    skype=false
-    discord=false
-    spotify=false
+    SNAP=false
+    PYPYTHREE=false
+    GIT=false
+    POWERSHELL=false
+    NOTEPADPLUSPLUS=false
+    CLION=false
+    PYCHARM=false
+    SLACK=false
+    DISCORD=false
+    SKYPE=false
+    SPOTIFY=false
 
     work=false
   else
-    if [ $# == 1 -a $1 == "-a" -o $1 == "--all" ]
+    if [ $# == 1 -a [ $1 == "-a" -o $1 == "--all" ] ]
     then
-      python=true
-      python_3=true
-      tools=true
-      cloc=true
-      i3=true
-      kde_desktop_enviroment=true
-      emulation=true
-      networking=true
-      pypy=true
-      git=true
-      cmake_gui=true
-      ide=true
-      w3m=true
-      firefox=true
-      tor=true
-      chromium=true
-      pdf_viewer=true
-      libre_office=true
-      vlc=true
-      media_editors=true
-      steam=true
+      echo -e "Argument: -a or --all, installing all packages...\n\n"
+      
+      PYTHON=true
+      PYTHONTHREE=true
+      TOOLS=true
+      ITHREE=true
+      KDE=true
+      EMULATION=true
+      NETWORKING=true
+      PYPY=true
+      SOURCECONTROL=true
+      CMAKE=true
+      IDE=true
+      WTHREEM=true
+      FIREFOX=true
+      TOR=true
+      CHROMIUM=true
+      PDF=true
+      LIBREOFFICE=true
+      VLC=true
+      MEDIA=true
+      STEAM=true
 
-      snap=true
-      pypy3=true
-      gitkracken=true
-      powershell=true
-      notepad=true
-      clion=true
-      pycharm=true
-      slack=true
-      skype=true
-      discord=true
-      spotify=true
+      SNAP=true
+      PYPYTHREE=true
+      GIT=true
+      POWERSHELL=true
+      NOTEPADPLUSPLUS=true
+      CLION=true
+      PYCHARM=true
+      SLACK=true
+      DISCORD=true
+      SKYPE=true
+      SPOTIFY=true
 
       work=true
     else
       if [ $# -ne 32 ]
       then
-        python=true
-        python_3=true
-        tools=true
-        cloc=false
-        i3=true
-        kde_desktop_enviroment=true
-        emulation=true
-        networking=true
-        pypy=false
-        git=false
-        cmake_gui=false
-        ide=false
-        w3m=true
-        firefox=false
-        tor=false
-        chromium=true
-        pdf_viewer=true
-        libre_office=true
-        vlc=true
-        media_editors=true
-        steam=true
+        echo -e "Argument: no argument, installing default packages...\n\n"
+        
+        PYTHON=true
+        PYTHONTHREE=true
+        TOOLS=false
+        ITHREE=false
+        KDE=true
+        EMULATION=false
+        NETWORKING=true
+        PYPY=false
+        SOURCECONTROL=false
+        CMAKE=false
+        IDE=false
+        WTHREEM=false
+        FIREFOX=true
+        TOR=false
+        CHROMIUM=true
+        PDF=false
+        LIBREOFFICE=true
+        VLC=true
+        MEDIA=false
+        STEAM=true
 
-        snap=true
-        pypy3=false
-        gitkracken=false
-        powershell=false
-        notepad=true
-        clion=false
-        pycharm=false
-        slack=true
-        skype=true
-        discord=true
-        spotify=true
+        SNAP=true
+        PYPYTHREE=false
+        GIT=false
+        POWERSHELL=false
+        NOTEPADPLUSPLUS=false
+        CLION=false
+        PYCHARM=false
+        SLACK=false
+        DISCORD=true
+        SKYPE=true
+        SPOTIFY=true
 
         work=false
       else
-        python=$1
-        python_3=$2
-        tools=$3
-        cloc=$4
-        i3=$5
-        kde_desktop_enviroment=$6
-        emulation=$7
-        networking=$8
-        pypy=$9
-        git=$10
-        cmake_gui=$11
-        ide=$12
-        w3m=$13
-        firefox=$14
-        tor=$15
-        chromium=$16
-        pdf_viewer=$17
-        libre_office=$18
-        vlc=$19
-        media_editors=$20
-        steam=$21
+        echo -e "Argument: user defined, installing selected packages...\n\n"
+        
+        PYTHON=$1
+        PYTHONTHREE=$2
+        TOOLS=$3
+        ITHREE=$4
+        KDE=$5
+        EMULATION=$6
+        NETWORKING=$7
+        PYPY=$8
+        SOURCECONTROL=$9
+        CMAKE=$10
+        IDE=$11
+        WTHREEM=$12
+        FIREFOX=$13
+        TOR=$14
+        CHROMIUM=$15
+        PDF=$16
+        LIBREOFFICE=$17
+        VLC=$18
+        MEDIA=$19
+        STEAM=$20
 
-        snap=$22
-        pypy3=$23
-        gitkracken=$24
-        powershell=$25
-        notepad=$26
-        clion=$27
-        pycharm=$28
-        slack=$29
-        skype=$30
-        discord=$31
-        spotify=$32
+        SNAP=$21
+        PYPYTHREE=$22
+        GIT=$23
+        POWERSHELL=$24
+        NOTEPADPLUSPLUS=$25
+        CLION=$26
+        PYCHARM=$27
+        SLACK=$28
+        DISCORD=$29
+        SKYPE=$30
+        SPOTIFY=$31
 
         work=$33
       fi
@@ -160,6 +164,8 @@ else
   fi
 fi
 
+echo -e "\n\nUpdating...\n"
+
 for i in update upgrade full-upgrade autoremove clean
 do
   apt $i -y
@@ -170,326 +176,479 @@ do
   snap $i
 done
 
-#Build
+echo -e "\n\nDone!\n"
+
+echo -e "\n\nInstalling default packages...\n"
+
+#Install default
 for i in linux-headers-generic sudo build-essential snapd
 do
   apt install -y $i
 done
 
-if [ $python = true ]
+echo -e "\n\nDone!\n"
+
+if [ $PYTHON = true ]
 then
-  #Install Python
+  echo -e "\n\nInstalling python...\n"
+  
+  #Install python
   for i in python python-dev python-pip python-virtualenv python-distutils-extra
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall Python
+  echo -e "\n\nUninstalling python...\n"
+  
+  #Uninstall python
   for i in python python-dev python-pip python-virtualenv python-distutils-extra
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $python_3 = true ]
+if [ $PYTHONTHREE = true ]
 then
-  #Install Python 3
+  echo -e "\n\nInstalling python3...\n"
+  
+  #Install python3
   for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall Python 3
+  echo -e "\n\nUninstalling python3...\n"
+  
+  #Uninstall python3
   for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $tools = true ]
+if [ $TOOLS = true ]
 then
+  echo -e "\n\nInstalling tools...\n"
+  
   #Install tools
-  for i in neofetch upower gparted
+  for i in neofetch upower gparted cloc
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
+  echo -e "\n\nUninstalling tools...\n"
+  
   #Uninstall tools
-  for i in neofetch upower gparted
+  for i in neofetch upower gparted cloc
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $cloc = true ]
+if [ $ITHREE = true ]
 then
-  #Install CLOC
-  for i in cloc
-  do
-    apt install -y $i
-  done
-else
-  #Uninstall CLOC
-  for i in cloc
-  do
-    apt purge -y $i
-  done
-fi
-
-if [ $i3 = true ]
-then
+  echo -e "\n\nInstalling i3...\n"
+  
   #Install i3
   for i in i3
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
+  echo -e "\n\nUninstalling i3...\n"
+  
   #Uninstall i3
   for i in i3
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $kde_desktop_enviroment = true ]
+if [ $KDE = true ]
 then
-  #Install KDE desktop enviroment
+  echo -e "\n\nInstalling kde...\n"
+  
+  #Install kde
   for i in sddm kde-full
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall KDE desktop enviroment
+  echo -e "\n\nUninstalling kde...\n"
+  
+  #Uninstall kde
   for i in sddm kde-full
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $emulation = true ]
+if [ $EMULATION = true ]
 then
+  echo -e "\n\nInstalling emulation...\n"
+  
   #Install emulation
   for i in virtualbox wine-development
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
+  echo -e "\n\nUninstalling emulation...\n"
+  
   #Uninstall emulation
   for i in virtualbox wine-development
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $networking = true ]
+if [ $NETWORKING = true ]
 then
-  #Install Networking
+  echo -e "\n\nInstalling networking...\n"
+  
+  #Install networking
   for i in network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall Networking
+  echo -e "\n\nUninstalling networking...\n"
+  
+  #Uninstall networking
   for i in network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $pypy = true ]
+if [ $PYPY = true ]
 then
-  #Install Pypy
+  echo -e "\n\nInstalling pypy...\n"
+  
+  #Install pypy
   for i in pypy
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall Pypy
+  echo -e "\n\nUninstalling pypy...\n"
+  
+  #Uninstall pypy
   for i in pypy
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $git = true ]
+if [ $SOURCECONTROL = true ]
 then
-  #Install git
+  echo -e "\n\nInstalling source control...\n"
+  
+  #Install source control
   for i in git subversion mercurial
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall git
+  echo -e "\n\nUninstalling source control...\n"
+  
+  #Uninstall source control
   for i in git subversion mercurial
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $cmake_gui = true ]
+if [ $CMAKE = true ]
 then
-  #Install CMake GUI
+  echo -e "\n\nInstalling cmake...\n"
+  
+  #Install cmake
   for i in cmake-gui cmake-qt-gui
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall CMake GUI
+  echo -e "\n\nUninstalling cmake...\n"
+  
+  #Uninstall cmake
   for i in cmake-gui cmake-qt-gui
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $ide = true ]
+if [ $IDE = true ]
 then
-  #Install IDE
+  echo -e "\n\nInstalling ide...\n"
+  
+  #Install ide
   for i in qtcreator codeblocks spyder octave
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall IDE
+  echo -e "\n\nUninstalling ide...\n"
+  
+  #Uninstall ide
   for i in qtcreator codeblocks spyder octave
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $w3m = true ]
+if [ $WTHREEM = true ]
 then
+  echo -e "\n\nInstalling w3m...\n"
+  
   #Install w3m
   for i in w3m
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
+  echo -e "\n\nUninstalling w3m...\n"
+  
   #Uninstall w3m
   for i in w3m
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $firefox = true ]
+if [ $FIREFOX = true ]
 then
-  #Install Firefox
+  echo -e "\n\nInstalling firefox...\n"
+  
+  #Install firefox
   for i in firefox
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall Firefox
+  echo -e "\n\nUninstalling firefox...\n"
+  
+  #Uninstall firefox
   for i in firefox
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $tor = true ]
+if [ $TOR = true ]
 then
-  #Install Tor
+  echo -e "\n\nInstalling tor...\n"
+  
+  #Install tor
   for i in tor torbrowser-launcher apt-transport-tor
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall Tor
+  echo -e "\n\nUninstalling tor...\n"
+  
+  #Uninstall tor
   for i in tor torbrowser-launcher apt-transport-tor
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $chromium = true ]
+if [ $CHROMIUM = true ]
 then
-  #Install Chromium
+  echo -e "\n\nInstalling chromium...\n"
+  
+  #Install chromium
   for i in chromium-browser
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall Chromium
+  echo -e "\n\nUninstalling chromium...\n"
+  
+  #Uninstall chromium
   for i in chromium-browser
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $pdf_viewer = true ]
+if [ $PDF = true ]
 then
-  #Install PDF viewer
+  echo -e "\n\nInstalling pdf viewer...\n"
+  
+  #Install pdf viewer
   for i in zathura zathura-pdf-poppler
   do
     apt install -y $i
   done
+  
+  echo -e "Done!\n"
 else
-  #Uninstall PDF viewer
+  echo -e "\n\nUninstalling pdf viewer...\n"
+  
+  #Uninstall pdf viewer
   for i in zathura zathura-pdf-poppler
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $libre_office = true ]
+if [ $LIBREOFFICE = true ]
 then
-  #Install LibreOffice
+  echo -e "\n\nInstalling libreoffice...\n"
+  
+  #Install libreoffice
   for i in libreoffice
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall LibreOffice
+  echo -e "\n\nUninstalling libreoffice...\n"
+  
+  #Uninstall libreoffice
   for i in libreoffice
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $vlc = true ]
+if [ $VLC = true ]
 then
-  #Install VLC
+  echo -e "\n\nInstalling vlc...\n"
+  
+  #Install vlc
   for i in vlc
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall VLC
+  echo -e "\n\nUninstalling vlc...\n"
+  
+  #Uninstall vlc
   for i in vlc
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $media_editors = true ]
+if [ $MEDIA = true ]
 then
-  #Install media editors
+  echo -e "\n\nInstalling media...\n"
+  
+  #Install media
   for i in gimp audacity blender
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall media editors
+  echo -e "\n\nUninstalling media...\n"
+  
+  #Uninstall media
   for i in gimp audacity blender
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $steam = true ]
+if [ $STEAM = true ]
 then
-  #Install Steam(Linux)
+  echo -e "\n\nInstalling steam...\n"
+  
+  #Install steam
   for i in steam-installer
   do
     apt install -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall Steam(Linux)
+  echo -e "\n\nUninstalling steam...\n"
+  
+  #Uninstall steam
   for i in steam-installer
   do
     apt purge -y $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
+
+echo -e "\n\nUpdating...\n"
 
 for i in update upgrade full-upgrade autoremove clean
 do
@@ -501,181 +660,273 @@ do
   snap $i
 done
 
-if [ $snap = true ]
+echo -e "\n\nDone!\n"
+
+if [ $SNAP = true ]
 then
-  #Install Snap Store
+  echo -e "\n\nInstalling snap...\n"
+  
+  #Install snap
   for i in "snap-store --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Remove Snap Store
+  echo -e "\n\nUninstalling snap...\n"
+  
+  #Remove snap
   for i in "snap-store --edge --classic"
   do
     snap remove $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $pypy3 = true ]
+if [ $PYPYTHREE = true ]
 then
+  echo -e "\n\nInstalling pypy3...\n"
+   
   #Install pypy3
   for i in "pypy3 --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
+  echo -e "\n\nUninstalling pypy3...\n"
+  
   #Remove pypy3
   for i in "pypy3 --edge --classic"
   do
     snap remove $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $gitkracken = true ]
+if [ $GITKRACKEN = true ]
 then
-  #Install gitkracken
+  echo -e "\n\nInstalling git...\n"
+  
+  #Install git
   for i in "gitkracken --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Remove gitkracken
+  echo -e "\n\nUninstalling git...\n"
+  
+  #Remove git
   for i in "gitkracken --edge --classic"
   do
     snap remove $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $powershell = true ]
+if [ $POWERSHELL = true ]
 then
-  #Install Powershell
+  echo -e "\n\nInstalling powershell...\n"
+  
+  #Install powershell
   for i in "powershell --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Remove Powershell
+  echo -e "\n\nUninstalling powershell...\n"
+  
+  #Remove powershell
   for i in "powershell --edge --classic"
   do
     snap remove $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $notepad = true ]
+if [ $NOTEPADPLUSPLUS = true ]
 then
-  #Install Notepad++
+  echo -e "\n\nInstalling notepad...\n"
+  
+  #Install notepad
   for i in "notepad-plus-plus --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Remove Notepad++
+  echo -e "\n\nUninstalling notepad...\n"
+  
+  #Remove notepad
   for i in "notepad-plus-plus --edge --classic"
   do
     snap remove $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $clion = true ]
+if [ $CLION = true ]
 then
-  #Install Clion
+  echo -e "\n\nInstalling clion...\n"
+  
+  #Install clion
   for i in "clion --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Remove Clion
+  echo -e "\n\nUninstalling clion...\n"
+  
+  #Remove clion
   for i in "clion --edge --classic"
   do
     snap remove $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $pycharm = true ]
+if [ $PYCHARM = true ]
 then
-  #Install Pycharm
+  echo -e "\n\nInstalling pycharm...\n"
+  
+  #Install pycharm
   for i in "pycharm-professional --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Remove Pycharm
+  echo -e "\n\nUninstalling pycharm...\n"
+  
+  #Remove pycharm
   for i in "pycharm-professional --edge --classic"
   do
     snap remove $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $slack = true ]
+if [ $SLACK = true ]
 then
-  #Install Slack
+  echo -e "\n\nInstalling slack...\n"
+  
+  #Install slack
   for i in "slack --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Remove Slack
+  echo -e "\n\nUninstalling slack...\n"
+  
+  #Remove slack
   for i in "slack --edge --classic"
   do
     snap remove $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $skype = true ]
+if [ $DISCORD = true ]
 then
-  #Install Skype
-  for i in "skype --edge --classic"
-  do
-    snap install $i
-    snap refresh $i
-  done
-else
-  #Remove Skype
-  for i in "skype --edge --classic"
-  do
-    snap remove $i
-  done
-fi
-
-if [ $discord = true ]
-then
-  #Install Discord
+  echo -e "\n\nInstalling discord...\n"
+  
+  #Install discord
   for i in "discord --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Remove Discord
-  for i in "discord --edgs --classic"
+  echo -e "\n\nUninstalling discord...\n"
+  
+  #Remove discord
+  for i in "discord --edge --classic"
   do
     snap remove $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
 
-if [ $spotify = true ]
+if [ $SKYPE = true ]
 then
-  #Install Spotify
+  echo -e "\n\nInstalling skype...\n"
+  
+  #Install skype
+  for i in "skype --edge --classic"
+  do
+    snap install $i
+    snap refresh $i
+  done
+  
+  echo -e "\n\nDone!\n"
+else
+  echo -e "\n\nUninstalling skype...\n"
+  
+  #Remove skype
+  for i in "skype --edge --classic"
+  do
+    snap remove $i
+  done
+  
+  echo -e "\n\nDone!\n"
+fi
+
+if [ $SPOTIFY = true ]
+then
+  echo -e "\n\nInstalling spotify...\n"
+
+  #Install spotify
   for i in "spotify --edge --classic"
   do
     snap install $i
     snap refresh $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Remove Spotify
+  echo -e "\n\nUninstalling spotify...\n"
+  
+  #Remove spotify
   for i in "spotify --edge --classic"
   do
     snap remove $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
+
+echo -e "\n\nUpdating...\n"
 
 for i in update upgrade full-upgrade autoremove clean
 do
@@ -687,9 +938,13 @@ do
   snap $i
 done
 
-if [ $work = true ]
+echo -e "\n\nDone!\n"
+
+if [ $WORKDEPENDENCIES = true ]
 then
-  #Install work
+  echo -e "\n\nInstalling work dependencies...\n"
+  
+  #Install work dependencies
   for i in update upgrade full-upgrade autoremove clean
   do
     apt $i -y
@@ -700,7 +955,7 @@ then
     snap $i
   done
 
-  #medical imaging viewer compatible with hv for stir
+  #medical imaging viewer compatible with hv for stir and nii for nifty*
   for i in amide
   do
     apt install -y $i
@@ -718,19 +973,19 @@ then
     apt install -y $i
   done
 
-  #video codec
+  #video codec for jrmomo
   for i in ffmpeg
   do
     apt install -y $i
   done
 
-  #qt for nifty
+  #qt for nifty*
   for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev libqt5xmlpatterns5 libqt5xmlpatterns5-dev qttools5-dev
   do
     apt install -y $i
   done
 
-  #for python scripts in jrmomo
+  #python for jrmomo
   for i in python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib ipython python-pandas python-sympy python-nose
   do
     apt install -y $i
@@ -745,8 +1000,12 @@ then
   do
     snap $i
   done
+  
+  echo -e "\n\nDone!\n"
 else
-  #Uninstall work
+  echo -e "\n\nUninstall work dependencies...\n"
+  
+  #Uninstall work dependencies
   for i in update upgrade full-upgrade autoremove clean
   do
     apt $i -y
@@ -757,7 +1016,7 @@ else
     snap $i
   done
 
-  #medical imaging viewer compatible with hv for stir
+  #medical imaging viewer compatible with hv for stir and nii for nifty*
   for i in amide
   do
     apt purge -y $i
@@ -775,19 +1034,19 @@ else
     apt purge -y $i
   done
 
-  #video codec
+  #video codec for jrmomo
   for i in ffmpeg
   do
     apt purge -y $i
   done
 
-  #qt for nifty
+  #qt for nifty*
   for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev libqt5xmlpatterns5 libqt5xmlpatterns5-dev qttools5-dev
   do
     apt purge -y $i
   done
 
-  #for python scripts in jrmomo
+  #python for jrmomo
   for i in python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib ipython python-pandas python-sympy python-nose
   do
     apt purge -y $i
@@ -802,7 +1061,11 @@ else
   do
     snap $i
   done
+  
+  echo -e "\n\nDone!\n"
 fi
+
+echo -e "\n\nUpdating...\n"
 
 for i in update upgrade full-upgrade autoremove clean
 do
@@ -813,5 +1076,7 @@ for i in refresh
 do
   snap $i
 done
+
+echo -e "\n\nDone!\n"
 
 exit 0
