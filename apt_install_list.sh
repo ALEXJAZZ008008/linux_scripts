@@ -6,114 +6,156 @@ then
 
   exit 0
 else
-  if [ $# == 1 -a $1 == "-a" -o $1 == "--all" ]
+  if [ $# == 1 -p $1 == "-a" -o $1 == "--purge" ]
   then
-    python=true
-    python_3=true
-    tools=true
-    cloc=true
-    i3=true
-    kde_desktop_enviroment=true
-    emulation=true
-    networking=true
-    pypy=true
-    git=true
-    cmake_gui=true
-    ide=true
-    w3m=true
-    firefox=true
-    tor=true
-    chromium=true
-    pdf_viewer=true
-    libre_office=true
-    vlc=true
-    media_editors=true
-    steam=true
+    python=false
+    python_3=false
+    tools=false
+    cloc=false
+    i3=false
+    kde_desktop_enviroment=false
+    emulation=false
+    networking=false
+    pypy=false
+    git=false
+    cmake_gui=false
+    ide=false
+    w3m=false
+    firefox=false
+    tor=false
+    chromium=false
+    pdf_viewer=false
+    libre_office=false
+    vlc=false
+    media_editors=false
+    steam=false
 
-    snap=true
-    pypy3=true
-    powershell=true
-    notepad=true
-    clion=true
-    pycharm=true
-    slack=true
-    skype=true
-    discord=true
-    spotify=true
+    snap=false
+    pypy3=false
+    gitkracken=false
+    powershell=false
+    notepad=false
+    clion=false
+    pycharm=false
+    slack=false
+    skype=false
+    discord=false
+    spotify=false
 
-    work=true
+    work=false
   else
-    if [ $# -ne 32 ]
+    if [ $# == 1 -a $1 == "-a" -o $1 == "--all" ]
     then
       python=true
       python_3=true
       tools=true
-      cloc=false
+      cloc=true
       i3=true
       kde_desktop_enviroment=true
       emulation=true
       networking=true
-      pypy=false
-      git=false
-      cmake_gui=false
-      ide=false
+      pypy=true
+      git=true
+      cmake_gui=true
+      ide=true
       w3m=true
-      firefox=false
-      tor=false
+      firefox=true
+      tor=true
       chromium=true
       pdf_viewer=true
       libre_office=true
       vlc=true
       media_editors=true
       steam=true
-      
+
       snap=true
-      pypy3=false
-      powershell=false
+      pypy3=true
+      gitkracken=true
+      powershell=true
       notepad=true
-      clion=false
-      pycharm=false
+      clion=true
+      pycharm=true
       slack=true
       skype=true
       discord=true
       spotify=true
 
-      work=false
+      work=true
     else
-      python=$1
-      python_3=$2
-      tools=$3
-      cloc=$4
-      i3=$5
-      kde_desktop_enviroment=$6
-      emulation=$7
-      networking=$8
-      pypy=$9
-      git=$10
-      cmake_gui=$11
-      ide=$12
-      w3m=$13
-      firefox=$14
-      tor=$15
-      chromium=$16
-      pdf_viewer=$17
-      libre_office=$18
-      vlc=$19
-      media_editors=$20
-      steam=$21
+      if [ $# -ne 32 ]
+      then
+        python=true
+        python_3=true
+        tools=true
+        cloc=false
+        i3=true
+        kde_desktop_enviroment=true
+        emulation=true
+        networking=true
+        pypy=false
+        git=false
+        cmake_gui=false
+        ide=false
+        w3m=true
+        firefox=false
+        tor=false
+        chromium=true
+        pdf_viewer=true
+        libre_office=true
+        vlc=true
+        media_editors=true
+        steam=true
 
-      snap=$22
-      pypy3=$23
-      powershell=$24
-      notepad=$25
-      clion=$26
-      pycharm=$27
-      slack=$28
-      skype=$29
-      discord=$30
-      spotify=$31
+        snap=true
+        pypy3=false
+        gitkracken=false
+        powershell=false
+        notepad=true
+        clion=false
+        pycharm=false
+        slack=true
+        skype=true
+        discord=true
+        spotify=true
 
-      work=$32
+        work=false
+      else
+        python=$1
+        python_3=$2
+        tools=$3
+        cloc=$4
+        i3=$5
+        kde_desktop_enviroment=$6
+        emulation=$7
+        networking=$8
+        pypy=$9
+        git=$10
+        cmake_gui=$11
+        ide=$12
+        w3m=$13
+        firefox=$14
+        tor=$15
+        chromium=$16
+        pdf_viewer=$17
+        libre_office=$18
+        vlc=$19
+        media_editors=$20
+        steam=$21
+
+        snap=$22
+        pypy3=$23
+        gitkracken=$24
+        powershell=$25
+        notepad=$26
+        clion=$27
+        pycharm=$28
+        slack=$29
+        skype=$30
+        discord=$31
+        spotify=$32
+
+        work=$33
+      fi
     fi
   fi
 fi
@@ -486,6 +528,22 @@ then
 else
   #Remove pypy3
   for i in "pypy3 --edge --classic"
+  do
+    snap remove $i
+  done
+fi
+
+if [ $gitkracken = true ]
+then
+  #Install gitkracken
+  for i in "gitkracken --edge --classic"
+  do
+    snap install $i
+    snap refresh $i
+  done
+else
+  #Remove gitkracken
+  for i in "gitkracken --edge --classic"
   do
     snap remove $i
   done
