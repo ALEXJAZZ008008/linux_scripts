@@ -278,9 +278,9 @@ fi
 
 if [ $PDF = true ]
 then
-  echo -e "Install pdf viewer"
+  echo -e "Install pdf"
 else
-  echo -e "Uninstall pdf viewer"
+  echo -e "Uninstall pdf"
 fi
 
 if [ $LIBREOFFICE = true ]
@@ -782,7 +782,7 @@ fi
 
 if [ $PDF = true ]
 then
-  echo -e "\n\nInstalling pdf viewer...\n"
+  echo -e "\n\nInstalling pdf...\n"
   
   #Install pdf viewer
   for i in zathura zathura-pdf-poppler
@@ -792,7 +792,7 @@ then
   
   echo -e "\nDone!\n"
 else
-  echo -e "\n\nUninstalling pdf viewer...\n"
+  echo -e "\n\nUninstalling pdf...\n"
   
   #Uninstall pdf viewer
   for i in zathura zathura-pdf-poppler
