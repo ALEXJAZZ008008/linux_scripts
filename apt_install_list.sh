@@ -670,7 +670,7 @@ then
   echo -e "\n\nInstalling ide...\n"
   
   #Install ide
-  for i in qtcreator codeblocks spyder octave
+  for i in ccache qtcreator codeblocks spyder octave
   do
     apt install -y $i
   done
@@ -680,7 +680,7 @@ else
   echo -e "\n\nUninstalling ide...\n"
   
   #Uninstall ide
-  for i in qtcreator codeblocks spyder octave
+  for i in ccache qtcreator codeblocks spyder octave
   do
     apt purge -y $i
   done
