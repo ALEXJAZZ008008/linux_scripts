@@ -70,7 +70,7 @@ echo -e "\nDone!\n"
 echo -e "\n\nInstalling python...\n"
 
 #Install python for jrmomo
-for i in python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib ipython python-pandas python-sympy python-nose
+for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython python-pandas python-sympy python-nose
 do
   apt install -y $i
 done
