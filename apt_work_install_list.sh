@@ -75,6 +75,12 @@ do
   apt install -y $i
 done
 
+#Install dep for niftyreg
+for i in ocl-icd-dev ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers 
+do
+  apt install -y $i
+done
+
 echo -e "\nDone!\n"
 
 echo -e "\n\nUpdating...\n"
