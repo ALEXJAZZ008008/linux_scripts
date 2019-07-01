@@ -1263,6 +1263,12 @@ then
   do
     apt install -y $i
   done
+  
+  #Install dep for niftyreg
+  for i in ocl-icd-dev ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers 
+  do
+    apt install -y $i
+  done
 
   echo -e "\nDone!\n"
 
@@ -1353,6 +1359,12 @@ else
 
   #Uninstall python for jrmomo
   for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython python-pandas python-sympy python-nose
+  do
+    apt purge -y $i
+  done
+  
+  #Install dep for niftyreg
+  for i in ocl-icd-dev ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers 
   do
     apt purge -y $i
   done
