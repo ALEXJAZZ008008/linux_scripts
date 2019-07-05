@@ -100,7 +100,7 @@ echo -e "\nDone!\n"
 echo -e "\n\nInstalling matlab dep...\n"
 
 #Install dep for matlab
-for i in g++-4.9
+for i in g++-5
 do
   apt install -y $i
 done
