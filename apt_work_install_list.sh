@@ -97,16 +97,6 @@ done
 
 echo -e "\nDone!\n"
 
-echo -e "\n\nInstalling matlab dep...\n"
-
-#Install dep for matlab
-for i in g++-5
-do
-  apt install -y $i
-done
-
-echo -e "\nDone!\n"
-
 echo -e "\n\nUpdating...\n"
 
 for i in update upgrade full-upgrade autoremove clean
