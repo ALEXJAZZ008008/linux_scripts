@@ -81,6 +81,12 @@ do
   apt install -y $i
 done
 
+#Install dep for sirf
+for i in libomp-dev
+do
+  apt install -y $i
+done
+
 echo -e "\nDone!\n"
 
 echo -e "\n\nUpdating...\n"
