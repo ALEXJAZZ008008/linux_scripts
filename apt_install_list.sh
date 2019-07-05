@@ -1269,6 +1269,12 @@ then
   do
     apt install -y $i
   done
+  
+  #Install dep for sirf
+  for i in libomp-dev
+  do
+    apt install -y $i
+  done
 
   echo -e "\nDone!\n"
 
@@ -1363,8 +1369,14 @@ else
     apt purge -y $i
   done
   
-  #Install dep for niftyreg
+  #Unstall dep for niftyreg
   for i in ocl-icd-dev ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers 
+  do
+    apt purge -y $i
+  done
+  
+  #Unstall dep for sirf
+  for i in libomp-dev
   do
     apt purge -y $i
   done
