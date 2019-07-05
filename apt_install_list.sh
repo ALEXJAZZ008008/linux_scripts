@@ -1264,12 +1264,20 @@ then
     apt install -y $i
   done
   
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nInstalling niftyreg...\n"
+
   #Install dep for niftyreg
   for i in ocl-icd-dev ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers 
   do
     apt install -y $i
   done
-  
+
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nInstalling sirf...\n"
+
   #Install dep for sirf
   for i in libomp-dev
   do
@@ -1369,12 +1377,20 @@ else
     apt purge -y $i
   done
   
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nInstalling niftyreg...\n"
+
   #Unstall dep for niftyreg
   for i in ocl-icd-dev ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers 
   do
     apt purge -y $i
   done
-  
+
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nInstalling sirf...\n"
+
   #Unstall dep for sirf
   for i in libomp-dev
   do
