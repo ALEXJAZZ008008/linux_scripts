@@ -57,7 +57,7 @@ done
 
 echo -e "\nDone!\n"
 
-echo -e "\n\nInstalling qt...\n"
+echo -e "\n\nInstalling nifty dep...\n"
 
 #Install qt for nifty*
 for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev libqt5xmlpatterns5 libqt5xmlpatterns5-dev qttools5-dev
@@ -67,7 +67,7 @@ done
 
 echo -e "\nDone!\n"
 
-echo -e "\n\nInstalling python...\n"
+echo -e "\n\nInstalling jrmomo dep...\n"
 
 #Install python for jrmomo
 for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython python-pandas python-sympy python-nose
@@ -77,7 +77,7 @@ done
 
 echo -e "\nDone!\n"
 
-echo -e "\n\nInstalling niftyreg...\n"
+echo -e "\n\nInstalling niftyreg dep...\n"
 
 #Install dep for niftyreg
 for i in ocl-icd-dev ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers 
@@ -87,10 +87,20 @@ done
 
 echo -e "\nDone!\n"
 
-echo -e "\n\nInstalling sirf...\n"
+echo -e "\n\nInstalling sirf dep...\n"
 
 #Install dep for sirf
 for i in libomp-dev
+do
+  apt install -y $i
+done
+
+echo -e "\nDone!\n"
+
+echo -e "\n\nInstalling matlab dep...\n"
+
+#Install dep for matlab
+for i in g++-4.9
 do
   apt install -y $i
 done
