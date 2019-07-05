@@ -1246,7 +1246,7 @@ then
 
   echo -e "\nDone!\n"
 
-  echo -e "\n\nInstalling qt...\n"
+  echo -e "\n\nInstalling nifty dep...\n"
 
   #Install qt for nifty*
   for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev libqt5xmlpatterns5 libqt5xmlpatterns5-dev qttools5-dev
@@ -1256,17 +1256,17 @@ then
 
   echo -e "\nDone!\n"
 
-  echo -e "\n\nInstalling python...\n"
+  echo -e "\n\nInstalling jrmomo dep...\n"
 
   #Install python for jrmomo
   for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython python-pandas python-sympy python-nose
   do
     apt install -y $i
   done
-  
+
   echo -e "\nDone!\n"
 
-  echo -e "\n\nInstalling niftyreg...\n"
+  echo -e "\n\nInstalling niftyreg dep...\n"
 
   #Install dep for niftyreg
   for i in ocl-icd-dev ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers 
@@ -1276,10 +1276,20 @@ then
 
   echo -e "\nDone!\n"
 
-  echo -e "\n\nInstalling sirf...\n"
+  echo -e "\n\nInstalling sirf dep...\n"
 
   #Install dep for sirf
   for i in libomp-dev
+  do
+    apt install -y $i
+  done
+
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nInstalling matlab dep...\n"
+
+  #Install dep for matlab
+  for i in g++-4.9
   do
     apt install -y $i
   done
@@ -1319,9 +1329,9 @@ else
   
   echo -e "\nDone!\n"
 
-  echo -e "\n\nUninstalling amide...\n"
+  echo -e "\n\nUnstalling amide...\n"
   
-  #Uninstall medical imaging viewer compatible with hv for stir and nii for nifty*
+  #Unstall medical imaging viewer compatible with hv for stir and nii for nifty*
   for i in amide
   do
     apt purge -y $i
@@ -1329,9 +1339,9 @@ else
 
   echo -e "\nDone!\n"
 
-  echo -e "\n\nUninstalling stir dependencies...\n"
+  echo -e "\n\nUnstalling stir dependencies...\n"
 
-  #Uninstall dependencies for stir
+  #Unstall dependencies for stir
   for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
   do
     apt purge -y $i
@@ -1339,9 +1349,9 @@ else
 
   echo -e "\nDone!\n"
 
-  echo -e "\n\nUninstalling doxygen...\n"
+  echo -e "\n\nUnstalling doxygen...\n"
 
-  #Uninstall documentation generator
+  #Unstall documentation generator
   for i in doxygen graphviz
   do
     apt purge -y $i
@@ -1349,9 +1359,9 @@ else
 
   echo -e "\nDone!\n"
 
-  echo -e "\n\nUninstalling ffmpeg...\n"
+  echo -e "\n\nUnstalling ffmpeg...\n"
 
-  #Uninstall video codec for jrmomo
+  #Unstall video codec for jrmomo
   for i in ffmpeg
   do
     apt purge -y $i
@@ -1359,9 +1369,9 @@ else
 
   echo -e "\nDone!\n"
 
-  echo -e "\n\nUninstalling qt...\n"
+  echo -e "\n\nUnstalling nifty dep...\n"
 
-  #Unnstall qt for nifty*
+  #Unstall qt for nifty*
   for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev libqt5xmlpatterns5 libqt5xmlpatterns5-dev qttools5-dev
   do
     apt purge -y $i
@@ -1369,17 +1379,17 @@ else
 
   echo -e "\nDone!\n"
 
-  echo -e "\n\nUninstalling python...\n"
+  echo -e "\n\nUnstalling jrmomo dep...\n"
 
-  #Uninstall python for jrmomo
+  #Unstall python for jrmomo
   for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython python-pandas python-sympy python-nose
   do
     apt purge -y $i
   done
-  
+
   echo -e "\nDone!\n"
 
-  echo -e "\n\nInstalling niftyreg...\n"
+  echo -e "\n\nUnstalling niftyreg dep...\n"
 
   #Unstall dep for niftyreg
   for i in ocl-icd-dev ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers 
@@ -1389,10 +1399,20 @@ else
 
   echo -e "\nDone!\n"
 
-  echo -e "\n\nInstalling sirf...\n"
+  echo -e "\n\nUnstalling sirf dep...\n"
 
   #Unstall dep for sirf
   for i in libomp-dev
+  do
+    apt purge -y $i
+  done
+
+  echo -e "\nDone!\n"
+
+  echo -e "\n\nUnstalling matlab dep...\n"
+
+  #Unstall dep for matlab
+  for i in g++-4.9
   do
     apt purge -y $i
   done
