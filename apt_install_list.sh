@@ -1286,16 +1286,6 @@ then
 
   echo -e "\nDone!\n"
 
-  echo -e "\n\nInstalling matlab dep...\n"
-
-  #Install dep for matlab
-  for i in g++-5
-  do
-    apt install -y $i
-  done
-
-  echo -e "\nDone!\n"
-
   echo -e "\n\nUpdating...\n"
 
   for i in update upgrade full-upgrade autoremove clean
@@ -1403,16 +1393,6 @@ else
 
   #Unstall dep for sirf
   for i in libomp-dev
-  do
-    apt purge -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nUnstalling matlab dep...\n"
-
-  #Unstall dep for matlab
-  for i in g++-5
   do
     apt purge -y $i
   done
