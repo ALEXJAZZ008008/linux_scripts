@@ -1299,7 +1299,7 @@ then
   echo -e "\n\nInstalling root dep...\n"
 
   #Install dep for root
-  for i in libxpm-dev
+  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng libjpeg python gfortran openssl-dev libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev libqt4-dev r-base
   do
     apt install -y $i
   done
@@ -1432,7 +1432,7 @@ else
   echo -e "\n\nUninstalling root dep...\n"
 
   #Uninstall dep for root
-  for i in libxpm-dev
+  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng libjpeg python gfortran openssl-dev libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev libqt4-dev r-base
   do
     apt purge -y $i
   done
