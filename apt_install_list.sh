@@ -1289,7 +1289,7 @@ then
   echo -e "\n\nInstalling matlab dep...\n"
 
   #Install dep for matlab
-  for i in libgmp-dev libmpfr-dev libmpc-dev
+  for i in libgmp-dev libmpfr-dev libmpc-dev gcc-6 g++-6 g++-6-multilib gfortran-6
   do
     apt install -y $i
   done
@@ -1412,7 +1412,7 @@ else
   echo -e "\n\nUnstalling matlab dep...\n"
 
   #Unstall dep for matlab
-  for i in libgmp-dev libmpfr-dev libmpc-dev
+  for i in libgmp-dev libmpfr-dev libmpc-dev gcc-6 g++-6 g++-6-multilib gfortran-6
   do
     apt purge -y $i
   done
