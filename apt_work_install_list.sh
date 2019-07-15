@@ -107,6 +107,16 @@ done
 
 echo -e "\nDone!\n"
 
+echo -e "\n\nInstalling root dep...\n"
+
+#Install dep for root
+for i in libxpm-dev
+do
+  apt install -y $i
+done
+
+echo -e "\nDone!\n"
+
 echo -e "\n\nUpdating...\n"
 
 for i in update upgrade full-upgrade autoremove clean
