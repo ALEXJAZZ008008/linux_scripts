@@ -1295,6 +1295,16 @@ then
   done
 
   echo -e "\nDone!\n"
+  
+  echo -e "\n\nInstalling root dep...\n"
+
+  #Install dep for root
+  for i in libxpm-dev
+  do
+    apt install -y $i
+  done
+
+  echo -e "\nDone!\n"
 
   echo -e "\n\nUpdating...\n"
 
@@ -1413,6 +1423,16 @@ else
 
   #Unstall dep for matlab
   for i in libgmp-dev libmpfr-dev libmpc-dev gcc-6 g++-6 g++-6-multilib gfortran-6
+  do
+    apt purge -y $i
+  done
+
+  echo -e "\nDone!\n"
+  
+  echo -e "\n\nUninstalling root dep...\n"
+
+  #Uninstall dep for root
+  for i in libxpm-dev
   do
     apt purge -y $i
   done
