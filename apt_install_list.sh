@@ -134,24 +134,24 @@ else
     
     PYTHON=true
     PYTHONTHREE=true
-    TOOLS=false
+    TOOLS=true
     ITHREE=false
     KDE=true
     EMULATION=false
     NETWORKING=true
     PYPY=false
-    SOURCECONTROL=false
-    CMAKE=false
-    IDE=false
+    SOURCECONTROL=true
+    CMAKE=true
+    IDE=true
     WTHREEM=false
-    FIREFOX=true
+    FIREFOX=false
     TOR=false
     CHROMIUM=true
     PDF=false
     LIBREOFFICE=true
     VLC=true
     MEDIA=false
-    STEAM=true
+    STEAM=false
     
     SNAP=true
     PYPYTHREE=false
@@ -159,13 +159,13 @@ else
     POWERSHELL=false
     NOTEPADPLUSPLUS=false
     CLION=false
-    PYCHARM=false
+    PYCHARM=true
     SLACK=false
-    DISCORD=true
+    DISCORD=false
     SKYPE=true
     SPOTIFY=true
     
-    WORKDEPENDENCIES=false
+    WORKDEPENDENCIES=true
   fi
 fi
 
