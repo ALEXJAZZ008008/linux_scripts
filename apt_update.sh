@@ -12,12 +12,7 @@ do
   snap $i
 done
 
-set -eu
-
-snap list --all | awk '/disabled/{print $1, $3}' |
-    while read snapname revision; do
-        snap remove "$snapname" --revision="$revision"
-    done
+rm /var/lib/snapd/cache/*
 
 echo -e "\n\nDone!\n"
 
