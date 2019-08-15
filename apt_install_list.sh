@@ -137,7 +137,7 @@ else
     TOOLS=true
     ITHREE=false
     KDE=true
-    EMULATION=false
+    EMULATION=true
     NETWORKING=true
     PYPY=false
     SOURCECONTROL=true
@@ -151,7 +151,7 @@ else
     LIBREOFFICE=true
     VLC=true
     MEDIA=false
-    STEAM=false
+    STEAM=true
     
     SNAP=true
     PYPYTHREE=false
