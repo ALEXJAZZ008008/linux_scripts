@@ -486,7 +486,7 @@ then
   echo -e "\n\nInstalling tools...\n"
   
   #Install tools
-  for i in neofetch upower gparted curl cloc
+  for i in neofetch upower gparted curl cloc unrar
   do
     apt install -y $i
   done
@@ -496,7 +496,7 @@ else
   echo -e "\n\nUninstalling tools...\n"
   
   #Uninstall tools
-  for i in neofetch upower gparted curl cloc
+  for i in neofetch upower gparted curl cloc unrar
   do
     apt purge -y $i
   done
