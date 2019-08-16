@@ -12,8 +12,6 @@ do
   snap $i
 done
 
-rm /var/lib/snapd/cache/*
-
 echo -e "\n\nDone!\n"
 
 exit 0
