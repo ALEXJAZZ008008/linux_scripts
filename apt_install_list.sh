@@ -914,7 +914,7 @@ then
   echo -e "\n\nInstalling snap...\n"
   
   #Install snap
-  for i in "snap-store --edge --classic"
+  for i in "snap-store --classic"
   do
     snap install $i
     snap refresh $i
@@ -925,7 +925,7 @@ else
   echo -e "\n\nUninstalling snap...\n"
   
   #Remove snap
-  for i in "snap-store --edge --classic"
+  for i in "snap-store --classic"
   do
     snap remove $i
   done
@@ -938,7 +938,7 @@ then
   echo -e "\n\nInstalling pypy3...\n"
    
   #Install pypy3
-  for i in "pypy3 --edge --classic"
+  for i in "pypy3 --classic"
   do
     snap install $i
     snap refresh $i
@@ -949,7 +949,7 @@ else
   echo -e "\n\nUninstalling pypy3...\n"
   
   #Remove pypy3
-  for i in "pypy3 --edge --classic"
+  for i in "pypy3 --classic"
   do
     snap remove $i
   done
@@ -962,7 +962,7 @@ then
   echo -e "\n\nInstalling git...\n"
   
   #Install git
-  for i in "gitkraken --edge --classic"
+  for i in "gitkraken --classic"
   do
     snap install $i
     snap refresh $i
@@ -973,7 +973,7 @@ else
   echo -e "\n\nUninstalling git...\n"
   
   #Remove git
-  for i in "gitkraken --edge --classic"
+  for i in "gitkraken --classic"
   do
     snap remove $i
   done
@@ -986,7 +986,7 @@ then
   echo -e "\n\nInstalling powershell...\n"
   
   #Install powershell
-  for i in "powershell --edge --classic"
+  for i in "powershell --classic"
   do
     snap install $i
     snap refresh $i
@@ -997,7 +997,7 @@ else
   echo -e "\n\nUninstalling powershell...\n"
   
   #Remove powershell
-  for i in "powershell --edge --classic"
+  for i in "powershell --classic"
   do
     snap remove $i
   done
@@ -1010,7 +1010,7 @@ then
   echo -e "\n\nInstalling notepad...\n"
   
   #Install notepad
-  for i in "notepad-plus-plus --edge --classic"
+  for i in "notepad-plus-plus --classic"
   do
     snap install $i
     snap refresh $i
@@ -1021,7 +1021,7 @@ else
   echo -e "\n\nUninstalling notepad...\n"
   
   #Remove notepad
-  for i in "notepad-plus-plus --edge --classic"
+  for i in "notepad-plus-plus --classic"
   do
     snap remove $i
   done
@@ -1034,7 +1034,7 @@ then
   echo -e "\n\nInstalling clion...\n"
   
   #Install clion
-  for i in "clion --edge --classic"
+  for i in "clion --classic"
   do
     snap install $i
     snap refresh $i
@@ -1045,7 +1045,7 @@ else
   echo -e "\n\nUninstalling clion...\n"
   
   #Remove clion
-  for i in "clion --edge --classic"
+  for i in "clion --classic"
   do
     snap remove $i
   done
@@ -1058,7 +1058,7 @@ then
   echo -e "\n\nInstalling pycharm...\n"
   
   #Install pycharm
-  for i in "pycharm-professional --edge --classic"
+  for i in "pycharm-professional --classic"
   do
     snap install $i
     snap refresh $i
@@ -1069,7 +1069,7 @@ else
   echo -e "\n\nUninstalling pycharm...\n"
   
   #Remove pycharm
-  for i in "pycharm-professional --edge --classic"
+  for i in "pycharm-professional --classic"
   do
     snap remove $i
   done
@@ -1082,7 +1082,7 @@ then
   echo -e "\n\nInstalling slack...\n"
   
   #Install slack
-  for i in "slack --edge --classic"
+  for i in "slack --classic"
   do
     snap install $i
     snap refresh $i
@@ -1093,7 +1093,7 @@ else
   echo -e "\n\nUninstalling slack...\n"
   
   #Remove slack
-  for i in "slack --edge --classic"
+  for i in "slack --classic"
   do
     snap remove $i
   done
@@ -1106,7 +1106,7 @@ then
   echo -e "\n\nInstalling discord...\n"
   
   #Install discord
-  for i in "discord --edge --classic"
+  for i in "discord --classic"
   do
     snap install $i
     snap refresh $i
@@ -1117,7 +1117,7 @@ else
   echo -e "\n\nUninstalling discord...\n"
   
   #Remove discord
-  for i in "discord --edge --classic"
+  for i in "discord --classic"
   do
     snap remove $i
   done
@@ -1130,7 +1130,7 @@ then
   echo -e "\n\nInstalling skype...\n"
   
   #Install skype
-  for i in "skype --edge --classic"
+  for i in "skype --classic"
   do
     snap install $i
     snap refresh $i
@@ -1141,7 +1141,7 @@ else
   echo -e "\n\nUninstalling skype...\n"
   
   #Remove skype
-  for i in "skype --edge --classic"
+  for i in "skype --classic"
   do
     snap remove $i
   done
@@ -1154,7 +1154,7 @@ then
   echo -e "\n\nInstalling spotify...\n"
 
   #Install spotify
-  for i in "spotify --edge --classic"
+  for i in "spotify --classic"
   do
     snap install $i
     snap refresh $i
@@ -1165,7 +1165,7 @@ else
   echo -e "\n\nUninstalling spotify...\n"
   
   #Remove spotify
-  for i in "spotify --edge --classic"
+  for i in "spotify --classic"
   do
     snap remove $i
   done
