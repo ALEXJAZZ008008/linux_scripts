@@ -1279,7 +1279,7 @@ then
   echo -e "\n\nInstalling sirf dep...\n"
 
   #Install dep for sirf
-  for i in libomp-dev
+  for i in libomp-dev cython cython3
   do
     apt install -y $i
   done
@@ -1412,7 +1412,7 @@ else
   echo -e "\n\nUnstalling sirf dep...\n"
 
   #Unstall dep for sirf
-  for i in libomp-dev
+  for i in libomp-dev cython cython3
   do
     apt purge -y $i
   done
