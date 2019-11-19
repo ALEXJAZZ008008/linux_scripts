@@ -1229,7 +1229,7 @@ then
   echo -e "\n\nInstalling doxygen...\n"
 
   #Install documentation generator
-  for i in doxygen graphviz
+  for i in doxygen graphviz graphviz-dev libgraphviz-dev python-pygraphviz python3-graphviz python-pydot python3-pydot
   do
     apt install -y $i
   done
@@ -1362,7 +1362,7 @@ else
   echo -e "\n\nUnstalling doxygen...\n"
 
   #Unstall documentation generator
-  for i in doxygen graphviz
+  for i in doxygen graphviz graphviz-dev libgraphviz-dev python-pygraphviz python3-graphviz python-pydot python3-pydot
   do
     apt purge -y $i
   done
