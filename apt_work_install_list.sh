@@ -115,6 +115,12 @@ do
   apt install -y $i
 done
 
+#Install xcat parallel
+for i in parallel
+do
+  apt install -y $i
+done
+
 echo -e "\nDone!\n"
 
 echo -e "\n\nUpdating...\n"
