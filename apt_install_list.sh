@@ -578,7 +578,7 @@ then
   echo -e "\n\nInstalling networking...\n"
   
   #Install networking
-  for i in network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
+  for i in network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome net-tools
   do
     apt install -y $i
   done
@@ -588,7 +588,7 @@ else
   echo -e "\n\nUninstalling networking...\n"
   
   #Uninstall networking
-  for i in network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
+  for i in network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome net-tools
   do
     apt purge -y $i
   done
