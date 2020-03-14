@@ -555,7 +555,7 @@ then
   echo -e "\n\nInstalling emulation...\n"
   
   #Install emulation
-  for i in virtualbox wine-stable
+  for i in virtualbox wine-stable winetricks
   do
     apt install -y $i
   done
@@ -565,7 +565,7 @@ else
   echo -e "\n\nUninstalling emulation...\n"
   
   #Uninstall emulation
-  for i in virtualbox wine-stable
+  for i in virtualbox wine-stable winetricks
   do
     apt purge -y $i
   done
