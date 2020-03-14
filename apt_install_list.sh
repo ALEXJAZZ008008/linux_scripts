@@ -463,7 +463,7 @@ then
   echo -e "\n\nInstalling python3...\n"
   
   #Install python3
-  for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra
+  for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra python3-setuptools python3-venv
   do
     apt install -y $i
   done
@@ -473,7 +473,7 @@ else
   echo -e "\n\nUninstalling python3...\n"
   
   #Uninstall python3
-  for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra
+  for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra python3-setuptools python3-venv
   do
     apt purge -y $i
   done
