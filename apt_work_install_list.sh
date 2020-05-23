@@ -115,11 +115,19 @@ do
   apt install -y $i
 done
 
+echo -e "\nDone!\n"
+
+echo -e "\n\nInstalling xcat parallel...\n"
+
 #Install xcat parallel
 for i in parallel
 do
   apt install -y $i
 done
+
+echo -e "\nDone!\n"
+
+echo -e "\n\nInstalling cuda dep...\n"
 
 #Install cuda dep
 for i in libcupti-dev libcupti-doc libcupti10.1 libcupti9.1
