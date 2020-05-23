@@ -1309,6 +1309,12 @@ then
   do
     apt install -y $i
   done
+  
+  #Install cuda dep
+  for i in libcupti-dev libcupti-doc libcupti10.1 libcupti9.1
+  do
+    apt install -y $i
+  done
 
   echo -e "\nDone!\n"
 
@@ -1445,6 +1451,12 @@ else
   
   #Unstall xcat parallel
   for i in parallel
+  do
+    apt purge -y $i
+  done
+  
+  #Install cuda dep
+  for i in libcupti-dev libcupti-doc libcupti10.1 libcupti9.1
   do
     apt purge -y $i
   done
