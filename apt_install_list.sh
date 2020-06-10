@@ -186,8 +186,10 @@ fi
 
 if [ $ITHREE = true ]
 then
+  true
   # echo -e "Install i3"
 else
+  true
   # echo -e "Uninstall i3"
 fi
 
@@ -489,6 +491,7 @@ then
   #Install i3
   for i in i3
   do
+    true
     # apt install -y $i
   done
   
@@ -499,6 +502,7 @@ else
   #Uninstall i3
   for i in i3
   do
+    true
     # apt purge -y $i
   done
   
