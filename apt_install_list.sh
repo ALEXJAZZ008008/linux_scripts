@@ -532,7 +532,7 @@ then
   echo -e "\n\nInstalling kde...\n"
   
   #Install kde
-  for i in sddm kde-full
+  for i in sddm sddm-theme-breeze plasma-desktop kubuntu-desktop kde-full gnome-tweak-tool
   do
     apt install -y $i
   done
@@ -542,7 +542,7 @@ else
   echo -e "\n\nUninstalling kde...\n"
   
   #Uninstall kde
-  for i in sddm kde-full
+  for i in sddm sddm-theme-breeze plasma-desktop kubuntu-desktop kde-full gnome-tweak-tool
   do
     apt purge -y $i
   done
