@@ -38,8 +38,6 @@ then
       SNAP=false
       PYPYTHREE=false
       GIT=false
-      POWERSHELL=false
-      NOTEPADPLUSPLUS=false
       CLION=false
       PYCHARM=false
       SLACK=false
@@ -77,8 +75,6 @@ then
         SNAP=true
         PYPYTHREE=true
         GIT=true
-        POWERSHELL=true
-        NOTEPADPLUSPLUS=true
         CLION=true
         PYCHARM=true
         SLACK=true
@@ -119,8 +115,6 @@ else
     SNAP=$21
     PYPYTHREE=$22
     GIT=$23
-    POWERSHELL=$24
-    NOTEPADPLUSPLUS=$25
     CLION=$26
     PYCHARM=$27
     SLACK=$28
@@ -156,8 +150,6 @@ else
     SNAP=true
     PYPYTHREE=false
     GIT=false
-    POWERSHELL=false
-    NOTEPADPLUSPLUS=false
     CLION=false
     PYCHARM=true
     SLACK=false
@@ -194,9 +186,9 @@ fi
 
 if [ $ITHREE = true ]
 then
-  echo -e "Install i3"
+  # echo -e "Install i3"
 else
-  echo -e "Uninstall i3"
+  # echo -e "Uninstall i3"
 fi
 
 if [ $KDE = true ]
@@ -332,20 +324,6 @@ then
   echo -e "Install git"
 else
   echo -e "Uninstall git"
-fi
-
-if [ $POWERSHELL = true ]
-then
-  echo -e "Install powershell"
-else
-  echo -e "Uninstall powershell"
-fi
-
-if [ $NOTEPADPLUSPLUS = true ]
-then
-  echo -e "Install notepad"
-else
-  echo -e "Uninstall notepad"
 fi
 
 if [ $CLION = true ]
@@ -506,25 +484,25 @@ fi
 
 if [ $ITHREE = true ]
 then
-  echo -e "\n\nInstalling i3...\n"
+  # echo -e "\n\nInstalling i3...\n"
   
   #Install i3
   for i in i3
   do
-    apt install -y $i
+    # apt install -y $i
   done
   
-  echo -e "\nDone!\n"
+  # echo -e "\nDone!\n"
 else
-  echo -e "\n\nUninstalling i3...\n"
+  # echo -e "\n\nUninstalling i3...\n"
   
   #Uninstall i3
   for i in i3
   do
-    apt purge -y $i
+    # apt purge -y $i
   done
   
-  echo -e "\nDone!\n"
+  # echo -e "\nDone!\n"
 fi
 
 if [ $KDE = true ]
@@ -974,54 +952,6 @@ else
   
   #Remove git
   for i in "gitkraken --stable --classic"
-  do
-    snap remove $i
-  done
-  
-  echo -e "\nDone!\n"
-fi
-
-if [ $POWERSHELL = true ]
-then
-  echo -e "\n\nInstalling powershell...\n"
-  
-  #Install powershell
-  for i in "powershell --stable --classic"
-  do
-    snap install $i
-    snap refresh $i
-  done
-  
-  echo -e "\nDone!\n"
-else
-  echo -e "\n\nUninstalling powershell...\n"
-  
-  #Remove powershell
-  for i in "powershell --stable --classic"
-  do
-    snap remove $i
-  done
-  
-  echo -e "\nDone!\n"
-fi
-
-if [ $NOTEPADPLUSPLUS = true ]
-then
-  echo -e "\n\nInstalling notepad...\n"
-  
-  #Install notepad
-  for i in "notepad-plus-plus --stable --classic"
-  do
-    snap install $i
-    snap refresh $i
-  done
-  
-  echo -e "\nDone!\n"
-else
-  echo -e "\n\nUninstalling notepad...\n"
-  
-  #Remove notepad
-  for i in "notepad-plus-plus --stable --classic"
   do
     snap remove $i
   done
