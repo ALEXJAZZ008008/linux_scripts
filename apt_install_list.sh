@@ -6,7 +6,7 @@ then
   
   if [ $1 == "-h" -o $1 == "--help" ]
   then
-    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHON\nPYTHONTHREE\nTOOLS\nITHREE\nKDE\nEMULATION\nNETWORKING\nPYPY\nSOURCECONTROL\nCMAKE\nIDE\nWTHREEM\nFIREFOX\nTOR\nCHROMIUM\nPDF\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nPOWERSHELL\nNOTEPADPLUSPLUS\nCLION\nPYCHARM\nSLACK\nDISCORD\nSKYPE\nSPOTIFY\n\nWORKDEPENDENCIES\n"
+    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHON\nPYTHONTHREE\nTOOLS\nKDE\nEMULATION\nNETWORKING\nPYPY\nSOURCECONTROL\nCMAKE\nIDE\nWTHREEM\nFIREFOX\nTOR\nCHROMIUM\nPDF\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nCLION\nPYCHARM\nSLACK\nDISCORD\nSKYPE\nSPOTIFY\n\nWORKDEPENDENCIES\n"
 
     exit 0
   else
@@ -17,7 +17,6 @@ then
       PYTHON=false
       PYTHONTHREE=false
       TOOLS=false
-      ITHREE=false
       KDE=false
       EMULATION=false
       NETWORKING=false
@@ -54,7 +53,6 @@ then
         PYTHON=true
         PYTHONTHREE=true
         TOOLS=true
-        ITHREE=true
         KDE=true
         EMULATION=true
         NETWORKING=true
@@ -94,42 +92,40 @@ else
     PYTHON=$1
     PYTHONTHREE=$2
     TOOLS=$3
-    ITHREE=$4
-    KDE=$5
-    EMULATION=$6
-    NETWORKING=$7
-    PYPY=$8
-    SOURCECONTROL=$9
-    CMAKE=$10
-    IDE=$11
-    WTHREEM=$12
-    FIREFOX=$13
-    TOR=$14
-    CHROMIUM=$15
-    PDF=$16
-    LIBREOFFICE=$17
-    VLC=$18
-    MEDIA=$19
-    STEAM=$20
+    KDE=$4
+    EMULATION=$5
+    NETWORKING=$6
+    PYPY=$7
+    SOURCECONTROL=$8
+    CMAKE=$9
+    IDE=$10
+    WTHREEM=$11
+    FIREFOX=$12
+    TOR=$13
+    CHROMIUM=$14
+    PDF=$15
+    LIBREOFFICE=$16
+    VLC=$17
+    MEDIA=$18
+    STEAM=$19
     
-    SNAP=$21
-    PYPYTHREE=$22
-    GIT=$23
-    CLION=$26
-    PYCHARM=$27
-    SLACK=$28
-    DISCORD=$29
-    SKYPE=$30
-    SPOTIFY=$31
+    SNAP=$20
+    PYPYTHREE=$21
+    GIT=$22
+    CLION=$23
+    PYCHARM=$24
+    SLACK=$25
+    DISCORD=$26
+    SKYPE=$27
+    SPOTIFY=$28
     
-    WORKDEPENDENCIES=$33
+    WORKDEPENDENCIES=$29
   else
     echo -e "Argument: no argument, installing default packages...\n"
     
     PYTHON=true
     PYTHONTHREE=true
     TOOLS=true
-    ITHREE=false
     KDE=true
     EMULATION=true
     NETWORKING=true
@@ -182,15 +178,6 @@ then
   echo -e "Install tools"
 else
   echo -e "Uninstall tools"
-fi
-
-if [ $ITHREE = true ]
-then
-  true
-  # echo -e "Install i3"
-else
-  true
-  # echo -e "Uninstall i3"
 fi
 
 if [ $KDE = true ]
@@ -482,31 +469,6 @@ else
   done
   
   echo -e "\nDone!\n"
-fi
-
-if [ $ITHREE = true ]
-then
-  # echo -e "\n\nInstalling i3...\n"
-  
-  #Install i3
-  for i in i3
-  do
-    true
-    # apt install -y $i
-  done
-  
-  # echo -e "\nDone!\n"
-else
-  # echo -e "\n\nUninstalling i3...\n"
-  
-  #Uninstall i3
-  for i in i3
-  do
-    true
-    # apt purge -y $i
-  done
-  
-  # echo -e "\nDone!\n"
 fi
 
 if [ $KDE = true ]
