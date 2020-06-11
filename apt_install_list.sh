@@ -45,6 +45,7 @@ then
       SPOTIFY=false
 
       WORKDEPENDENCIES=false
+      NVIDIA=false
     else
       if [ $1 == "-a" -o $1 == "--all" ]
       then
@@ -81,6 +82,45 @@ then
         SPOTIFY=true
 
         WORKDEPENDENCIES=true
+        NVIDIA=false
+      else
+        if [ $1 == "-na" -o $1 == "--nvidiaall" ]
+        then
+          echo -e "Argument: -na or --nvidiaall, installing all packages inc nvidia...\n"
+
+          PYTHON=true
+          PYTHONTHREE=true
+          TOOLS=true
+          KDE=true
+          EMULATION=true
+          NETWORKING=true
+          PYPY=true
+          SOURCECONTROL=true
+          CMAKE=true
+          IDE=true
+          WTHREEM=true
+          FIREFOX=true
+          TOR=true
+          CHROMIUM=true
+          PDF=true
+          LIBREOFFICE=true
+          VLC=true
+          MEDIA=true
+          STEAM=true
+
+          SNAP=true
+          PYPYTHREE=true
+          GIT=true
+          CLION=true
+          PYCHARM=true
+          SLACK=true
+          DISCORD=true
+          SKYPE=true
+          SPOTIFY=true
+
+          WORKDEPENDENCIES=true
+          NVIDIA=true
+        fi
       fi
     fi
   fi
@@ -120,6 +160,7 @@ else
     SPOTIFY=$28
     
     WORKDEPENDENCIES=$29
+    NVIDIA=$30
   else
     echo -e "Argument: no argument, installing default packages...\n"
     
@@ -154,6 +195,7 @@ else
     SPOTIFY=true
     
     WORKDEPENDENCIES=true
+    NVIDIA=true
   fi
 fi
 
@@ -364,6 +406,13 @@ then
   echo -e "Install work dependencies"
 else
   echo -e "Uninstall work dependencies"
+fi
+
+if [ $NVIDIA = true ]
+then
+  echo -e "Install nvidia"
+else
+  echo -e "Uninstall nvidia"
 fi
 
 while true
@@ -1140,7 +1189,7 @@ then
   echo -e "\n\nInstalling stir dependencies...\n"
 
   #Install dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpng16-16-udeb libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
   do
     apt install -y $i
   done
@@ -1220,7 +1269,7 @@ then
   echo -e "\n\nInstalling root dep...\n"
 
   #Install dep for root
-  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpng16-16-udeb libpnglite-dev libpnglite0 libjpeg-dev libjpeg-progs libjpeg-tools python gfortran openssl python-openssl python3-openssl libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev qt5-default qt5-qmake qt5-qmake-bin qt5ct qtbase5-dev qtbase5-dev-tools r-base
+  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 libjpeg-dev libjpeg-progs libjpeg-tools python gfortran openssl python-openssl python3-openssl libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev qt5-default qt5-qmake qt5-qmake-bin qt5ct qtbase5-dev qtbase5-dev-tools r-base
   do
     apt install -y $i
   done
@@ -1237,15 +1286,20 @@ then
   
   echo -e "\nDone!\n"
   
-  echo -e "\n\nInstalling cuda dep...\n"
-  
-  #Install cuda dep
-  for i in libcupti-dev libcupti-doc libcupti10.1 libcupti9.1
-  do
-    apt install -y $i
-  done
+  if [ $NVIDIA = true ]
+  then
+    echo -e "\n\nInstalling cuda dep...\n"
+    
+    #Install cuda dep
+    for i in libcupti-dev libcupti-doc libcupti10.1 nvidia-driver-440 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc python-pycuda python-pycuda-dbg python3-pycuda python3-pycuda-dbg nvidia-cuda-dev
+    do
+      apt install -y $i
+    done
 
-  echo -e "\nDone!\n"
+    echo -e "\nDone!\n"
+  else
+    true
+  fi
 
   echo -e "\n\nUpdating...\n"
 
@@ -1293,7 +1347,7 @@ else
   echo -e "\n\nUnstalling stir dependencies...\n"
 
   #Unstall dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpng16-16-udeb libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
   do
     apt purge -y $i
   done
@@ -1373,7 +1427,7 @@ else
   echo -e "\n\nUninstalling root dep...\n"
 
   #Uninstall dep for root
-  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpng16-16-udeb libpnglite-dev libpnglite0 libjpeg-dev libjpeg-progs libjpeg-tools python gfortran openssl python-openssl python3-openssl libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev qt5-default qt5-qmake qt5-qmake-bin qt5ct qtbase5-dev qtbase5-dev-tools r-base
+  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 libjpeg-dev libjpeg-progs libjpeg-tools python gfortran openssl python-openssl python3-openssl libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev qt5-default qt5-qmake qt5-qmake-bin qt5ct qtbase5-dev qtbase5-dev-tools r-base
   do
     apt purge -y $i
   done
@@ -1390,15 +1444,20 @@ else
   
   echo -e "\nDone!\n"
   
-  echo -e "\n\nUninstalling cuda dep...\n"
-  
-  #Uninstall cuda dep
-  for i in libcupti-dev libcupti-doc libcupti10.1 libcupti9.1
-  do
-    apt purge -y $i
-  done
-
-  echo -e "\nDone!\n"
+  if [ $NVIDIA = true ]
+  then
+    true
+  else
+    echo -e "\n\nUninstalling cuda dep...\n"
+    
+    #Uninstall cuda dep
+    for i in libcupti-dev libcupti-doc libcupti10.1 nvidia-driver-440 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc python-pycuda python-pycuda-dbg python3-pycuda python3-pycuda-dbg nvidia-cuda-dev
+    do
+      apt purge -y $i
+    done
+    
+    echo -e "\nDone!\n"
+  fi
 
   echo -e "\n\nUpdating...\n"
 
