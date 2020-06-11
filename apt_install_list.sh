@@ -1140,7 +1140,7 @@ then
   echo -e "\n\nInstalling stir dependencies...\n"
 
   #Install dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
   do
     apt install -y $i
   done
@@ -1150,7 +1150,7 @@ then
   echo -e "\n\nInstalling doxygen...\n"
 
   #Install documentation generator
-  for i in doxygen graphviz graphviz-dev libgraphviz-dev python-pygraphviz python3-graphviz python-pydot python3-pydot
+  for i in doxygen graphviz graphviz-dev libgraphviz-dev python3-pygraphviz python3-pygraphviz-dbg python3-graphviz python3-pydot python3-pydot-ng python3-pydotplus
   do
     apt install -y $i
   done
@@ -1180,7 +1180,7 @@ then
   echo -e "\n\nInstalling jrmomo dep...\n"
 
   #Install python for jrmomo
-  for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython python-pandas python-sympy python-nose
+  for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython3 python3-ipython python3-ipython-genutils python-pandas python-sympy python-nose
   do
     apt install -y $i
   done
@@ -1293,7 +1293,7 @@ else
   echo -e "\n\nUnstalling stir dependencies...\n"
 
   #Unstall dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
   do
     apt purge -y $i
   done
@@ -1303,7 +1303,7 @@ else
   echo -e "\n\nUnstalling doxygen...\n"
 
   #Unstall documentation generator
-  for i in doxygen graphviz graphviz-dev libgraphviz-dev python-pygraphviz python3-graphviz python-pydot python3-pydot
+  for i in doxygen graphviz graphviz-dev libgraphviz-dev python3-pygraphviz python3-pygraphviz-dbg python3-graphviz python3-pydot python3-pydot-ng python3-pydotplus
   do
     apt purge -y $i
   done
@@ -1333,7 +1333,7 @@ else
   echo -e "\n\nUnstalling jrmomo dep...\n"
 
   #Unstall python for jrmomo
-  for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython python-pandas python-sympy python-nose
+  for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython3 python3-ipython python3-ipython-genutils python-pandas python-sympy python-nose
   do
     apt purge -y $i
   done
