@@ -6,7 +6,7 @@ then
   
   if [ $1 == "-h" -o $1 == "--help" ]
   then
-    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHON\nPYTHONTHREE\nTOOLS\nITHREE\nKDE\nEMULATION\nNETWORKING\nPYPY\nSOURCECONTROL\nCMAKE\nIDE\nWTHREEM\nFIREFOX\nTOR\nCHROMIUM\nPDF\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nPOWERSHELL\nNOTEPADPLUSPLUS\nCLION\nPYCHARM\nSLACK\nDISCORD\nSKYPE\nSPOTIFY\n\nWORKDEPENDENCIES\n"
+    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHON\nPYTHONTHREE\nTOOLS\nKDE\nEMULATION\nNETWORKING\nPYPY\nSOURCECONTROL\nCMAKE\nIDE\nWTHREEM\nFIREFOX\nTOR\nCHROMIUM\nPDF\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nCLION\nPYCHARM\nSLACK\nDISCORD\nSKYPE\nSPOTIFY\n\nWORKDEPENDENCIES\nNVIDIA\n"
 
     exit 0
   else
@@ -518,31 +518,6 @@ else
   done
   
   echo -e "\nDone!\n"
-fi
-
-if [ $ITHREE = true ]
-then
-  # echo -e "\n\nInstalling i3...\n"
-  
-  #Install i3
-  for i in i3
-  do
-    true
-    # apt install -y $i
-  done
-  
-  # echo -e "\nDone!\n"
-else
-  # echo -e "\n\nUninstalling i3...\n"
-  
-  #Uninstall i3
-  for i in i3
-  do
-    true
-    # apt purge -y $i
-  done
-  
-  # echo -e "\nDone!\n"
 fi
 
 if [ $KDE = true ]
