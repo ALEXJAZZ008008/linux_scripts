@@ -1224,7 +1224,7 @@ then
   echo -e "\n\nInstalling sirf dep...\n"
 
   #Install dep for sirf
-  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage
+  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage libace-6.4.5 libace-dev libace-tkreactor-6.4.5 libace-tkreactor-dev libace-xtreactor-6.4.5 libace-xtreactor-dev
   do
     apt install -y $i
   done
@@ -1382,7 +1382,7 @@ else
   echo -e "\n\nUnstalling sirf dep...\n"
 
   #Unstall dep for sirf
-  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage
+  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage libace-6.4.5 libace-dev libace-tkreactor-6.4.5 libace-tkreactor-dev libace-xtreactor-6.4.5 libace-xtreactor-dev
   do
     apt purge -y $i
   done
