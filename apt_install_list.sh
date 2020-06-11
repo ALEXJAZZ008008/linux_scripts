@@ -17,7 +17,6 @@ then
       PYTHON=false
       PYTHONTHREE=false
       TOOLS=false
-      ITHREE=false
       KDE=false
       EMULATION=false
       NETWORKING=false
@@ -54,7 +53,6 @@ then
         PYTHON=true
         PYTHONTHREE=true
         TOOLS=true
-        ITHREE=true
         KDE=true
         EMULATION=true
         NETWORKING=true
@@ -94,42 +92,40 @@ else
     PYTHON=$1
     PYTHONTHREE=$2
     TOOLS=$3
-    ITHREE=$4
-    KDE=$5
-    EMULATION=$6
-    NETWORKING=$7
-    PYPY=$8
-    SOURCECONTROL=$9
-    CMAKE=$10
-    IDE=$11
-    WTHREEM=$12
-    FIREFOX=$13
-    TOR=$14
-    CHROMIUM=$15
-    PDF=$16
-    LIBREOFFICE=$17
-    VLC=$18
-    MEDIA=$19
-    STEAM=$20
+    KDE=$4
+    EMULATION=$5
+    NETWORKING=$6
+    PYPY=$7
+    SOURCECONTROL=$8
+    CMAKE=$9
+    IDE=$10
+    WTHREEM=$11
+    FIREFOX=$12
+    TOR=$13
+    CHROMIUM=$14
+    PDF=$15
+    LIBREOFFICE=$16
+    VLC=$17
+    MEDIA=$18
+    STEAM=$19
     
-    SNAP=$21
-    PYPYTHREE=$22
-    GIT=$23
-    CLION=$26
-    PYCHARM=$27
-    SLACK=$28
-    DISCORD=$29
-    SKYPE=$30
-    SPOTIFY=$31
+    SNAP=$20
+    PYPYTHREE=$21
+    GIT=$22
+    CLION=$23
+    PYCHARM=$24
+    SLACK=$25
+    DISCORD=$26
+    SKYPE=$27
+    SPOTIFY=$28
     
-    WORKDEPENDENCIES=$33
+    WORKDEPENDENCIES=$29
   else
     echo -e "Argument: no argument, installing default packages...\n"
     
     PYTHON=true
     PYTHONTHREE=true
     TOOLS=true
-    ITHREE=false
     KDE=true
     EMULATION=true
     NETWORKING=true
@@ -182,15 +178,6 @@ then
   echo -e "Install tools"
 else
   echo -e "Uninstall tools"
-fi
-
-if [ $ITHREE = true ]
-then
-  true
-  # echo -e "Install i3"
-else
-  true
-  # echo -e "Uninstall i3"
 fi
 
 if [ $KDE = true ]
@@ -420,7 +407,7 @@ then
   echo -e "\n\nInstalling python...\n"
   
   #Install python
-  for i in python python-dev python-pip python-virtualenv python-distutils-extra
+  for i in python python-dev pipenv virtualenv virtualenvwrapper python-distutils-extra
   do
     apt install -y $i
   done
@@ -430,7 +417,7 @@ else
   echo -e "\n\nUninstalling python...\n"
   
   #Uninstall python
-  for i in python python-dev python-pip python-virtualenv python-distutils-extra
+  for i in python python-dev pipenv virtualenv virtualenvwrapper python-distutils-extra
   do
     apt purge -y $i
   done
@@ -443,7 +430,7 @@ then
   echo -e "\n\nInstalling python3...\n"
   
   #Install python3
-  for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra python3-setuptools python3-venv
+  for i in python3 python3-dev python3-pip python3-virtualenv python3-virtualenvwrapper python3-distutils python3-distutils-extra python3-setuptools python3-venv python3-btrfs python3-btrfsutil
   do
     apt install -y $i
   done
@@ -453,7 +440,7 @@ else
   echo -e "\n\nUninstalling python3...\n"
   
   #Uninstall python3
-  for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra python3-setuptools python3-venv
+  for i in python3 python3-dev python3-pip python3-virtualenv python3-virtualenvwrapper python3-distutils python3-distutils-extra python3-setuptools python3-venv python3-btrfs python3-btrfsutil
   do
     apt purge -y $i
   done
@@ -466,7 +453,7 @@ then
   echo -e "\n\nInstalling tools...\n"
   
   #Install tools
-  for i in neofetch upower gparted curl cloc unrar htop nvtop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools
+  for i in neofetch upower gparted curl cloc unrar htop nvtop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-progs apt-btrfs-snapshot btrfsmaintenance
   do
     apt install -y $i
   done
@@ -476,7 +463,7 @@ else
   echo -e "\n\nUninstalling tools...\n"
   
   #Uninstall tools
-  for i in neofetch upower gparted curl cloc unrar htop nvtop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools
+  for i in neofetch upower gparted curl cloc unrar htop nvtop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-progs apt-btrfs-snapshot btrfsmaintenance
   do
     apt purge -y $i
   done
