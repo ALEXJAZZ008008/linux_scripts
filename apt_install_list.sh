@@ -1140,7 +1140,7 @@ then
   echo -e "\n\nInstalling stir dependencies...\n"
 
   #Install dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpng16-16-udeb libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
   do
     apt install -y $i
   done
@@ -1180,7 +1180,7 @@ then
   echo -e "\n\nInstalling jrmomo dep...\n"
 
   #Install python for jrmomo
-  for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython3 python3-ipython python3-ipython-genutils python-pandas python-sympy python-nose
+  for i in python-numpy python3-numpy python3-scipy python3-scipy-dbg python3-matplotlib python3-matplotlib-dbg python3-nibabel ipython3 python3-ipython python3-ipython-genutils python3-pandas python3-pandas-lib python3-sklearn-pandas isympy isympy-common isympy3 python3-sympy python-nose
   do
     apt install -y $i
   done
@@ -1210,7 +1210,7 @@ then
   echo -e "\n\nInstalling matlab dep...\n"
 
   #Install dep for matlab
-  for i in libgmp-dev libmpfr-dev libmpc-dev gcc-6 g++-6 g++-6-multilib gfortran-6
+  for i in libgmp-dev libmpfr-dev libmpc-dev
   do
     apt install -y $i
   done
@@ -1220,7 +1220,7 @@ then
   echo -e "\n\nInstalling root dep...\n"
 
   #Install dep for root
-  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng libjpeg python gfortran openssl-dev libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev libqt4-dev r-base
+  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpng16-16-udeb libpnglite-dev libpnglite0 libjpeg-dev libjpeg-progs libjpeg-tools python gfortran openssl python-openssl python3-openssl libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev qt5-default qt5-qmake qt5-qmake-bin qt5ct qtbase5-dev qtbase5-dev-tools r-base
   do
     apt install -y $i
   done
@@ -1293,7 +1293,7 @@ else
   echo -e "\n\nUnstalling stir dependencies...\n"
 
   #Unstall dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpng16-16-udeb libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
   do
     apt purge -y $i
   done
@@ -1333,7 +1333,7 @@ else
   echo -e "\n\nUnstalling jrmomo dep...\n"
 
   #Unstall python for jrmomo
-  for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython3 python3-ipython python3-ipython-genutils python-pandas python-sympy python-nose
+  for i in python-numpy python3-numpy python3-scipy python3-scipy-dbg python3-matplotlib python3-matplotlib-dbg python3-nibabel ipython3 python3-ipython python3-ipython-genutils python3-pandas python3-pandas-lib python3-sklearn-pandas isympy isympy-common isympy3 python3-sympy python-nose
   do
     apt purge -y $i
   done
@@ -1363,7 +1363,7 @@ else
   echo -e "\n\nUnstalling matlab dep...\n"
 
   #Unstall dep for matlab
-  for i in libgmp-dev libmpfr-dev libmpc-dev gcc-6 g++-6 g++-6-multilib gfortran-6
+  for i in libgmp-dev libmpfr-dev libmpc-dev
   do
     apt purge -y $i
   done
@@ -1373,7 +1373,7 @@ else
   echo -e "\n\nUninstalling root dep...\n"
 
   #Uninstall dep for root
-  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng libjpeg python gfortran openssl-dev libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev libqt4-dev r-base
+  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpng16-16-udeb libpnglite-dev libpnglite0 libjpeg-dev libjpeg-progs libjpeg-tools python gfortran openssl python-openssl python3-openssl libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev qt5-default qt5-qmake qt5-qmake-bin qt5ct qtbase5-dev qtbase5-dev-tools r-base
   do
     apt purge -y $i
   done
