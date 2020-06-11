@@ -1200,7 +1200,7 @@ then
   echo -e "\n\nInstalling sirf dep...\n"
 
   #Install dep for sirf
-  for i in libomp-dev cython cython3 libhdf5-dev
+  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage
   do
     apt install -y $i
   done
@@ -1353,7 +1353,7 @@ else
   echo -e "\n\nUnstalling sirf dep...\n"
 
   #Unstall dep for sirf
-  for i in libomp-dev cython cython3 libhdf5-dev
+  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage
   do
     apt purge -y $i
   done
