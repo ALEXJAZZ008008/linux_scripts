@@ -453,7 +453,7 @@ then
   echo -e "\n\nInstalling tools...\n"
   
   #Install tools
-  for i in neofetch upower gparted curl cloc unrar htop nvtop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools
+  for i in neofetch upower gparted curl cloc unrar htop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools
   do
     apt install -y $i
   done
@@ -463,7 +463,7 @@ else
   echo -e "\n\nUninstalling tools...\n"
   
   #Uninstall tools
-  for i in neofetch upower gparted curl cloc unrar htop nvtop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools
+  for i in neofetch upower gparted curl cloc unrar htop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools
   do
     apt purge -y $i
   done
@@ -1115,7 +1115,7 @@ then
   echo -e "\n\nInstalling stir dependencies...\n"
 
   #Install dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
   do
     apt install -y $i
   done
@@ -1195,7 +1195,7 @@ then
   echo -e "\n\nInstalling root dep...\n"
 
   #Install dep for root
-  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng libjpeg python gfortran openssl-dev libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev libqt4-dev r-base
+  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 libjpeg-dev libjpeg-progs libjpeg-turbo-progs libjpeg-turbo8 libjpeg-turbo8-dbg libjpeg-turbo8-dev libjpeg62 libjpeg62-dev libjpeg8 libjpeg8-dbg libjpeg8-dev libjpeg9 libjpeg9-dbg libjpeg9-dev python gfortran openssl-dev libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev libqt4-dev r-base
   do
     apt install -y $i
   done
@@ -1210,16 +1210,6 @@ then
     apt install -y $i
   done
   
-  echo -e "\nDone!\n"
-  
-  echo -e "\n\nInstalling cuda dep...\n"
-  
-  #Install cuda dep
-  for i in libcupti-dev libcupti-doc libcupti10.1 libcupti9.1
-  do
-    apt install -y $i
-  done
-
   echo -e "\nDone!\n"
 
   echo -e "\n\nUpdating...\n"
@@ -1268,7 +1258,7 @@ else
   echo -e "\n\nUnstalling stir dependencies...\n"
 
   #Unstall dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng-dev tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
   do
     apt purge -y $i
   done
@@ -1348,7 +1338,7 @@ else
   echo -e "\n\nUninstalling root dep...\n"
 
   #Uninstall dep for root
-  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng libjpeg python gfortran openssl-dev libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev libqt4-dev r-base
+  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 libjpeg-dev libjpeg-progs libjpeg-turbo-progs libjpeg-turbo8 libjpeg-turbo8-dbg libjpeg-turbo8-dev libjpeg62 libjpeg62-dev libjpeg8 libjpeg8-dbg libjpeg8-dev libjpeg9 libjpeg9-dbg libjpeg9-dev python gfortran openssl openssl-ibmca openssl1.0 python-openssl python3-openssl libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev libqt4-dev r-base
   do
     apt purge -y $i
   done
@@ -1363,16 +1353,6 @@ else
     apt purge -y $i
   done
   
-  echo -e "\nDone!\n"
-  
-  echo -e "\n\nUninstalling cuda dep...\n"
-  
-  #Uninstall cuda dep
-  for i in libcupti-dev libcupti-doc libcupti10.1 libcupti9.1
-  do
-    apt purge -y $i
-  done
-
   echo -e "\nDone!\n"
 
   echo -e "\n\nUpdating...\n"
