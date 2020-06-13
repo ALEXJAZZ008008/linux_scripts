@@ -1177,7 +1177,7 @@ then
   echo -e "\n\nInstalling sirf dep...\n"
 
   #Install dep for sirf
-  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage libace-6.4.5 libace-dev libace-tkreactor-6.4.5 libace-tkreactor-dev libace-xtreactor-6.4.5 libace-xtreactor-dev libopenblas-base libopenblas-dev libopenblas-openmp-dev libopenblas-pthread-dev libopenblas-serial-dev libopenblas0 libopenblas0-openmp libopenblas0-pthread libopenblas0-serial libopenblas64-0 libopenblas64-0-openmp libopenblas64-0-pthread libopenblas64-0-serial libopenblas64-dev libopenblas64-openmp-dev libopenblas64-pthread-dev libopenblas64-serial-dev
+  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage libace-6.4.5 libace-dev libace-tkreactor-6.4.5 libace-tkreactor-dev libace-xtreactor-6.4.5 libace-xtreactor-dev libopenblas-base libopenblas-dev
   do
     apt install -y $i
   done
@@ -1320,7 +1320,7 @@ else
   echo -e "\n\nUnstalling sirf dep...\n"
 
   #Unstall dep for sirf
-  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage libace-6.4.5 libace-dev libace-tkreactor-6.4.5 libace-tkreactor-dev libace-xtreactor-6.4.5 libace-xtreactor-dev libopenblas-base libopenblas-dev libopenblas-openmp-dev libopenblas-pthread-dev libopenblas-serial-dev libopenblas0 libopenblas0-openmp libopenblas0-pthread libopenblas0-serial libopenblas64-0 libopenblas64-0-openmp libopenblas64-0-pthread libopenblas64-0-serial libopenblas64-dev libopenblas64-openmp-dev libopenblas64-pthread-dev libopenblas64-serial-dev
+  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage libace-6.4.5 libace-dev libace-tkreactor-6.4.5 libace-tkreactor-dev libace-xtreactor-6.4.5 libace-xtreactor-dev libopenblas-base libopenblas-dev
   do
     apt purge -y $i
   done
