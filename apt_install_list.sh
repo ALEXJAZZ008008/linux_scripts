@@ -481,6 +481,8 @@ then
     apt install -y $i
   done
   
+  apt install -y $(check-language-support)
+  
   echo -e "\nDone!\n"
 else
   echo -e "\n\nUninstalling kde...\n"
