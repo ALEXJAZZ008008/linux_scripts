@@ -849,7 +849,7 @@ then
   echo -e "\n\nInstalling media...\n"
   
   #Install media
-  for i in gimp audacity blender
+  for i in gimp gimp-python audacity blender
   do
     apt install -y $i
   done
@@ -859,7 +859,7 @@ else
   echo -e "\n\nUninstalling media...\n"
   
   #Uninstall media
-  for i in gimp audacity blender
+  for i in gimp gimp-python audacity blender
   do
     apt purge -y $i
   done
