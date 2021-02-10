@@ -1233,7 +1233,7 @@ then
     echo -e "\n\nInstalling cuda dep...\n"
     
     #Install cuda dep
-    for i in libcupti-dev libcupti-doc libcupti10.1 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
+    for i in libcupti-dev libcupti-doc libcupti11.2 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
     do
       apt install -y $i
     done
@@ -1389,7 +1389,7 @@ else
     echo -e "\n\nUninstalling cuda dep...\n"
     
     #Uninstall cuda dep
-    for i in libcupti-dev libcupti-doc libcupti10.1 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
+    for i in libcupti-dev libcupti-doc libcupti11.2 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
     do
       apt purge -y $i
     done
