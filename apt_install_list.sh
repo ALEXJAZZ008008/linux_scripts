@@ -6,7 +6,7 @@ then
   
   if [ $1 == "-h" -o $1 == "--help" ]
   then
-    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHON\nPYTHONTHREE\nTOOLS\nKDE\nEMULATION\nNETWORKING\nPYPY\nSOURCECONTROL\nCMAKE\nIDE\nWTHREEM\nFIREFOX\nTOR\nCHROMIUM\nPDF\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nCLION\nPYCHARM\nSLACK\nDISCORD\nSKYPE\nSPOTIFY\n\nWORKDEPENDENCIES\nNVIDIA\n"
+    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHON\nPYTHONTHREE\nTOOLS\nKDE\nEMULATION\nNETWORKING\nPYPY\nSOURCECONTROL\nCMAKE\nIDE\nWTHREEM\nFIREFOX\nTOR\nCHROMIUM\nPDF\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nCLION\nPYCHARM\nSLACK\nDISCORD\nSPOTIFY\n\nWORKDEPENDENCIES\nNVIDIA\n"
 
     exit 0
   else
@@ -1233,7 +1233,7 @@ then
     echo -e "\n\nInstalling cuda dep...\n"
     
     #Install cuda dep
-    for i in libcupti-dev libcupti-doc libcupti10.1 nvidia-driver-440 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
+    for i in libcupti-dev libcupti-doc libcupti10.1 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
     do
       apt install -y $i
     done
@@ -1386,14 +1386,14 @@ else
   
   echo -e "\nDone!\n"
   
-  if [ $NVIDIA = true ]
+  if [ $NVIDIA = false ]
   then
     true
   else
     echo -e "\n\nUninstalling cuda dep...\n"
     
     #Uninstall cuda dep
-    for i in libcupti-dev libcupti-doc libcupti10.1 nvidia-driver-440 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
+    for i in libcupti-dev libcupti-doc libcupti10.1 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
     do
       apt purge -y $i
     done
