@@ -41,7 +41,6 @@ then
       PYCHARM=false
       SLACK=false
       DISCORD=false
-      SKYPE=false
       SPOTIFY=false
 
       WORKDEPENDENCIES=false
@@ -78,11 +77,10 @@ then
         PYCHARM=true
         SLACK=true
         DISCORD=true
-        SKYPE=true
         SPOTIFY=true
 
         WORKDEPENDENCIES=true
-        NVIDIA=false
+        NVIDIA=true
       else
         if [ $1 == "-na" -o $1 == "--nvidiaall" ]
         then
@@ -115,7 +113,6 @@ then
           PYCHARM=true
           SLACK=true
           DISCORD=true
-          SKYPE=true
           SPOTIFY=true
 
           WORKDEPENDENCIES=true
@@ -125,7 +122,7 @@ then
     fi
   fi
 else
-  if [ $# == 32 ]
+  if [ $# == 31 ]
   then
     echo -e "Argument: user defined, installing selected packages...\n"
     
@@ -156,11 +153,10 @@ else
     PYCHARM=$24
     SLACK=$25
     DISCORD=$26
-    SKYPE=$27
-    SPOTIFY=$28
+    SPOTIFY=$27
     
-    WORKDEPENDENCIES=$29
-    NVIDIA=$30
+    WORKDEPENDENCIES=$28
+    NVIDIA=$29
   else
     echo -e "Argument: no argument, installing default packages...\n"
     
@@ -168,33 +164,32 @@ else
     PYTHONTHREE=true
     TOOLS=true
     KDE=true
-    EMULATION=true
-    NETWORKING=true
+    EMULATION=false
+    NETWORKING=false
     PYPY=false
-    SOURCECONTROL=true
-    CMAKE=true
-    IDE=true
+    SOURCECONTROL=false
+    CMAKE=false
+    IDE=false
     WTHREEM=false
-    FIREFOX=false
+    FIREFOX=true
     TOR=false
     CHROMIUM=true
     PDF=false
     LIBREOFFICE=true
     VLC=true
-    MEDIA=false
+    MEDIA=true
     STEAM=true
     
     SNAP=true
     PYPYTHREE=false
     GIT=false
     CLION=false
-    PYCHARM=true
+    PYCHARM=false
     SLACK=false
-    DISCORD=false
-    SKYPE=true
+    DISCORD=true
     SPOTIFY=true
     
-    WORKDEPENDENCIES=true
+    WORKDEPENDENCIES=false
     NVIDIA=true
   fi
 fi
@@ -385,13 +380,6 @@ else
   echo -e "Uninstall discord"
 fi
 
-if [ $SKYPE = true ]
-then
-  echo -e "Install skype"
-else
-  echo -e "Uninstall skype"
-fi
-
 if [ $SPOTIFY = true ]
 then
   echo -e "Install spotify"
@@ -502,7 +490,7 @@ then
   echo -e "\n\nInstalling tools...\n"
   
   #Install tools
-  for i in neofetch upower gparted curl cloc unrar htop nvtop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-progs apt-btrfs-snapshot btrfsmaintenance
+  for i in neofetch upower gparted curl cloc unrar htop nvtop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-progs apt-btrfs-snapshot btrfsmaintenance redshift
   do
     apt install -y $i
   done
@@ -512,7 +500,7 @@ else
   echo -e "\n\nUninstalling tools...\n"
   
   #Uninstall tools
-  for i in neofetch upower gparted curl cloc unrar htop nvtop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-progs apt-btrfs-snapshot btrfsmaintenance
+  for i in neofetch upower gparted curl cloc unrar htop nvtop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-progs apt-btrfs-snapshot btrfsmaintenance redshift
   do
     apt purge -y $i
   done
@@ -1065,30 +1053,6 @@ else
   
   #Remove discord
   for i in "discord --stable --classic"
-  do
-    snap remove $i
-  done
-  
-  echo -e "\nDone!\n"
-fi
-
-if [ $SKYPE = true ]
-then
-  echo -e "\n\nInstalling skype...\n"
-  
-  #Install skype
-  for i in "skype --stable --classic"
-  do
-    snap install $i
-    snap refresh $i
-  done
-  
-  echo -e "\nDone!\n"
-else
-  echo -e "\n\nUninstalling skype...\n"
-  
-  #Remove skype
-  for i in "skype --stable --classic"
   do
     snap remove $i
   done
