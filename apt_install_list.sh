@@ -1201,8 +1201,6 @@ then
     done
 
     echo -e "\nDone!\n"
-  else
-    true
   fi
 
   echo -e "\n\nUpdating...\n"
@@ -1349,8 +1347,6 @@ else
   echo -e "\nDone!\n"
   
   if [ $NVIDIA = false ]
-  then
-    true
   else
     echo -e "\n\nUninstalling cuda dep...\n"
     
