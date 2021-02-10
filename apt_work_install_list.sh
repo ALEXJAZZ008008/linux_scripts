@@ -288,7 +288,7 @@ else
   echo -e "\nDone!\n"
   
   if [ $NVIDIA = false ]
-  else
+  then
     echo -e "\n\nUninstalling cuda dep...\n"
     
     #Uninstall cuda dep
