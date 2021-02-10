@@ -6,7 +6,7 @@ then
   
   if [ $1 == "-h" -o $1 == "--help" ]
   then
-    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHON\nPYTHONTHREE\nTOOLS\nKDE\nEMULATION\nNETWORKING\nPYPY\nSOURCECONTROL\nCMAKE\nIDE\nWTHREEM\nFIREFOX\nTOR\nCHROMIUM\nPDF\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nCLION\nPYCHARM\nSLACK\nDISCORD\nSPOTIFY\n\nWORKDEPENDENCIES\n"
+    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHON\nPYTHONTHREE\nTOOLS\nKDE\nEMULATION\nNETWORKING\nPYPY\nSOURCECONTROL\nCMAKE\nIDE\nWTHREEM\nFIREFOX\nTOR\nCHROMIUM\nPDF\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nCLION\nPYCHARM\nSLACK\nDISCORD\nSPOTIFY\n\nWORKDEPENDENCIES\nNVIDIA\n"
 
     exit 0
   else
@@ -44,6 +44,7 @@ then
       SPOTIFY=false
 
       WORKDEPENDENCIES=false
+      NVIDIA=false
     else
       if [ $1 == "-a" -o $1 == "--all" ]
       then
@@ -79,11 +80,12 @@ then
         SPOTIFY=true
 
         WORKDEPENDENCIES=true
+        NVIDIA=true
       fi
     fi
   fi
 else
-  if [ $# == 30 ]
+  if [ $# == 31 ]
   then
     echo -e "Argument: user defined, installing selected packages...\n"
     
@@ -117,6 +119,7 @@ else
     SPOTIFY=$27
     
     WORKDEPENDENCIES=$28
+    NVIDIA=$29
   else
     echo -e "Argument: no argument, installing default packages...\n"
     
@@ -150,6 +153,7 @@ else
     SPOTIFY=true
     
     WORKDEPENDENCIES=false
+    NVIDIA=false
   fi
 fi
 
@@ -353,6 +357,13 @@ then
   echo -e "Install work dependencies"
 else
   echo -e "Uninstall work dependencies"
+fi
+
+if [ $NVIDIA = true ]
+then
+  echo -e "Install nvidia"
+else
+  echo -e "Uninstall nvidia"
 fi
 
 while true
@@ -1178,6 +1189,21 @@ then
   done
   
   echo -e "\nDone!\n"
+  
+  if [ $NVIDIA = true ]
+  then
+    echo -e "\n\nInstalling cuda dep...\n"
+    
+    #Install cuda dep
+    for i in libcupti-dev libcupti-doc libcupti10.1 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
+    do
+      apt install -y $i
+    done
+
+    echo -e "\nDone!\n"
+  else
+    true
+  fi
 
   echo -e "\n\nUpdating...\n"
 
@@ -1321,6 +1347,21 @@ else
   done
   
   echo -e "\nDone!\n"
+  
+  if [ $NVIDIA = false ]
+  then
+    true
+  else
+    echo -e "\n\nUninstalling cuda dep...\n"
+    
+    #Uninstall cuda dep
+    for i in libcupti-dev libcupti-doc libcupti10.1 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
+    do
+      apt purge -y $i
+    done
+    
+    echo -e "\nDone!\n"
+  fi
 
   echo -e "\n\nUpdating...\n"
 
