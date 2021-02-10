@@ -130,6 +130,19 @@ then
   done
   
   echo -e "\nDone!\n"
+  
+  if [ $NVIDIA = true ]
+  then
+    echo -e "\n\nInstalling cuda dep...\n"
+    
+    #Install cuda dep
+    for i in libcupti-dev libcupti-doc libcupti10.1 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
+    do
+      apt install -y $i
+    done
+
+    echo -e "\nDone!\n"
+  fi
 
   echo -e "\n\nUpdating...\n"
 
@@ -273,6 +286,19 @@ else
   done
   
   echo -e "\nDone!\n"
+  
+  if [ $NVIDIA = false ]
+  else
+    echo -e "\n\nUninstalling cuda dep...\n"
+    
+    #Uninstall cuda dep
+    for i in libcupti-dev libcupti-doc libcupti10.1 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
+    do
+      apt purge -y $i
+    done
+    
+    echo -e "\nDone!\n"
+  fi
 
   echo -e "\n\nUpdating...\n"
 
