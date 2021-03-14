@@ -80,7 +80,7 @@ then
         SPOTIFY=true
 
         WORKDEPENDENCIES=true
-        NVIDIA=true
+        NVIDIA=false
       else
         if [ $1 == "-na" -o $1 == "--nvidiaall" ]
         then
