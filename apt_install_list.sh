@@ -80,7 +80,7 @@ then
         SPOTIFY=true
 
         WORKDEPENDENCIES=true
-        NVIDIA=true
+        NVIDIA=false
       fi
     fi
   fi
