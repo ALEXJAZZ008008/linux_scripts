@@ -453,7 +453,7 @@ then
   echo -e "\n\nInstalling tools...\n"
   
   #Install tools
-  for i in neofetch upower gparted curl cloc unrar htop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools redshift
+  for i in neofetch upower gparted curl cloc unrar htop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools redshift hardinfo
   do
     apt install -y $i
   done
