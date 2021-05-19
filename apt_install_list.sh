@@ -42,6 +42,7 @@ then
       SLACK=false
       DISCORD=false
       SPOTIFY=false
+      CURE=false
 
       WORKDEPENDENCIES=false
       NVIDIA=false
@@ -78,6 +79,7 @@ then
         SLACK=true
         DISCORD=true
         SPOTIFY=true
+        CURA=true
 
         WORKDEPENDENCIES=true
         NVIDIA=false
@@ -117,9 +119,10 @@ else
     SLACK=$25
     DISCORD=$26
     SPOTIFY=$27
+    CURA=$28
     
-    WORKDEPENDENCIES=$28
-    NVIDIA=$29
+    WORKDEPENDENCIES=$29
+    NVIDIA=$30
   else
     echo -e "Argument: no argument, installing default packages...\n"
     
@@ -151,6 +154,7 @@ else
     SLACK=false
     DISCORD=true
     SPOTIFY=true
+    CURA=false
     
     WORKDEPENDENCIES=false
     NVIDIA=false
@@ -348,6 +352,13 @@ then
   echo -e "Install spotify"
 else
   echo -e "Uninstall spotify"
+fi
+
+if [ $CURA = true ]
+then
+  echo -e "Install cura"
+else
+  echo -e "Uninstall cura"
 fi
 
 echo -e ""
@@ -1040,6 +1051,31 @@ else
   
   #Remove spotify
   for i in "spotify --stable --classic"
+  do
+    snap remove $i
+  done
+  
+  echo -e "\nDone!\n"
+fi
+
+
+if [ $CURA = true ]
+then
+  echo -e "\n\nInstalling cura...\n"
+
+  #Install cura
+  for i in "cura-slicer --stable --classic"
+  do
+    snap install $i
+    snap refresh $i
+  done
+  
+  echo -e "\nDone!\n"
+else
+  echo -e "\n\nUninstalling cura...\n"
+  
+  #Remove cura
+  for i in "cura-slicer --stable --classic"
   do
     snap remove $i
   done
