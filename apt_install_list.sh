@@ -871,7 +871,7 @@ then
   echo -e "\n\nInstalling snap...\n"
   
   #Install snap
-  for i in "snap-store --stable --classic"
+  for i in snap-store
   do
     snap install $i
     snap refresh $i
@@ -882,7 +882,7 @@ else
   echo -e "\n\nUninstalling snap...\n"
   
   #Remove snap
-  for i in "snap-store --stable --classic"
+  for i in snap-store
   do
     snap remove $i
   done
@@ -895,7 +895,7 @@ then
   echo -e "\n\nInstalling pypy3...\n"
    
   #Install pypy3
-  for i in "pypy3 --stable --classic"
+  for i in pypy3
   do
     snap install $i
     snap refresh $i
@@ -906,7 +906,7 @@ else
   echo -e "\n\nUninstalling pypy3...\n"
   
   #Remove pypy3
-  for i in "pypy3 --stable --classic"
+  for i in pypy3
   do
     snap remove $i
   done
@@ -919,7 +919,7 @@ then
   echo -e "\n\nInstalling git...\n"
   
   #Install git
-  for i in "gitkraken --stable --classic"
+  for i in gitkraken
   do
     snap install $i
     snap refresh $i
@@ -930,7 +930,7 @@ else
   echo -e "\n\nUninstalling git...\n"
   
   #Remove git
-  for i in "gitkraken --stable --classic"
+  for i in gitkraken
   do
     snap remove $i
   done
@@ -943,7 +943,7 @@ then
   echo -e "\n\nInstalling clion...\n"
   
   #Install clion
-  for i in "clion --stable --classic"
+  for i in clion
   do
     snap install $i
     snap refresh $i
@@ -954,7 +954,7 @@ else
   echo -e "\n\nUninstalling clion...\n"
   
   #Remove clion
-  for i in "clion --stable --classic"
+  for i in clion
   do
     snap remove $i
   done
@@ -967,7 +967,7 @@ then
   echo -e "\n\nInstalling pycharm...\n"
   
   #Install pycharm
-  for i in "pycharm-professional --stable --classic"
+  for i in pycharm-professional
   do
     snap install $i
     snap refresh $i
@@ -978,7 +978,7 @@ else
   echo -e "\n\nUninstalling pycharm...\n"
   
   #Remove pycharm
-  for i in "pycharm-professional --stable --classic"
+  for i in pycharm-professional
   do
     snap remove $i
   done
@@ -991,7 +991,7 @@ then
   echo -e "\n\nInstalling slack...\n"
   
   #Install slack
-  for i in "slack --stable --classic"
+  for i in slack
   do
     snap install $i
     snap refresh $i
@@ -1002,7 +1002,7 @@ else
   echo -e "\n\nUninstalling slack...\n"
   
   #Remove slack
-  for i in "slack --stable --classic"
+  for i in slack
   do
     snap remove $i
   done
@@ -1015,7 +1015,7 @@ then
   echo -e "\n\nInstalling discord...\n"
   
   #Install discord
-  for i in "discord --stable --classic"
+  for i in discord
   do
     snap install $i
     snap refresh $i
@@ -1026,7 +1026,7 @@ else
   echo -e "\n\nUninstalling discord...\n"
   
   #Remove discord
-  for i in "discord --stable --classic"
+  for i in discord
   do
     snap remove $i
   done
@@ -1039,7 +1039,7 @@ then
   echo -e "\n\nInstalling spotify...\n"
 
   #Install spotify
-  for i in "spotify --stable --classic"
+  for i in spotify
   do
     snap install $i
     snap refresh $i
@@ -1050,7 +1050,7 @@ else
   echo -e "\n\nUninstalling spotify...\n"
   
   #Remove spotify
-  for i in "spotify --stable --classic"
+  for i in spotify
   do
     snap remove $i
   done
@@ -1064,7 +1064,7 @@ then
   echo -e "\n\nInstalling cura...\n"
 
   #Install cura
-  for i in "cura-slicer --stable --classic"
+  for i in cura-slicer meshlab
   do
     snap install $i
     snap refresh $i
@@ -1075,7 +1075,7 @@ else
   echo -e "\n\nUninstalling cura...\n"
   
   #Remove cura
-  for i in "cura-slicer --stable --classic"
+  for i in cura-slicer meshlab
   do
     snap remove $i
   done
