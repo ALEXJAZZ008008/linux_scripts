@@ -1130,7 +1130,7 @@ then
   echo -e "\n\nInstalling stir dependencies...\n"
 
   #Install dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev h5utils liblapack-dev libxslt-dev python-h5py python-libxml2 python-psutil python3-h5py python3-libxml2 python3-psutil libplplot-dev libhdf5-serial-dev libarmadillo-dev libgtest-dev
   do
     apt install -y $i
   done
@@ -1287,7 +1287,7 @@ else
   echo -e "\n\nUnstalling stir dependencies...\n"
 
   #Unstall dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev h5utils liblapack-dev libxslt-dev python-h5py python-libxml2 python-psutil python3-h5py python3-libxml2 python3-psutil libplplot-dev libhdf5-serial-dev libarmadillo-dev libgtest-dev
   do
     apt purge -y $i
   done
