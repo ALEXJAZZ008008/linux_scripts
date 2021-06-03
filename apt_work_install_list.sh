@@ -35,7 +35,7 @@ then
   echo -e "\n\nInstalling stir dependencies...\n"
 
   #Install dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev h5utils liblapack-dev libxslt-dev python-h5py python-libxml2 python-psutil python3-h5py python3-libxml2 python3-psutil libplplot-dev libhdf5-serial-dev libarmadillo-dev libgtest-dev
   do
     apt install -y $i
   done
@@ -95,7 +95,8 @@ then
   echo -e "\n\nInstalling sirf dep...\n"
 
   #Install dep for sirf
-  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage
+  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage libace-6.4.5 libace-dev libace-tkreactor-6.4.5 libace-tkreactor-dev libace-xtreactor-6.4.5 libace-xtreactor-dev libopenblas-base libopenblas-dev libopenblas-openmp-dev libopenblas-pthread-dev libopenblas-serial-dev libopenblas0 libopenblas0-openmp libopenblas0-pthread libopenblas0-serial libopenblas64-0 libopenblas64-0-openmp libopenblas64-0-pthread libopenblas64-0-serial libopenblas64-dev libopenblas64-openmp-dev libopenblas64-pthread-dev libopenblas64-serial-dev
+  
   do
     apt install -y $i
   done
@@ -191,7 +192,7 @@ else
   echo -e "\n\nUnstalling stir dependencies...\n"
 
   #Unstall dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev h5utils liblapack-dev libxslt-dev python-h5py python-libxml2 python-psutil python3-h5py python3-libxml2 python3-psutil libplplot-dev libhdf5-serial-dev libarmadillo-dev libgtest-dev
   do
     apt purge -y $i
   done
@@ -251,7 +252,7 @@ else
   echo -e "\n\nUnstalling sirf dep...\n"
 
   #Unstall dep for sirf
-  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage
+  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage libace-6.4.5 libace-dev libace-tkreactor-6.4.5 libace-tkreactor-dev libace-xtreactor-6.4.5 libace-xtreactor-dev libopenblas-base libopenblas-dev libopenblas-openmp-dev libopenblas-pthread-dev libopenblas-serial-dev libopenblas0 libopenblas0-openmp libopenblas0-pthread libopenblas0-serial libopenblas64-0 libopenblas64-0-openmp libopenblas64-0-pthread libopenblas64-0-serial libopenblas64-dev libopenblas64-openmp-dev libopenblas64-pthread-dev libopenblas64-serial-dev
   do
     apt purge -y $i
   done
@@ -288,18 +289,18 @@ else
   
   echo -e "\nDone!\n"
   
-  if [ $NVIDIA = false ]
-  then
-    echo -e "\n\nUninstalling cuda dep...\n"
+  # if [ $NVIDIA = false ]
+  # then
+  #   echo -e "\n\nUninstalling cuda dep...\n"
     
     #Uninstall cuda dep
-    for i in libcupti-dev libcupti-doc libcupti11.2 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
-    do
-      apt purge -y $i
-    done
+  #   for i in libcupti-dev libcupti-doc libcupti11.2 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
+  #   do
+  #     apt purge -y $i
+  #   done
     
-    echo -e "\nDone!\n"
-  fi
+  #   echo -e "\nDone!\n"
+  # fi
 
   echo -e "\n\nUpdating...\n"
 
