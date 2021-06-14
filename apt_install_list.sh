@@ -627,7 +627,7 @@ then
   echo -e "\n\nInstalling ide...\n"
   
   #Install ide
-  for i in ccache qtcreator codeblocks spyder octave
+  for i in ccache qtcreator codeblocks spyder octave arduino
   do
     apt install -y $i
   done
@@ -637,7 +637,7 @@ else
   echo -e "\n\nUninstalling ide...\n"
   
   #Uninstall ide
-  for i in ccache qtcreator codeblocks spyder octave
+  for i in ccache qtcreator codeblocks spyder octave arduino
   do
     apt purge -y $i
   done
