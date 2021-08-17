@@ -18,3 +18,9 @@ Update settings
 Start programs
 
 Add VMs
+
+
+
+Fixes I've found:
+Laptop touchpad https://askubuntu.com/questions/1031940/how-to-switch-from-libinput-to-synaptics-in-ubuntu-18-04
+Tearing https://askubuntu.com/questions/1170247/how-do-i-solve-screen-tearing-on-ubuntu-18-04-with-nvidia
