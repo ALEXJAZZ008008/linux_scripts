@@ -464,7 +464,7 @@ then
   echo -e "\n\nInstalling tools...\n"
   
   #Install tools
-  for i in neofetch upower gparted curl cloc unrar htop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools redshift lm-sensors hardinfo
+  for i in neofetch upower gparted curl cloc unrar htop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools redshift lm-sensors hardinfo apt-find ppa-purge
   do
     apt install -y $i
   done
@@ -474,7 +474,7 @@ else
   echo -e "\n\nUninstalling tools...\n"
   
   #Uninstall tools
-  for i in neofetch upower gparted curl cloc unrar htop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools redshift lm-sensors hardinfo
+  for i in neofetch upower gparted curl cloc unrar htop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools redshift lm-sensors hardinfo apt-find ppa-purge
   do
     apt purge -y $i
   done
