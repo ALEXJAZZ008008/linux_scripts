@@ -6,7 +6,7 @@ then
   
   if [ $1 == "-h" -o $1 == "--help" ]
   then
-    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHON\nPYTHONTHREE\nTOOLS\nKDE\nEMULATION\nNETWORKING\nPYPY\nSOURCECONTROL\nCMAKE\nIDE\nWTHREEM\nFIREFOX\nTOR\nCHROMIUM\nPDF\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nCLION\nPYCHARM\nSLACK\nDISCORD\nSPOTIFY\n\nWORKDEPENDENCIES\nNVIDIA\n"
+    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHON\nPYTHONTHREE\nTOOLS\nKDE\nEMULATION\nNETWORKING\nPYPY\nSOURCECONTROL\nCMAKE\nIDE\nFIREFOX\nTOR\nCHROMIUM\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nCLION\nPYCHARM\nSLACK\nDISCORD\nSPOTIFY\n"
 
     exit 0
   else
@@ -24,11 +24,9 @@ then
       SOURCECONTROL=false
       CMAKE=false
       IDE=false
-      WTHREEM=false
       FIREFOX=false
       TOR=false
       CHROMIUM=false
-      PDF=false
       LIBREOFFICE=false
       VLC=false
       MEDIA=false
@@ -42,9 +40,6 @@ then
       SLACK=false
       DISCORD=false
       SPOTIFY=false
-
-      WORKDEPENDENCIES=false
-      NVIDIA=false
     else
       if [ $1 == "-a" -o $1 == "--all" ]
       then
@@ -60,11 +55,9 @@ then
         SOURCECONTROL=true
         CMAKE=true
         IDE=true
-        WTHREEM=true
         FIREFOX=true
         TOR=true
         CHROMIUM=true
-        PDF=true
         LIBREOFFICE=true
         VLC=true
         MEDIA=true
@@ -78,51 +71,11 @@ then
         SLACK=true
         DISCORD=true
         SPOTIFY=true
-
-        WORKDEPENDENCIES=true
-        NVIDIA=false
-      else
-        if [ $1 == "-na" -o $1 == "--nvidiaall" ]
-        then
-          echo -e "Argument: -na or --nvidiaall, installing all packages inc nvidia...\n"
-
-          PYTHON=true
-          PYTHONTHREE=true
-          TOOLS=true
-          KDE=true
-          EMULATION=true
-          NETWORKING=true
-          PYPY=true
-          SOURCECONTROL=true
-          CMAKE=true
-          IDE=true
-          WTHREEM=true
-          FIREFOX=true
-          TOR=true
-          CHROMIUM=true
-          PDF=true
-          LIBREOFFICE=true
-          VLC=true
-          MEDIA=true
-          STEAM=true
-
-          SNAP=true
-          PYPYTHREE=true
-          GIT=true
-          CLION=true
-          PYCHARM=true
-          SLACK=true
-          DISCORD=true
-          SPOTIFY=true
-
-          WORKDEPENDENCIES=true
-          NVIDIA=true
-        fi
       fi
     fi
   fi
 else
-  if [ $# == 31 ]
+  if [ $# == 25 ]
   then
     echo -e "Argument: user defined, installing selected packages...\n"
     
@@ -136,27 +89,22 @@ else
     SOURCECONTROL=$8
     CMAKE=$9
     IDE=$10
-    WTHREEM=$11
-    FIREFOX=$12
-    TOR=$13
-    CHROMIUM=$14
-    PDF=$15
-    LIBREOFFICE=$16
-    VLC=$17
-    MEDIA=$18
-    STEAM=$19
+    FIREFOX=$11
+    TOR=$12
+    CHROMIUM=$13
+    LIBREOFFICE=$14
+    VLC=$15
+    MEDIA=$16
+    STEAM=$17
     
-    SNAP=$20
-    PYPYTHREE=$21
-    GIT=$22
-    CLION=$23
-    PYCHARM=$24
-    SLACK=$25
-    DISCORD=$26
-    SPOTIFY=$27
-    
-    WORKDEPENDENCIES=$28
-    NVIDIA=$29
+    SNAP=$18
+    PYPYTHREE=$19
+    GIT=$20
+    CLION=$21
+    PYCHARM=$22
+    SLACK=$23
+    DISCORD=$24
+    SPOTIFY=$25
   else
     echo -e "Argument: no argument, installing default packages...\n"
     
@@ -164,21 +112,19 @@ else
     PYTHONTHREE=true
     TOOLS=true
     KDE=true
-    EMULATION=false
-    NETWORKING=false
+    EMULATION=true
+    NETWORKING=true
     PYPY=false
     SOURCECONTROL=false
     CMAKE=false
     IDE=false
-    WTHREEM=false
     FIREFOX=true
     TOR=false
-    CHROMIUM=true
-    PDF=false
+    CHROMIUM=false
     LIBREOFFICE=true
     VLC=true
     MEDIA=true
-    STEAM=true
+    STEAM=false
     
     SNAP=true
     PYPYTHREE=false
@@ -186,11 +132,8 @@ else
     CLION=false
     PYCHARM=false
     SLACK=false
-    DISCORD=true
-    SPOTIFY=true
-    
-    WORKDEPENDENCIES=false
-    NVIDIA=true
+    DISCORD=false
+    SPOTIFY=false
   fi
 fi
 
@@ -266,13 +209,6 @@ else
   echo -e "Uninstall ide"
 fi
 
-if [ $WTHREEM = true ]
-then
-  echo -e "Install w3m"
-else
-  echo -e "Uninstall w3m"
-fi
-
 if [ $FIREFOX = true ]
 then
   echo -e "Install firefox"
@@ -292,13 +228,6 @@ then
   echo -e "Install chromium"
 else
   echo -e "Uninstall chromium"
-fi
-
-if [ $PDF = true ]
-then
-  echo -e "Install pdf"
-else
-  echo -e "Uninstall pdf"
 fi
 
 if [ $LIBREOFFICE = true ]
@@ -389,20 +318,6 @@ fi
 
 echo -e ""
 
-if [ $WORKDEPENDENCIES = true ]
-then
-  echo -e "Install work dependencies"
-else
-  echo -e "Uninstall work dependencies"
-fi
-
-if [ $NVIDIA = true ]
-then
-  echo -e "Install nvidia"
-else
-  echo -e "Uninstall nvidia"
-fi
-
 while true
 do
     echo -e ""
@@ -444,7 +359,7 @@ then
   echo -e "\n\nInstalling python...\n"
   
   #Install python
-  for i in python python-dev pipenv virtualenv virtualenvwrapper python-distutils-extra
+  for i in python python-dev python-pip python-virtualenv python-distutils-extra
   do
     apt install -y $i
   done
@@ -454,7 +369,7 @@ else
   echo -e "\n\nUninstalling python...\n"
   
   #Uninstall python
-  for i in python python-dev pipenv virtualenv virtualenvwrapper python-distutils-extra
+  for i in python python-dev python-pip python-virtualenv python-distutils-extra
   do
     apt purge -y $i
   done
@@ -467,7 +382,7 @@ then
   echo -e "\n\nInstalling python3...\n"
   
   #Install python3
-  for i in python3 python3-dev python3-pip python3-virtualenv python3-virtualenvwrapper python3-distutils python3-distutils-extra python3-setuptools python3-venv python3-btrfs python3-btrfsutil
+  for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra python3-setuptools python3-venv
   do
     apt install -y $i
   done
@@ -477,7 +392,7 @@ else
   echo -e "\n\nUninstalling python3...\n"
   
   #Uninstall python3
-  for i in python3 python3-dev python3-pip python3-virtualenv python3-virtualenvwrapper python3-distutils python3-distutils-extra python3-setuptools python3-venv python3-btrfs python3-btrfsutil
+  for i in python3 python3-dev python3-pip python3-virtualenv python3-distutils python3-distutils-extra python3-setuptools python3-venv
   do
     apt purge -y $i
   done
@@ -490,7 +405,7 @@ then
   echo -e "\n\nInstalling tools...\n"
   
   #Install tools
-  for i in neofetch upower gparted curl cloc unrar htop nvtop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-progs apt-btrfs-snapshot btrfsmaintenance redshift
+  for i in neofetch gparted curl unrar htop aptitude exfat-fuse exfat-utils btrfs-tools redshift
   do
     apt install -y $i
   done
@@ -500,7 +415,7 @@ else
   echo -e "\n\nUninstalling tools...\n"
   
   #Uninstall tools
-  for i in neofetch upower gparted curl cloc unrar htop nvtop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-progs apt-btrfs-snapshot btrfsmaintenance redshift
+  for i in neofetch gparted curl unrar htop aptitude exfat-fuse exfat-utils btrfs-tools redshift
   do
     apt purge -y $i
   done
@@ -538,7 +453,7 @@ then
   echo -e "\n\nInstalling emulation...\n"
   
   #Install emulation
-  for i in virtualbox wine-stable winetricks
+  for i in wine-stable winetricks
   do
     apt install -y $i
   done
@@ -548,7 +463,7 @@ else
   echo -e "\n\nUninstalling emulation...\n"
   
   #Uninstall emulation
-  for i in virtualbox wine-stable winetricks
+  for i in wine-stable winetricks
   do
     apt purge -y $i
   done
@@ -607,7 +522,7 @@ then
   echo -e "\n\nInstalling source control...\n"
   
   #Install source control
-  for i in git subversion mercurial
+  for i in git
   do
     apt install -y $i
   done
@@ -617,7 +532,7 @@ else
   echo -e "\n\nUninstalling source control...\n"
   
   #Uninstall source control
-  for i in git subversion mercurial
+  for i in git
   do
     apt purge -y $i
   done
@@ -653,7 +568,7 @@ then
   echo -e "\n\nInstalling ide...\n"
   
   #Install ide
-  for i in ccache qtcreator codeblocks spyder octave
+  for i in ccache qtcreator codeblocks spyder octave arduino
   do
     apt install -y $i
   done
@@ -663,30 +578,7 @@ else
   echo -e "\n\nUninstalling ide...\n"
   
   #Uninstall ide
-  for i in ccache qtcreator codeblocks spyder octave
-  do
-    apt purge -y $i
-  done
-  
-  echo -e "\nDone!\n"
-fi
-
-if [ $WTHREEM = true ]
-then
-  echo -e "\n\nInstalling w3m...\n"
-  
-  #Install w3m
-  for i in w3m
-  do
-    apt install -y $i
-  done
-  
-  echo -e "\nDone!\n"
-else
-  echo -e "\n\nUninstalling w3m...\n"
-  
-  #Uninstall w3m
-  for i in w3m
+  for i in ccache qtcreator codeblocks spyder octave arduino
   do
     apt purge -y $i
   done
@@ -763,29 +655,6 @@ else
   echo -e "\nDone!\n"
 fi
 
-if [ $PDF = true ]
-then
-  echo -e "\n\nInstalling pdf...\n"
-  
-  #Install pdf viewer
-  for i in zathura zathura-pdf-poppler
-  do
-    apt install -y $i
-  done
-  
-  echo -e "\nDone!\n"
-else
-  echo -e "\n\nUninstalling pdf...\n"
-  
-  #Uninstall pdf viewer
-  for i in zathura zathura-pdf-poppler
-  do
-    apt purge -y $i
-  done
-  
-  echo -e "\nDone!\n"
-fi
-
 if [ $LIBREOFFICE = true ]
 then
   echo -e "\n\nInstalling libreoffice...\n"
@@ -837,7 +706,7 @@ then
   echo -e "\n\nInstalling media...\n"
   
   #Install media
-  for i in gimp gimp-python audacity blender
+  for i in gimp audacity blender
   do
     apt install -y $i
   done
@@ -847,7 +716,7 @@ else
   echo -e "\n\nUninstalling media...\n"
   
   #Uninstall media
-  for i in gimp gimp-python audacity blender
+  for i in gimp audacity blender
   do
     apt purge -y $i
   done
@@ -882,7 +751,7 @@ echo -e "\n\nUpdating...\n"
 
 for i in update upgrade full-upgrade autoremove clean
 do
-  apt $i -y
+  sudo apt $i -y
 done
 
 for i in refresh
@@ -993,6 +862,12 @@ then
   echo -e "\n\nInstalling pycharm...\n"
   
   #Install pycharm
+  for i in "pycharm-community --stable --classic"
+  do
+    snap install $i
+    snap refresh $i
+  done
+  
   for i in "pycharm-professional --stable --classic"
   do
     snap install $i
@@ -1004,6 +879,11 @@ else
   echo -e "\n\nUninstalling pycharm...\n"
   
   #Remove pycharm
+  for i in "pycharm-community --stable --classic"
+  do
+    snap remove $i
+  done
+  
   for i in "pycharm-professional --stable --classic"
   do
     snap remove $i
@@ -1080,336 +960,6 @@ else
   do
     snap remove $i
   done
-  
-  echo -e "\nDone!\n"
-fi
-
-echo -e "\n\nUpdating...\n"
-
-for i in update upgrade full-upgrade autoremove clean
-do
-  apt $i -y
-done
-
-for i in refresh
-do
-  snap $i
-done
-
-echo -e "\nDone!\n"
-
-if [ $WORKDEPENDENCIES = true ]
-then
-  echo -e "\n\nInstalling work dependencies...\n"
-  
-  echo -e "\n\nUpdating...\n"
-  
-  #Install work dependencies
-  for i in update upgrade full-upgrade autoremove clean
-  do
-    apt $i -y
-  done
-
-  for i in refresh
-  do
-    snap $i
-  done
-  
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nInstalling amide...\n"
-  
-  #Install medical imaging viewer compatible with hv for stir and nii for nifty*
-  for i in amide
-  do
-    apt install -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nInstalling stir dependencies...\n"
-
-  #Install dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev h5utils liblapack-dev libxslt-dev python-h5py python-libxml2 python-psutil python3-h5py python3-libxml2 python3-psutil libplplot-dev libhdf5-serial-dev libarmadillo-dev libgtest-dev
-  do
-    apt install -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nInstalling doxygen...\n"
-
-  #Install documentation generator
-  for i in doxygen graphviz graphviz-dev libgraphviz-dev python3-pygraphviz python3-pygraphviz-dbg python3-graphviz python3-pydot python3-pydot-ng python3-pydotplus
-  do
-    apt install -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nInstalling ffmpeg...\n"
-
-  #Install video codec for jrmomo
-  for i in ffmpeg
-  do
-    apt install -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nInstalling nifty dep...\n"
-
-  #Install qt for nifty*
-  for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev libqt5xmlpatterns5 libqt5xmlpatterns5-dev qttools5-dev
-  do
-    apt install -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nInstalling jrmomo dep...\n"
-
-  #Install python for jrmomo
-  for i in python-numpy python3-numpy python3-scipy python3-scipy-dbg python3-matplotlib python3-matplotlib-dbg python3-nibabel ipython3 python3-ipython python3-ipython-genutils python3-pandas python3-pandas-lib python3-sklearn-pandas isympy isympy-common isympy3 python3-sympy python-nose
-  do
-    apt install -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nInstalling niftyreg dep...\n"
-
-  #Install dep for niftyreg
-  for i in ocl-icd-dev ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers 
-  do
-    apt install -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nInstalling sirf dep...\n"
-
-  #Install dep for sirf
-  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage libace-6.4.5 libace-dev libace-tkreactor-6.4.5 libace-tkreactor-dev libace-xtreactor-6.4.5 libace-xtreactor-dev libopenblas-base libopenblas-dev libopenblas-openmp-dev libopenblas-pthread-dev libopenblas-serial-dev libopenblas0 libopenblas0-openmp libopenblas0-pthread libopenblas0-serial libopenblas64-0 libopenblas64-0-openmp libopenblas64-0-pthread libopenblas64-0-serial libopenblas64-dev libopenblas64-openmp-dev libopenblas64-pthread-dev libopenblas64-serial-dev
-  
-  do
-    apt install -y $i
-  done
-  
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nInstalling matlab dep...\n"
-
-  #Install dep for matlab
-  for i in libgmp-dev libmpfr-dev libmpc-dev
-  do
-    apt install -y $i
-  done
-
-  echo -e "\nDone!\n"
-  
-  echo -e "\n\nInstalling root dep...\n"
-
-  #Install dep for root
-  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 libjpeg-dev libjpeg-progs libjpeg-tools python gfortran openssl python-openssl python3-openssl libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev qt5-default qt5-qmake qt5-qmake-bin qt5ct qtbase5-dev qtbase5-dev-tools r-base
-  do
-    apt install -y $i
-  done
-  
-  echo -e "\nDone!\n"
-  
-  echo -e "\n\nInstalling xcat parallel...\n"
-  
-  #Install xcat parallel
-  for i in parallel
-  do
-    apt install -y $i
-  done
-  
-  echo -e "\nDone!\n"
-  
-  if [ $NVIDIA = true ]
-  then
-    echo -e "\n\nInstalling cuda dep...\n"
-    
-    #Install cuda dep
-    for i in libcupti-dev libcupti-doc libcupti11.2 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
-    do
-      apt install -y $i
-    done
-
-    echo -e "\nDone!\n"
-  fi
-
-  echo -e "\n\nUpdating...\n"
-
-  for i in update upgrade full-upgrade autoremove clean
-  do
-    apt $i -y
-  done
-
-  for i in refresh
-  do
-    snap $i
-  done
-  
-  echo -e "\nDone!\n"
-  
-  echo -e "\nDone!\n"
-else
-  echo -e "\n\nUninstalling work dependencies...\n"
-  
-  echo -e "\n\nUpdating...\n"
-  
-  #Install work dependencies
-  for i in update upgrade full-upgrade autoremove clean
-  do
-    apt $i -y
-  done
-
-  for i in refresh
-  do
-    snap $i
-  done
-  
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nUnstalling amide...\n"
-  
-  #Unstall medical imaging viewer compatible with hv for stir and nii for nifty*
-  for i in amide
-  do
-    apt purge -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nUnstalling stir dependencies...\n"
-
-  #Unstall dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libboost-all-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 tcsh python swig python-dev python-numpy ipython3 python3-ipython python3-ipython-genutils python3-matplotlib python3-matplotlib-dbg mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev h5utils liblapack-dev libxslt-dev python-h5py python-libxml2 python-psutil python3-h5py python3-libxml2 python3-psutil libplplot-dev libhdf5-serial-dev libarmadillo-dev libgtest-dev
-  do
-    apt purge -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nUnstalling doxygen...\n"
-
-  #Unstall documentation generator
-  for i in doxygen graphviz graphviz-dev libgraphviz-dev python3-pygraphviz python3-pygraphviz-dbg python3-graphviz python3-pydot python3-pydot-ng python3-pydotplus
-  do
-    apt purge -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nUnstalling ffmpeg...\n"
-
-  #Unstall video codec for jrmomo
-  for i in ffmpeg
-  do
-    apt purge -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nUnstalling nifty dep...\n"
-
-  #Unstall qt for nifty*
-  for i in libqt5svg5 libqt5svg5-dev libqt5webkit5 libqt5webkit5-dev libqt5xmlpatterns5 libqt5xmlpatterns5-dev qttools5-dev
-  do
-    apt purge -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nUnstalling jrmomo dep...\n"
-
-  #Unstall python for jrmomo
-  for i in python-numpy python3-numpy python3-scipy python3-scipy-dbg python3-matplotlib python3-matplotlib-dbg python3-nibabel ipython3 python3-ipython python3-ipython-genutils python3-pandas python3-pandas-lib python3-sklearn-pandas isympy isympy-common isympy3 python3-sympy python-nose
-  do
-    apt purge -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nUnstalling niftyreg dep...\n"
-
-  #Unstall dep for niftyreg
-  for i in ocl-icd-dev ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers 
-  do
-    apt purge -y $i
-  done
-
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nUnstalling sirf dep...\n"
-
-  #Unstall dep for sirf
-  for i in libomp-dev cython cython3 libhdf5-dev hdf5-tools python3-hdf5storage libace-6.4.5 libace-dev libace-tkreactor-6.4.5 libace-tkreactor-dev libace-xtreactor-6.4.5 libace-xtreactor-dev libopenblas-base libopenblas-dev libopenblas-openmp-dev libopenblas-pthread-dev libopenblas-serial-dev libopenblas0 libopenblas0-openmp libopenblas0-pthread libopenblas0-serial libopenblas64-0 libopenblas64-0-openmp libopenblas64-0-pthread libopenblas64-0-serial libopenblas64-dev libopenblas64-openmp-dev libopenblas64-pthread-dev libopenblas64-serial-dev
-  do
-    apt purge -y $i
-  done
-  
-  echo -e "\nDone!\n"
-
-  echo -e "\n\nUnstalling matlab dep...\n"
-
-  #Unstall dep for matlab
-  for i in libgmp-dev libmpfr-dev libmpc-dev
-  do
-    apt purge -y $i
-  done
-
-  echo -e "\nDone!\n"
-  
-  echo -e "\n\nUninstalling root dep...\n"
-
-  #Uninstall dep for root
-  for i in git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libpng++-dev libpng-dev libpng-tools libpng16-16 libpnglite-dev libpnglite0 libjpeg-dev libjpeg-progs libjpeg-tools python gfortran openssl python-openssl python3-openssl libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev python-numpy-dev libxml2-dev libkrb5-dev libgsl0-dev qt5-default qt5-qmake qt5-qmake-bin qt5ct qtbase5-dev qtbase5-dev-tools r-base
-  do
-    apt purge -y $i
-  done
-  
-  echo -e "\nDone!\n"
-  
-  echo -e "\n\nUninstalling xcat dep...\n"
-  
-  #Unstall xcat parallel
-  for i in parallel
-  do
-    apt purge -y $i
-  done
-  
-  echo -e "\nDone!\n"
-  
-  # if [ $NVIDIA = false ]
-  # then
-  #   echo -e "\n\nUninstalling cuda dep...\n"
-    
-    #Uninstall cuda dep
-  #   for i in libcupti-dev libcupti-doc libcupti11.2 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
-  #   do
-  #     apt purge -y $i
-  #   done
-    
-  #   echo -e "\nDone!\n"
-  # fi
-
-  echo -e "\n\nUpdating...\n"
-
-  for i in update upgrade full-upgrade autoremove clean
-  do
-    apt $i -y
-  done
-
-  for i in refresh
-  do
-    snap $i
-  done
-  
-  echo -e "\nDone!\n"
   
   echo -e "\nDone!\n"
 fi
