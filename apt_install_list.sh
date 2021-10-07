@@ -6,7 +6,7 @@ then
   
   if [ $1 == "-h" -o $1 == "--help" ]
   then
-    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHON\nPYTHONTHREE\nTOOLS\nKDE\nEMULATION\nNETWORKING\nPYPY\nSOURCECONTROL\nCMAKE\nIDE\nWTHREEM\nFIREFOX\nTOR\nCHROMIUM\nPDF\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nCLION\nPYCHARM\nSLACK\nDISCORD\nSPOTIFY\n\nWORKDEPENDENCIES\nNVIDIA\n"
+    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHON\nPYTHONTHREE\nTOOLS\nKDE\nEMULATION\nNETWORKING\nPYPY\nSOURCECONTROL\nCMAKE\nIDE\nFIREFOX\nTOR\nCHROMIUM\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nCLION\nPYCHARM\nSLACK\nDISCORD\nSPOTIFY\n\nWORKDEPENDENCIES\n"
 
     exit 0
   else
@@ -24,11 +24,9 @@ then
       SOURCECONTROL=false
       CMAKE=false
       IDE=false
-      WTHREEM=false
       FIREFOX=false
       TOR=false
       CHROMIUM=false
-      PDF=false
       LIBREOFFICE=false
       VLC=false
       MEDIA=false
@@ -42,10 +40,8 @@ then
       SLACK=false
       DISCORD=false
       SPOTIFY=false
-      CURE=false
 
       WORKDEPENDENCIES=false
-      NVIDIA=false
     else
       if [ $1 == "-a" -o $1 == "--all" ]
       then
@@ -61,11 +57,9 @@ then
         SOURCECONTROL=true
         CMAKE=true
         IDE=true
-        WTHREEM=true
         FIREFOX=true
         TOR=true
         CHROMIUM=true
-        PDF=true
         LIBREOFFICE=true
         VLC=true
         MEDIA=true
@@ -79,15 +73,13 @@ then
         SLACK=true
         DISCORD=true
         SPOTIFY=true
-        CURA=true
 
         WORKDEPENDENCIES=true
-        NVIDIA=false
       fi
     fi
   fi
 else
-  if [ $# == 31 ]
+  if [ $# == 26 ]
   then
     echo -e "Argument: user defined, installing selected packages...\n"
     
@@ -101,28 +93,24 @@ else
     SOURCECONTROL=$8
     CMAKE=$9
     IDE=$10
-    WTHREEM=$11
-    FIREFOX=$12
-    TOR=$13
-    CHROMIUM=$14
-    PDF=$15
-    LIBREOFFICE=$16
-    VLC=$17
-    MEDIA=$18
-    STEAM=$19
+    FIREFOX=$11
+    TOR=$12
+    CHROMIUM=$13
+    LIBREOFFICE=$14
+    VLC=$15
+    MEDIA=$16
+    STEAM=$17
     
-    SNAP=$20
-    PYPYTHREE=$21
-    GIT=$22
-    CLION=$23
-    PYCHARM=$24
-    SLACK=$25
-    DISCORD=$26
-    SPOTIFY=$27
-    CURA=$28
+    SNAP=$18
+    PYPYTHREE=$19
+    GIT=$20
+    CLION=$21
+    PYCHARM=$22
+    SLACK=$23
+    DISCORD=$24
+    SPOTIFY=$25
     
-    WORKDEPENDENCIES=$29
-    NVIDIA=$30
+    WORKDEPENDENCIES=$26
   else
     echo -e "Argument: no argument, installing default packages...\n"
     
@@ -130,21 +118,19 @@ else
     PYTHONTHREE=true
     TOOLS=true
     KDE=true
-    EMULATION=false
-    NETWORKING=false
+    EMULATION=true
+    NETWORKING=true
     PYPY=false
     SOURCECONTROL=false
     CMAKE=false
     IDE=false
-    WTHREEM=false
     FIREFOX=true
     TOR=false
-    CHROMIUM=true
-    PDF=false
+    CHROMIUM=false
     LIBREOFFICE=true
     VLC=true
     MEDIA=true
-    STEAM=true
+    STEAM=false
     
     SNAP=true
     PYPYTHREE=false
@@ -152,12 +138,10 @@ else
     CLION=false
     PYCHARM=false
     SLACK=false
-    DISCORD=true
-    SPOTIFY=true
-    CURA=false
+    DISCORD=false
+    SPOTIFY=false
     
     WORKDEPENDENCIES=false
-    NVIDIA=false
   fi
 fi
 
@@ -233,13 +217,6 @@ else
   echo -e "Uninstall ide"
 fi
 
-if [ $WTHREEM = true ]
-then
-  echo -e "Install w3m"
-else
-  echo -e "Uninstall w3m"
-fi
-
 if [ $FIREFOX = true ]
 then
   echo -e "Install firefox"
@@ -259,13 +236,6 @@ then
   echo -e "Install chromium"
 else
   echo -e "Uninstall chromium"
-fi
-
-if [ $PDF = true ]
-then
-  echo -e "Install pdf"
-else
-  echo -e "Uninstall pdf"
 fi
 
 if [ $LIBREOFFICE = true ]
@@ -354,13 +324,6 @@ else
   echo -e "Uninstall spotify"
 fi
 
-if [ $CURA = true ]
-then
-  echo -e "Install cura"
-else
-  echo -e "Uninstall cura"
-fi
-
 echo -e ""
 
 if [ $WORKDEPENDENCIES = true ]
@@ -368,13 +331,6 @@ then
   echo -e "Install work dependencies"
 else
   echo -e "Uninstall work dependencies"
-fi
-
-if [ $NVIDIA = true ]
-then
-  echo -e "Install nvidia"
-else
-  echo -e "Uninstall nvidia"
 fi
 
 while true
@@ -464,7 +420,7 @@ then
   echo -e "\n\nInstalling tools...\n"
   
   #Install tools
-  for i in neofetch upower gparted curl cloc unrar htop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools redshift lm-sensors hardinfo apt-find ppa-purge debsums
+  for i in neofetch gparted curl unrar htop aptitude exfat-fuse exfat-utils btrfs-tools redshift
   do
     apt install -y $i
   done
@@ -474,7 +430,7 @@ else
   echo -e "\n\nUninstalling tools...\n"
   
   #Uninstall tools
-  for i in neofetch upower gparted curl cloc unrar htop fonts-powerline emacs lynis aptitude exfat-fuse exfat-utils btrfs-tools redshift lm-sensors hardinfo apt-find ppa-purge debsums
+  for i in neofetch gparted curl unrar htop aptitude exfat-fuse exfat-utils btrfs-tools redshift
   do
     apt purge -y $i
   done
@@ -512,7 +468,7 @@ then
   echo -e "\n\nInstalling emulation...\n"
   
   #Install emulation
-  for i in virtualbox wine-stable winetricks
+  for i in wine-stable winetricks
   do
     apt install -y $i
   done
@@ -522,7 +478,7 @@ else
   echo -e "\n\nUninstalling emulation...\n"
   
   #Uninstall emulation
-  for i in virtualbox wine-stable winetricks
+  for i in wine-stable winetricks
   do
     apt purge -y $i
   done
@@ -581,7 +537,7 @@ then
   echo -e "\n\nInstalling source control...\n"
   
   #Install source control
-  for i in git subversion mercurial
+  for i in git
   do
     apt install -y $i
   done
@@ -591,7 +547,7 @@ else
   echo -e "\n\nUninstalling source control...\n"
   
   #Uninstall source control
-  for i in git subversion mercurial
+  for i in git
   do
     apt purge -y $i
   done
@@ -638,29 +594,6 @@ else
   
   #Uninstall ide
   for i in ccache qtcreator codeblocks spyder octave arduino
-  do
-    apt purge -y $i
-  done
-  
-  echo -e "\nDone!\n"
-fi
-
-if [ $WTHREEM = true ]
-then
-  echo -e "\n\nInstalling w3m...\n"
-  
-  #Install w3m
-  for i in w3m
-  do
-    apt install -y $i
-  done
-  
-  echo -e "\nDone!\n"
-else
-  echo -e "\n\nUninstalling w3m...\n"
-  
-  #Uninstall w3m
-  for i in w3m
   do
     apt purge -y $i
   done
@@ -730,29 +663,6 @@ else
   
   #Uninstall chromium
   for i in chromium-browser
-  do
-    apt purge -y $i
-  done
-  
-  echo -e "\nDone!\n"
-fi
-
-if [ $PDF = true ]
-then
-  echo -e "\n\nInstalling pdf...\n"
-  
-  #Install pdf viewer
-  for i in zathura zathura-pdf-poppler
-  do
-    apt install -y $i
-  done
-  
-  echo -e "\nDone!\n"
-else
-  echo -e "\n\nUninstalling pdf...\n"
-  
-  #Uninstall pdf viewer
-  for i in zathura zathura-pdf-poppler
   do
     apt purge -y $i
   done
@@ -967,6 +877,12 @@ then
   echo -e "\n\nInstalling pycharm...\n"
   
   #Install pycharm
+  for i in "pycharm-community --stable --classic"
+  do
+    snap install $i
+    snap refresh $i
+  done
+  
   for i in "pycharm-professional --stable --classic"
   do
     snap install $i
@@ -978,6 +894,11 @@ else
   echo -e "\n\nUninstalling pycharm...\n"
   
   #Remove pycharm
+  for i in "pycharm-community --stable --classic"
+  do
+    snap remove $i
+  done
+  
   for i in "pycharm-professional --stable --classic"
   do
     snap remove $i
@@ -1051,31 +972,6 @@ else
   
   #Remove spotify
   for i in "spotify --stable --classic"
-  do
-    snap remove $i
-  done
-  
-  echo -e "\nDone!\n"
-fi
-
-
-if [ $CURA = true ]
-then
-  echo -e "\n\nInstalling cura...\n"
-
-  #Install cura
-  for i in "cura-slicer --stable --classic" "meshlab --stable --classic"
-  do
-    snap install $i
-    snap refresh $i
-  done
-  
-  echo -e "\nDone!\n"
-else
-  echo -e "\n\nUninstalling cura...\n"
-  
-  #Remove cura
-  for i in "cura-slicer --stable --classic" "meshlab --stable --classic"
   do
     snap remove $i
   done
@@ -1381,19 +1277,6 @@ else
   done
   
   echo -e "\nDone!\n"
-  
-  # if [ $NVIDIA = false ]
-  # then
-  #   echo -e "\n\nUninstalling cuda dep...\n"
-    
-    #Uninstall cuda dep
-  #   for i in libcupti-dev libcupti-doc libcupti9.1 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
-  #   do
-  #     apt purge -y $i
-  #   done
-    
-  #   echo -e "\nDone!\n"
-  # fi
 
   echo -e "\n\nUpdating...\n"
 
