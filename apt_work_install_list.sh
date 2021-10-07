@@ -2,6 +2,20 @@
 
 WORKDEPENDENCIES=true
 
+echo -e "\n\nUpdating...\n"
+
+for i in update upgrade full-upgrade autoremove clean
+do
+  sudo apt $i -y
+done
+
+for i in refresh
+do
+  snap $i
+done
+
+echo -e "\nDone!\n"
+
 if [ $WORKDEPENDENCIES = true ]
 then
   echo -e "\n\nInstalling work dependencies...\n"
@@ -130,19 +144,6 @@ then
   done
   
   echo -e "\nDone!\n"
-  
-  if [ $NVIDIA = true ]
-  then
-    echo -e "\n\nInstalling cuda dep...\n"
-    
-    #Install cuda dep
-    for i in libcupti-dev libcupti-doc libcupti9.1 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
-    do
-      apt install -y $i
-    done
-
-    echo -e "\nDone!\n"
-  fi
 
   echo -e "\n\nUpdating...\n"
 
@@ -286,19 +287,6 @@ else
   done
   
   echo -e "\nDone!\n"
-  
-  if [ $NVIDIA = false ]
-  then
-    echo -e "\n\nUninstalling cuda dep...\n"
-    
-    #Uninstall cuda dep
-    for i in libcupti-dev libcupti-doc libcupti9.1 nvidia-driver-460 nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cuda-dev
-    do
-      apt purge -y $i
-    done
-    
-    echo -e "\nDone!\n"
-  fi
 
   echo -e "\n\nUpdating...\n"
 
@@ -316,3 +304,19 @@ else
   
   echo -e "\nDone!\n"
 fi
+
+echo -e "\n\nUpdating...\n"
+
+for i in update upgrade full-upgrade autoremove clean
+do
+  apt $i -y
+done
+
+for i in refresh
+do
+  snap $i
+done
+
+echo -e "\nDone!\n"
+
+exit 0
