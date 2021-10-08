@@ -6,7 +6,7 @@ then
   
   if [ $1 == "-h" -o $1 == "--help" ]
   then
-    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHON\nPYTHONTHREE\nTOOLS\nKDE\nEMULATION\nNETWORKING\nPYPY\nSOURCECONTROL\nCMAKE\nIDE\nFIREFOX\nTOR\nCHROMIUM\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nCLION\nPYCHARM\nSLACK\nDISCORD\nSPOTIFY\n"
+    echo -e "Options:\n\nNo arguments to install default packages\n-p or --purge to uninstall all packages.\n-a or --all to install all packages.\n\nElse enter true or false to select from following package list:\nPYTHONTHREE\nTOOLS\nKDE\nEMULATION\nNETWORKING\nSOURCECONTROL\nCMAKE\nIDE\nFIREFOX\nTOR\nCHROMIUM\nLIBREOFFICE\nVLC\nMEDIA\nSTEAM\n\nSNAP\nPYPYTHREE\nGIT\nCLION\nPYCHARM\nSLACK\nDISCORD\nSPOTIFY\n"
 
     exit 0
   else
@@ -14,13 +14,11 @@ then
     then
       echo -e "Argument: -p or --purge, uninstalling all packages...\n"
 
-      PYTHON=false
       PYTHONTHREE=false
       TOOLS=false
       KDE=false
       EMULATION=false
       NETWORKING=false
-      PYPY=false
       SOURCECONTROL=false
       CMAKE=false
       IDE=false
@@ -45,13 +43,11 @@ then
       then
         echo -e "Argument: -a or --all, installing all packages...\n"
 
-        PYTHON=true
         PYTHONTHREE=true
         TOOLS=true
         KDE=true
         EMULATION=true
         NETWORKING=true
-        PYPY=true
         SOURCECONTROL=true
         CMAKE=true
         IDE=true
@@ -75,46 +71,42 @@ then
     fi
   fi
 else
-  if [ $# == 25 ]
+  if [ $# == 23 ]
   then
     echo -e "Argument: user defined, installing selected packages...\n"
     
-    PYTHON=$1
-    PYTHONTHREE=$2
-    TOOLS=$3
-    KDE=$4
-    EMULATION=$5
-    NETWORKING=$6
-    PYPY=$7
-    SOURCECONTROL=$8
-    CMAKE=$9
-    IDE=$10
-    FIREFOX=$11
-    TOR=$12
-    CHROMIUM=$13
-    LIBREOFFICE=$14
-    VLC=$15
-    MEDIA=$16
-    STEAM=$17
+    PYTHONTHREE=$1
+    TOOLS=$2
+    KDE=$3
+    EMULATION=$4
+    NETWORKING=$5
+    SOURCECONTROL=$6
+    CMAKE=$7
+    IDE=$8
+    FIREFOX=$9
+    TOR=$10
+    CHROMIUM=$11
+    LIBREOFFICE=$12
+    VLC=$13
+    MEDIA=$14
+    STEAM=$15
     
-    SNAP=$18
-    PYPYTHREE=$19
-    GIT=$20
-    CLION=$21
-    PYCHARM=$22
-    SLACK=$23
-    DISCORD=$24
-    SPOTIFY=$25
+    SNAP=$16
+    PYPYTHREE=$17
+    GIT=$18
+    CLION=$19
+    PYCHARM=$20
+    SLACK=$21
+    DISCORD=$22
+    SPOTIFY=$23
   else
     echo -e "Argument: no argument, installing default packages...\n"
     
-    PYTHON=true
     PYTHONTHREE=true
     TOOLS=true
     KDE=true
     EMULATION=true
     NETWORKING=true
-    PYPY=false
     SOURCECONTROL=false
     CMAKE=false
     IDE=false
@@ -138,13 +130,6 @@ else
 fi
 
 echo -e "Changes to be made:"
-
-if [ $PYTHON = true ]
-then
-  echo -e "Install python"
-else
-  echo -e "Uninstall python"
-fi
 
 if [ $PYTHONTHREE = true ]
 then
@@ -179,13 +164,6 @@ then
   echo -e "Install networking"
 else
   echo -e "Uninstall networking"
-fi
-
-if [ $PYPY = true ]
-then
-  echo -e "Install pypy"
-else
-  echo -e "Uninstall pypy"
 fi
 
 if [ $SOURCECONTROL = true ]
@@ -354,29 +332,6 @@ done
 
 echo -e "\nDone!\n"
 
-if [ $PYTHON = true ]
-then
-  echo -e "\n\nInstalling python...\n"
-  
-  #Install python
-  for i in python python-dev python-pip python-virtualenv python-distutils-extra
-  do
-    apt install -y $i
-  done
-  
-  echo -e "\nDone!\n"
-else
-  echo -e "\n\nUninstalling python...\n"
-  
-  #Uninstall python
-  for i in python python-dev python-pip python-virtualenv python-distutils-extra
-  do
-    apt purge -y $i
-  done
-  
-  echo -e "\nDone!\n"
-fi
-
 if [ $PYTHONTHREE = true ]
 then
   echo -e "\n\nInstalling python3...\n"
@@ -405,7 +360,7 @@ then
   echo -e "\n\nInstalling tools...\n"
   
   #Install tools
-  for i in neofetch gparted curl unrar htop aptitude exfat-fuse exfat-utils btrfs-tools redshift
+  for i in neofetch gparted curl unrar htop aptitude exfat-fuse exfat-utils redshift
   do
     apt install -y $i
   done
@@ -415,7 +370,7 @@ else
   echo -e "\n\nUninstalling tools...\n"
   
   #Uninstall tools
-  for i in neofetch gparted curl unrar htop aptitude exfat-fuse exfat-utils btrfs-tools redshift
+  for i in neofetch gparted curl unrar htop aptitude exfat-fuse exfat-utils redshift
   do
     apt purge -y $i
   done
@@ -494,29 +449,6 @@ else
   echo -e "\nDone!\n"
 fi
 
-if [ $PYPY = true ]
-then
-  echo -e "\n\nInstalling pypy...\n"
-  
-  #Install pypy
-  for i in pypy
-  do
-    apt install -y $i
-  done
-  
-  echo -e "\nDone!\n"
-else
-  echo -e "\n\nUninstalling pypy...\n"
-  
-  #Uninstall pypy
-  for i in pypy
-  do
-    apt purge -y $i
-  done
-  
-  echo -e "\nDone!\n"
-fi
-
 if [ $SOURCECONTROL = true ]
 then
   echo -e "\n\nInstalling source control...\n"
@@ -545,7 +477,7 @@ then
   echo -e "\n\nInstalling cmake...\n"
   
   #Install cmake
-  for i in cmake-gui cmake-qt-gui
+  for i in cmake-curses-gui cmake-qt-gui
   do
     apt install -y $i
   done
@@ -555,7 +487,7 @@ else
   echo -e "\n\nUninstalling cmake...\n"
   
   #Uninstall cmake
-  for i in cmake-gui cmake-qt-gui
+  for i in cmake-curses-gui cmake-qt-gui
   do
     apt purge -y $i
   done
