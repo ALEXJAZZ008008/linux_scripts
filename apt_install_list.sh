@@ -345,7 +345,7 @@ do
     esac
 done 
 
-echo -e "\n\n\nUpdating...\n"
+echo -e "\n\nUpdating...\n"
 
 for i in update upgrade full-upgrade autoremove clean
 do
