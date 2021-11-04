@@ -67,6 +67,36 @@ then
         SLACK=true
         DISCORD=true
         SPOTIFY=true
+      else
+        if [ $1 == "-w" -o $1 == "--work" ]
+        then
+          echo -e "Argument: -w or --work, installing work packages...\n"
+
+          PYTHONTHREE=true
+          TOOLS=true
+          KDE=true
+          EMULATION=true
+          NETWORKING=true
+          SOURCECONTROL=true
+          CMAKE=true
+          IDE=true
+          FIREFOX=true
+          TOR=true
+          CHROMIUM=true
+          LIBREOFFICE=true
+          VLC=true
+          MEDIA=true
+          STEAM=false
+
+          SNAP=true
+          PYPYTHREE=true
+          GIT=true
+          CLION=true
+          PYCHARM=true
+          SLACK=true
+          DISCORD=false
+          SPOTIFY=true
+        fi
       fi
     fi
   fi
