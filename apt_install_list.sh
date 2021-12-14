@@ -420,7 +420,7 @@ then
   echo -e "\n\nInstalling tools...\n"
   
   #Install tools
-  for i in neofetch gparted curl unrar htop aptitude exfat-fuse exfat-utils btrfs-tools redshift
+  for i in neofetch gparted curl unrar htop aptitude exfat-fuse exfat-utils btrfs-tools redshift tree
   do
     apt install -y $i
   done
@@ -430,7 +430,7 @@ else
   echo -e "\n\nUninstalling tools...\n"
   
   #Uninstall tools
-  for i in neofetch gparted curl unrar htop aptitude exfat-fuse exfat-utils btrfs-tools redshift
+  for i in neofetch gparted curl unrar htop aptitude exfat-fuse exfat-utils btrfs-tools redshift tree
   do
     apt purge -y $i
   done
