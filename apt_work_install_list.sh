@@ -88,7 +88,7 @@ then
   echo -e "\n\nInstalling jrmomo dep...\n"
 
   #Install python for jrmomo
-  for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython python-pandas python-sympy python-nose
+  for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython python-pandas python-sympy python-nose libopenexr-dev openexr
   do
     apt install -y $i
   done
@@ -231,7 +231,7 @@ else
   echo -e "\n\nUnstalling jrmomo dep...\n"
 
   #Unstall python for jrmomo
-  for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython python-pandas python-sympy python-nose
+  for i in python-numpy python-scipy python-matplotlib python-nibabel python3-numpy python3-scipy python3-matplotlib python3-nibabel ipython python-pandas python-sympy python-nose libopenexr-dev openexr
   do
     apt purge -y $i
   done
