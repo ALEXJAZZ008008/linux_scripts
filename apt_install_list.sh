@@ -1025,7 +1025,7 @@ then
   echo -e "\n\nInstalling stir dependencies...\n"
 
   #Install dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng++-dev libpng-dev libpng-tools libpng16-16 tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev libvtkgdcm-cil libvtkgdcm-java libvtkgdcm-tools libvtkgdcm2-dev libvtkgdcm2.8 python-vtkgdcm libgdcm-cil libgdcm-java libgdcm-tools libgdcm2-dev libgdcm2.8
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng++-dev libpng-dev libpng-tools libpng16-16 tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev libvtkgdcm-cil libvtkgdcm-java libvtkgdcm-tools libvtkgdcm2-dev libvtkgdcm2.8 python-vtkgdcm libgdcm-cil libgdcm-java libgdcm-tools libgdcm2-dev libgdcm2.8 libboost-numpy-dev libboost-numpy1.65-dev libboost-numpy1.65.1 numpy-stl python-numpy python-numpy-dbg python-numpy-doc python-numpydoc python3-numpy python3-numpy-dbg python3-numpydoc
   do
     apt install -y $i
   done
@@ -1168,7 +1168,7 @@ else
   echo -e "\n\nUnstalling stir dependencies...\n"
 
   #Uninstall dependencies for stir
-  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng++-dev libpng-dev libpng-tools libpng16-16 tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev libvtkgdcm-cil libvtkgdcm-java libvtkgdcm-tools libvtkgdcm2-dev libvtkgdcm2.8 python-vtkgdcm libgdcm-cil libgdcm-java libgdcm-tools libgdcm2-dev libgdcm2.8
+  for i in gcc g++ make  cmake-curses-gui libncurses-dev libx11-dev libboost-dev libpng++-dev libpng-dev libpng-tools libpng16-16 tcsh python swig python-dev python-numpy ipython python-matplotlib mayavi2 mpi-default-dev mpi-default-bin libinsighttoolkit4-dev libtiff5-dev libvtkgdcm-cil libvtkgdcm-java libvtkgdcm-tools libvtkgdcm2-dev libvtkgdcm2.8 python-vtkgdcm libgdcm-cil libgdcm-java libgdcm-tools libgdcm2-dev libgdcm2.8libboost-numpy-dev libboost-numpy1.65-dev libboost-numpy1.65.1 numpy-stl python-numpy python-numpy-dbg python-numpy-doc python-numpydoc python3-numpy python3-numpy-dbg python3-numpydoc
   do
     apt purge -y $i
   done
